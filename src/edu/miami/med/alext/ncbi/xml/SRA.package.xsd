@@ -11,10 +11,12 @@
     <xs:include schemaLocation="SRA.analysis.xsd"/>
     <xs:complexType name="PackageType">
         <xs:annotation>
-            <xs:documentation> A SRA package is a container for any combination of SRA objects. This object is useful to serve as
-                the document root for a collection of SRA objects retrieved in a search, or delivered together in a submission. A
-                package may also contain other packages. </xs:documentation>
-            <xs:appinfo>
+            <xs:documentation>
+               A SRA package is a container for any combination of SRA objects.  This object is
+               useful to serve as the document root  for a collection of SRA objects retrieved in a search,
+               or delivered together in a submission.  A package may also contain other packages.
+            </xs:documentation>
+        <xs:appinfo>
                 <ann:Status current="Active"/>
             </xs:appinfo>
         </xs:annotation>
@@ -33,6 +35,7 @@
             <xs:element name="EXPERIMENT_SET" type="ExperimentSetType"/>
             <xs:element name="EXPERIMENT" type="ExperimentType"/>
 
+            <xs:element name="RUN_SET" type="RunSetType"/>
             <xs:element name="RUN" type="RunType"/>
         </xs:all>
 
@@ -40,8 +43,11 @@
 
     <xs:element name="PACKAGE_SET">
         <xs:annotation>
-            <xs:documentation> PACKAGE_SET serves as a container for a set of SRA objects, and can contain other SRA packages. </xs:documentation>
-            <xs:appinfo>
+            <xs:documentation>
+                PACKAGE_SET serves as a container for a set of SRA objects,
+                and can contain other SRA packages.
+            </xs:documentation>
+        <xs:appinfo>
                 <ann:Status current="Active"/>
             </xs:appinfo>
         </xs:annotation>
@@ -59,8 +65,8 @@
             <xs:element name="EXPERIMENT" type="ExperimentType"/>
             <xs:element name="SUBMISSION" type="SubmissionType"/>
             <xs:element name="STUDY" type="StudyType"/>
-            <xs:element name="SAMPLE_SET" type="SampleSetType"/>
-
+            <xs:element name="SAMPLE" type="SampleType"/>
+            <xs:element name="RUN_SET" type="RunSetType"/>
         </xs:sequence>
     </xs:complexType>
     <xs:element name="EXPERIMENT_PACKAGE" type="ExperimentPackageType"/>
