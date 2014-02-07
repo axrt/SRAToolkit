@@ -1,7 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="" />
+    <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/PlayAround.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/AlignmentDirectivesType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/AlignmentProcessingType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisFileType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisSetType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/AttributeType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/DefaultProcessingType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/EXPERIMENTPACKAGESET.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentPackageType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentSetType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/IdentifierType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/LibraryDescriptorType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/LibraryType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/LinkType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/NameAndLabelType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/ObjectFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/PACKAGESET.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/PackageType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/PipelineType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/PlatformType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/PoolMemberType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/ProcessingType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/QualifiedNameType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/RUNSET.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/RunType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SampleDescriptorType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SampleSetType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SampleType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SequencingDirectivesType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SpotDescriptorType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SraLinkType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/StudySetType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/StudyType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionSetType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/XRefType.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="SRAToolkit.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,7 +98,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java" line="60" class="edu.miami.med.alext.ncbi.xml.jax.SRAXMLLoader" package="edu.miami.med.alext.ncbi.xml.jax">
+      <breakpoint url="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java" line="62" class="edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader" package="edu.miami.med.alext.ncbi.xml.jaxb">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -70,6 +112,21 @@
         <option name="INSTANCE_FILTERS_ENABLED" value="false" />
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/scripts/PlayAround.java" line="20" class="scripts.PlayAround" package="scripts">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="&#13;&#13;JAVA" />
+        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
@@ -90,10 +147,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SRAXMLLoader.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SRAXMLLoader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="0" selection-start="2163" selection-end="2163" vertical-scroll-proportion="0.5672727" vertical-offset="623" max-vertical-offset="1173">
+            <state line="5" column="32" selection-start="166" selection-end="196" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1156">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayAround.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scripts/PlayAround.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="0" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="612">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,11 +167,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlignmentDirectivesType.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/AlignmentDirectivesType.java">
+      <file leaf-file-name="SraExperimentPackage (1).xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Downloads/SraExperimentPackage (1).xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="13" selection-start="1478" selection-end="1478" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1785">
-              <folding />
+            <state line="124" column="0" selection-start="6412" selection-end="6412" vertical-scroll-proportion="0.15828678" vertical-offset="0" max-vertical-offset="3009">
+              <folding>
+                <element signature="tag#EXPERIMENT#0;tag#EXPERIMENT_PACKAGE#0;tag#EXPERIMENT_PACKAGE_SET#0" expanded="false" />
+                <element signature="tag#SUBMISSION#0;tag#EXPERIMENT_PACKAGE#0;tag#EXPERIMENT_PACKAGE_SET#0" expanded="false" />
+                <element signature="tag#STUDY#0;tag#EXPERIMENT_PACKAGE#0;tag#EXPERIMENT_PACKAGE_SET#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,11 +187,16 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jax/SRAXMLLoader.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java" />
+        <option value="$PROJECT_DIR$/src/scripts/PlayAround.java" />
+        <option value="$USER_HOME$/Downloads/SraExperimentPackage (1).xml" />
       </list>
     </option>
   </component>
@@ -130,7 +205,7 @@
     <option name="width" value="1920" />
     <option name="height" value="1055" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -171,6 +246,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SRAToolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SRAToolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SRAToolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -263,8 +356,9 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="LayoutCode.rearrangeEntriesXML" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.SRAXMLLoader">
+  <component name="RunManager" selected="JUnit.PlayAround">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="edu.miami.med.alext.Main" />
@@ -308,6 +402,32 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="PlayAround" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SRAToolkit" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="scripts" />
+      <option name="MAIN_CLASS_NAME" value="scripts.PlayAround" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -411,13 +531,15 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.SRAXMLLoader" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.PlayAround" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SRAXMLLoader" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.PlayAround" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SRAXMLLoader" />
       </list>
     </recent_temporary>
   </component>
@@ -457,7 +579,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39958376" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39958376" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -467,7 +589,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -507,15 +629,6 @@
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="31" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1173">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/AlignmentDirectivesType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="13" selection-start="1478" selection-end="1478" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1785">
           <folding />
         </state>
       </provider>
@@ -541,18 +654,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/AlignmentDirectivesType.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="13" selection-start="1478" selection-end="1478" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1445">
+        <state line="5" column="32" selection-start="166" selection-end="196" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1156">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/scripts/PlayAround.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="2163" selection-end="2163" vertical-scroll-proportion="0.5672727" vertical-offset="623" max-vertical-offset="1173">
+        <state line="28" column="0" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="612">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/SraExperimentPackage (1).xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="0" selection-start="6412" selection-end="6412" vertical-scroll-proportion="0.15828678" vertical-offset="0" max-vertical-offset="3009">
+          <folding>
+            <element signature="tag#EXPERIMENT#0;tag#EXPERIMENT_PACKAGE#0;tag#EXPERIMENT_PACKAGE_SET#0" expanded="false" />
+            <element signature="tag#SUBMISSION#0;tag#EXPERIMENT_PACKAGE#0;tag#EXPERIMENT_PACKAGE_SET#0" expanded="false" />
+            <element signature="tag#STUDY#0;tag#EXPERIMENT_PACKAGE#0;tag#EXPERIMENT_PACKAGE_SET#0" expanded="false" />
           </folding>
         </state>
       </provider>

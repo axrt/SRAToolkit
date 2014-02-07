@@ -1,6 +1,5 @@
-package edu.miami.med.alext.ncbi.xml.jax;
+package edu.miami.med.alext.ncbi.xml.jaxb;
 
-import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
 import org.junit.Test;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
