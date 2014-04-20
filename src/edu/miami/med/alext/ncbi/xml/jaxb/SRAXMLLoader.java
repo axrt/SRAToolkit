@@ -23,7 +23,7 @@ import java.io.InputStream;
 public class SRAXMLLoader {
 
 
-    public static EXPERIMENTPACKAGESET catchBLASTOutput(InputStream in)
+    public static EXPERIMENTPACKAGESET catchXMLOutput(InputStream in)
             throws SAXException, JAXBException {
         JAXBContext jc = JAXBContext.newInstance(EXPERIMENTPACKAGESET.class);
         Unmarshaller u = jc.createUnmarshaller();
@@ -55,7 +55,7 @@ public class SRAXMLLoader {
     public void test(){
        try(InputStream inputStream=new FileInputStream(new File("/home/alext/Downloads/SraExperimentPackage.xml"));){
 
-           final EXPERIMENTPACKAGESET experimentpackageset=catchBLASTOutput(inputStream);
+           final EXPERIMENTPACKAGESET experimentpackageset= catchXMLOutput(inputStream);
 
            System.out.println();
 

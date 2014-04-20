@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="libprocess">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../ProcessLib/out/artifacts/libprocess.jar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../ProcessLib/out/artifacts/libprocess.jar" recursive="false" />
+  </library>
+</component>

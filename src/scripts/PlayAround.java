@@ -1,5 +1,6 @@
 package scripts;
 
+import edu.miami.med.alext.caseclass.Sample;
 import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
 import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;
 import org.junit.Test;
@@ -17,9 +18,10 @@ public class PlayAround {
     public void play(){
         try(InputStream inputStream=new FileInputStream(new File("/home/alext/Downloads/SraExperimentPackage.xml"));){
 
-            final EXPERIMENTPACKAGESET experimentpackageset= SRAXMLLoader.catchBLASTOutput(inputStream);
+            final EXPERIMENTPACKAGESET experimentpackageset= SRAXMLLoader.catchXMLOutput(inputStream);
 
-            System.out.println();
+            System.out.println(Sample.fromExperimetnPackageSet(experimentpackageset.getEXPERIMENTPACKAGE().get(0)));
+
 
 
         }catch (Exception e){
