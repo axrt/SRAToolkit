@@ -5,15 +5,14 @@ import edu.miami.med.alext.ncbi.xml.jaxb.ExperimentPackageType;
 import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;
 import edu.miami.med.alext.net.DownloadSRA;
 import org.xml.sax.SAXException;
+import process.CallableProcessExecutor;
+import process.FixThreadCallableProcessExectuor;
 
 import javax.xml.bind.JAXBException;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 /**
  * Created by alext on 4/19/14.
@@ -24,6 +23,10 @@ public class SRAListAssembler {
 
         final File driverXML=new File("/home/alext/Documents/Brain/full_process_of_SRP005169/human.xml");
         final File mainFolder=new File("/home/alext/Documents/Brain/full_process_of_SRP005169");
+        final File bmTaggerExec=new File("/usr/local/bin/bmtagger.sh");
+        final File humanBitmask=new File("/home/alext/NCBI/reference/grch38/grch38.bitmask");
+        final File humanSRPrism=new File("/home/alext/NCBI/reference/grch38/grch38.srprism");
+        final File tmpDir=new File("/home/alext/Downloads/tmp");
         try(InputStream inputStream=new FileInputStream(driverXML)){
 
             final EXPERIMENTPACKAGESET experimentpackageset= SRAXMLLoader.catchXMLOutput(inputStream);
@@ -32,12 +35,12 @@ public class SRAListAssembler {
                 sraNames.add(experimentPackageType.getRUNSET().getRUN().get(0).getAccession());
             }
             System.out.println("SRR archives for humans: "+sraNames.size());
-            sraNames.remove("SRR112675");
             /*for(String s:sraNames){
                 DownloadSRA.downloadSRAToANewFolder(s, mainFolder);
                 System.out.println(s+" downloaded");
             }*/
-            final ExecutorService executorService= Executors.newSingleThreadExecutor();
+
+            /*final ExecutorService executorService= Executors.newSingleThreadExecutor();
             final File fastqDumpExec=new File("/usr/local/bin/fastq-dump.2.3.4");
             final List<Future<File[]>>futures=new ArrayList<>();
             for(String s:sraNames){
@@ -52,7 +55,40 @@ public class SRAListAssembler {
                     e.printStackTrace();
                 }
             }
-            executorService.shutdown();
+            executorService.shutdown();*/
+
+            final CallableProcessExecutor<File,Callable<File>> fileCallableCallableProcessExecutor = FixThreadCallableProcessExectuor.newInstance(7);
+            List<File> folders=new ArrayList<>();
+            for(String s:sraNames){
+               final File subFolder=new File(mainFolder,s);
+               if(new File(subFolder,s.concat("_1.blacklist")).exists()){
+                   System.out.println("Skipping ".concat(s));
+                   continue;
+               }else{
+                   folders.add(subFolder);
+               }
+            }
+            for(int i=0;i<folders.size();i++){
+                final File rLane=new File(folders.get(i), sraNames.get(i)+"_2.fastq");
+                final File lLane=new File(folders.get(i), sraNames.get(i)+"_1.fastq");
+                if(lLane.exists()){
+                    fileCallableCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec,lLane,rLane,humanBitmask,humanSRPrism,tmpDir));
+                }else{
+                    fileCallableCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec,lLane,humanBitmask,humanSRPrism,tmpDir));
+                }
+            }
+            final List<Future<File>> futures=fileCallableCallableProcessExecutor.getFutures();
+
+            for(Future<File>f:futures){
+                try {
+                    f.get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+            fileCallableCallableProcessExecutor.shutdown();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

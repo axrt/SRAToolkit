@@ -8,7 +8,7 @@ import java.io.File;
  * Created by alext on 4/20/14.
  */
 public class FastqDump extends CallableProcess<File[]> {
-    public static final String SPLIT_FILES= "-split-files";
+    public static final String SPLIT_FILES= "--split-files";
 
     protected final File inputFile;
 
