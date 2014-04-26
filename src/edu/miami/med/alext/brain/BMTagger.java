@@ -125,15 +125,15 @@ public class BMTagger extends CallableProcess<File> {
     }
 
     public static File restrict(final File input, final File output, final File blacklist, final RestrictType type) throws IOException {
+        final Set<String> blacklisted = new HashSet<>();
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(blacklist))) {
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                blacklisted.add(line.trim());
+            }
+        }
         switch (type) {
             case FastQ: {
-                final Set<String> blacklisted = new HashSet<>();
-                try (BufferedReader bufferedReader = new BufferedReader(new FileReader(blacklist))) {
-                    String line;
-                    while ((line = bufferedReader.readLine()) != null) {
-                        blacklisted.add(line.trim());
-                    }
-                }
                 try (
                         BufferedReader bufferedReader = new BufferedReader(new FileReader(input));
                         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(output));
@@ -158,7 +158,28 @@ public class BMTagger extends CallableProcess<File> {
                 break;
             }
             case FastA: {
-                throw new NotImplementedException();
+                try (
+                        BufferedReader bufferedReader = new BufferedReader(new FileReader(input));
+                        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(output));
+                ) {
+                    String line;
+                    boolean write=false;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        if(line.startsWith(">")){
+                            final String ac=line.split(" ")[0].substring(1);
+                            if(!blacklisted.contains(ac)){
+                               write=true;
+                            }else{
+                                write=false;
+                            }
+                        }
+                        if(write){
+                            bufferedWriter.write(line);
+                            bufferedWriter.newLine();
+                        }
+                    }
+                }
+                break;
             }
         }
         return output;
