@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 
 /**
  * Created by alext on 4/22/14.
@@ -34,6 +35,7 @@ public class Trinity extends CallableProcess<File> {
         super(processBuilder);
         this.rLane = rLane;
         this.lLane = lLane;
+        this.processBuilder.directory(lLane.getParentFile());
     }
 
     @Override

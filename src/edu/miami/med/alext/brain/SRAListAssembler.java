@@ -61,31 +61,34 @@ public class SRAListAssembler {
             List<File> folders=new ArrayList<>();
             for(String s:sraNames){
                final File subFolder=new File(mainFolder,s);
-               if(new File(subFolder,s.concat("_1.blacklist")).exists()){
-                   System.out.println("Skipping ".concat(s));
-                   continue;
-               }else{
-                   folders.add(subFolder);
-               }
+               folders.add(subFolder);
             }
             for(int i=0;i<folders.size();i++){
                 final File rLane=new File(folders.get(i), sraNames.get(i)+"_2.fastq");
                 final File lLane=new File(folders.get(i), sraNames.get(i)+"_1.fastq");
-                if(lLane.exists()){
+                if(rLane.exists()){
                     fileCallableCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec,lLane,rLane,humanBitmask,humanSRPrism,tmpDir));
                 }else{
-                    fileCallableCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec,lLane,humanBitmask,humanSRPrism,tmpDir));
+                    fileCallableCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec,lLane,humanBitmask,humanSRPrism,tmpDir, BMTagger.RestrictType.FastQ));
                 }
             }
             final List<Future<File>> futures=fileCallableCallableProcessExecutor.getFutures();
-
+            final List<File> blacklists = new ArrayList<>();
             for(Future<File>f:futures){
                 try {
-                    f.get();
+                    blacklists.add(f.get());
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
                     e.printStackTrace();
+                }
+            }
+            for(int i=0;i<folders.size();i++) {
+                final File rLane = new File(folders.get(i), sraNames.get(i) + "_2.fastq");
+                final File lLane = new File(folders.get(i), sraNames.get(i) + "_1.fastq");
+                BMTagger.restrict(lLane,new File(lLane.getParent(),lLane.getName().replaceAll("fastq","rest.fastq")),blacklists.get(i), BMTagger.RestrictType.FastQ);
+                if(rLane.exists()){
+                    BMTagger.restrict(lLane,new File(rLane.getParent(),rLane.getName().replaceAll("fastq","rest.fastq")),blacklists.get(i), BMTagger.RestrictType.FastQ);
                 }
             }
             fileCallableCallableProcessExecutor.shutdown();
