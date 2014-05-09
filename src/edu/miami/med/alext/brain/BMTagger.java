@@ -74,7 +74,7 @@ public class BMTagger extends CallableProcess<File> {
     }
 
     public synchronized Optional<File> getBlacklist() {
-        final Optional<File> file = Optional.of(this.blacklist);
+        final Optional<File> file = Optional.of(new File(this.blacklist.toString()));
         return file;
     }
 
@@ -124,9 +124,8 @@ public class BMTagger extends CallableProcess<File> {
     public synchronized void removePreviousOutput() {
         if (this.blacklist != null && this.blacklist.exists()) {
             this.blacklist.delete();
-        } else {
-            this.blacklist = null;
         }
+            this.blacklist = null;
     }
 
     public static CallableProcess<File> newInstance(BMTaggerBuilder builder) {
