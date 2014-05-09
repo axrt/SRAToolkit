@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcessExecutor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/process/FixThreadCallableProcessExectuor.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javabio.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/libprocess.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastaBMTagerRun.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastaBMTagerRun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastqDump.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastqDump.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SRAListAssembler.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SRAListAssembler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit.iml" afterPath="$PROJECT_DIR$/SRAToolkit.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/SelectSamples.java" afterPath="$PROJECT_DIR$/src/scripts/SelectSamples.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SRAToolkit.iws" />
@@ -169,12 +156,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BMTagger.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BMTagger.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="0" selection-start="3733" selection-end="3733" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="3705">
+            <state line="86" column="8" selection-start="2289" selection-end="2289" vertical-scroll-proportion="-1.0610687" vertical-offset="2124" max-vertical-offset="4410">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1719#1720#0" expanded="true" />
+                <element signature="e#1747#1748#0" expanded="true" />
+                <element signature="e#1777#1778#0" expanded="true" />
+                <element signature="e#1805#1806#0" expanded="true" />
+                <element signature="e#1846#1847#0" expanded="true" />
+                <element signature="e#1885#1886#0" expanded="true" />
+                <element signature="e#1926#1927#0" expanded="true" />
+                <element signature="e#1965#1966#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,10 +186,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MonkeyPipeline.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MonkeyPipeline.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="40" selection-start="2579" selection-end="2579" vertical-scroll-proportion="0.40966922" vertical-offset="488" max-vertical-offset="3480">
+            <state line="54" column="40" selection-start="2579" selection-end="2579" vertical-scroll-proportion="0.0" vertical-offset="488" max-vertical-offset="3480">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -231,17 +226,17 @@
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTaggerTest.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityTest.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityFastaFilter.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcessExecutor.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/process/FixThreadCallableProcessExectuor.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java" />
         <option value="$PROJECT_DIR$/src/scripts/SelectSamples.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SRAListAssembler.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastaBMTagerRun.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastqDump.java" />
+        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java" />
+        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java" />
       </list>
     </option>
   </component>
@@ -758,7 +753,11 @@
       <created>1398553108872</created>
       <updated>1398553108872</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="BMTaggerBuilder added to BMTagger">
+      <created>1399663062913</created>
+      <updated>1399663062913</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -808,7 +807,8 @@
     <MESSAGE value="BMTagger fastq processing via blacklist added" />
     <MESSAGE value="Fasta processing" />
     <MESSAGE value="Fasta processing on BMTaggers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fasta processing on BMTaggers" />
+    <MESSAGE value="BMTaggerBuilder added to BMTagger" />
+    <option name="LAST_COMMIT_MESSAGE" value="BMTaggerBuilder added to BMTagger" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1011,13 +1011,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="1" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcessExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="1" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
@@ -1101,27 +1094,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="0" selection-start="3733" selection-end="3733" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="3705">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="87" column="40" selection-start="4457" selection-end="4457" vertical-scroll-proportion="0.0" vertical-offset="984" max-vertical-offset="1770">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastaBMTagerRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="40" selection-start="2828" selection-end="2828" vertical-scroll-proportion="0.0" vertical-offset="521" max-vertical-offset="1320">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1146,9 +1121,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="40" selection-start="2579" selection-end="2579" vertical-scroll-proportion="0.40966922" vertical-offset="488" max-vertical-offset="3480">
+        <state line="54" column="40" selection-start="2579" selection-end="2579" vertical-scroll-proportion="0.0" vertical-offset="488" max-vertical-offset="3480">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="38" selection-start="480" selection-end="480" vertical-scroll-proportion="0.30927834" vertical-offset="0" max-vertical-offset="776">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastaBMTagerRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="40" selection-start="2828" selection-end="2828" vertical-scroll-proportion="0.0" vertical-offset="521" max-vertical-offset="1320">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="8" selection-start="2289" selection-end="2289" vertical-scroll-proportion="-1.0610687" vertical-offset="2124" max-vertical-offset="4410">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#1747#1748#0" expanded="true" />
+            <element signature="e#1777#1778#0" expanded="true" />
+            <element signature="e#1805#1806#0" expanded="true" />
+            <element signature="e#1846#1847#0" expanded="true" />
+            <element signature="e#1885#1886#0" expanded="true" />
+            <element signature="e#1926#1927#0" expanded="true" />
+            <element signature="e#1965#1966#0" expanded="true" />
           </folding>
         </state>
       </provider>

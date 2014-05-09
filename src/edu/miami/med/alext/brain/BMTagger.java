@@ -4,10 +4,7 @@ package edu.miami.med.alext.brain;
 import edu.miami.med.alext.process.CallableProcess;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by alext on 4/20/14.
@@ -24,50 +21,109 @@ public class BMTagger extends CallableProcess<File> {
     public static final String OUTPUT = "-o";
     public static final String OUTPUT_EXT = ".blacklist";
 
+    public enum RestrictType {
+
+        FastQ("fastq"),
+        FastA("fasta");
+
+        private final String name;
+
+        RestrictType(String name) {
+            this.name = name;
+        }
+
+        public static String toBMTaggerCommand(RestrictType restrictType) {
+            switch (restrictType) {
+                case FastA:
+                    return FASTA;
+                default:
+                    return FASTQ;
+            }
+        }
+    }
+
     protected final File rLane;
     protected final File lLane;
     protected final File referenceBitmask;
     protected final File referenceSrprism;
+    protected File blacklist;
 
-    protected BMTagger(ProcessBuilder processBuilder, File lLane, File rLane, File referenceBitmask, File referenceSrprism) {
+    protected BMTagger(ProcessBuilder processBuilder, File lLane, File rLane, File referenceBitmask, File referenceSrprism, File blacklist) {
         super(processBuilder);
         this.rLane = rLane;
         this.lLane = lLane;
         this.referenceBitmask = referenceBitmask;
         this.referenceSrprism = referenceSrprism;
+        this.blacklist = blacklist;
+    }
+
+    public File getrLane() {
+        return rLane;
+    }
+
+    public File getlLane() {
+        return lLane;
+    }
+
+    public File getReferenceBitmask() {
+        return referenceBitmask;
+    }
+
+    public File getReferenceSrprism() {
+        return referenceSrprism;
+    }
+
+    public Optional<File> getBlacklist() {
+        final Optional<File> file = Optional.of(this.blacklist);
+        return file;
     }
 
     @Override
     public File call() throws Exception {
+
         for (String s : this.processBuilder.command()) {
-            System.out.print(s.concat(" "));
+            System.out.print(s.concat(" ")); //TODO lambdify
         }
-        if (!new File(this.lLane.getParent(), this.lLane.getName().split("\\.")[0] + OUTPUT_EXT).exists()) {
 
-            System.out.println();
-            final Process p = this.processBuilder.start();
+        try {
+            if (!new File(this.lLane.getParent(), this.lLane.getName().split("\\.")[0] + OUTPUT_EXT).exists()) {
+
+                final Process p = this.processBuilder.start();
 
 
-            try (InputStream inputStream = p.getErrorStream();
-                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
-                String line;
-                while ((line = bufferedReader.readLine()) != null) {
-                    System.out.println("ERR::" + this.lLane.getName() + " >" + line);
+                try (InputStream inputStream = p.getErrorStream();
+                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        System.out.println("ERR::" + this.lLane.getName() + " >" + line);
+                    }
                 }
-            }
-            try (InputStream inputStream = p.getInputStream();
-                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
-                String line;
-                while ((line = bufferedReader.readLine()) != null) {
-                    System.out.println("OUT::" + this.lLane.getName() + " >" + line);
+                try (InputStream inputStream = p.getInputStream();
+                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        System.out.println("OUT::" + this.lLane.getName() + " >" + line);
+                    }
                 }
-            }
-            p.waitFor();
+                p.waitFor(); //TODO is this necessary?
 
-        } else {//TODO remove
-            System.out.println("Reads for " + this.lLane + " have already been filtered against the reference.");
+            } else {//TODO remove
+                System.out.println("Reads for " + this.lLane + " have already been filtered against the reference.");
+            }
+        } catch (Exception e) {
+            this.blacklist = null;
+            throw e;
         }
-        return new File(this.lLane.getParent(), this.lLane.getName().split("\\.")[0] + OUTPUT_EXT);
+
+        return this.blacklist;
+    }
+
+    public void removePreviousOutput() {
+        if (this.blacklist != null && this.blacklist.exists()) {
+            this.blacklist.delete();
+        } else {
+            this.blacklist = null;
+        }
     }
 
     public static CallableProcess<File> newInstance(BMTaggerBuilder builder) {
@@ -94,18 +150,9 @@ public class BMTagger extends CallableProcess<File> {
             processCall.add(new File(builder.lLane.getParent(), builder.lLane.getName().split("\\.")[0] + OUTPUT_EXT).toString());
         }
 
-        return new BMTagger(new ProcessBuilder(processCall), builder.lLane, builder.rLane, builder.referenceBitmask, builder.referenceSrprism);
+        return new BMTagger(new ProcessBuilder(processCall), builder.lLane, builder.rLane, builder.referenceBitmask, builder.referenceSrprism,builder.output);
     }
 
-    public enum RestrictType {
-        FastQ("fastq"),
-        FastA("fasta");
-        private final String name;
-
-        RestrictType(String name) {
-            this.name = name;
-        }
-    }
 
     public static File restrict(final File input, final File output, final File blacklist, final RestrictType type) throws IOException {
         if (output.exists()) {
@@ -178,7 +225,7 @@ public class BMTagger extends CallableProcess<File> {
         private File referenceBitmask = null;
         private File referenceSrprism = null;
         private File tmpDir = null;
-        private RestrictType restrictType = null;
+        private String restrictType = null;
         //Optional
         private File rLane = null;
         private File output = null;
@@ -216,7 +263,7 @@ public class BMTagger extends CallableProcess<File> {
         }
 
         public BMTaggerBuilder restrictType(RestrictType restrictType) {
-            this.restrictType = restrictType;
+            this.restrictType = BMTagger.RestrictType.toBMTaggerCommand(restrictType);
             return this;
         }
 
