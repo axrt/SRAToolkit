@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/ActiveSince.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/Alternative.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/BusinessRules.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/GapDescriptorType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/Glossary.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/RunSetType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/StatusType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/Use.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/UseType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SRAToolkit.iws" />
@@ -737,7 +736,11 @@
       <created>1399656995147</created>
       <updated>1399656995147</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Pushing jaxb classes that had been left out">
+      <created>1399657967956</created>
+      <updated>1399657967957</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -789,7 +792,8 @@
     <MESSAGE value="BMTagger and FastqDump added" />
     <MESSAGE value="BMTagger fastq processing via blacklist added" />
     <MESSAGE value="Monkey pipeline successully applied" />
-    <option name="LAST_COMMIT_MESSAGE" value="Monkey pipeline successully applied" />
+    <MESSAGE value="Pushing jaxb classes that had been left out" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pushing jaxb classes that had been left out" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
