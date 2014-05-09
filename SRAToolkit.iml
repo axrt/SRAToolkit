@@ -17,7 +17,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="commons-io:commons-io:2.4" level="project" />
-    <orderEntry type="library" name="javabio" level="project" />
     <orderEntry type="library" name="org.apache.commons:commons-math3:3.2" level="project" />
     <orderEntry type="module-library">
       <library name="JUnit4">
@@ -30,7 +29,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="libprocess" level="project" />
+    <orderEntry type="library" name="javabio_jar" level="project" />
   </component>
 </module>
 

@@ -1,6 +1,6 @@
 package edu.miami.med.alext.brain;
 
-import process.CallableProcess;
+import edu.miami.med.alext.process.CallableProcess;
 
 import java.io.File;
 

@@ -3,9 +3,9 @@ package edu.miami.med.alext.brain;
 import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
 import edu.miami.med.alext.ncbi.xml.jaxb.ExperimentPackageType;
 import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;
+import edu.miami.med.alext.process.CallableProcessExecutor;
+import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import org.xml.sax.SAXException;
-import process.CallableProcessExecutor;
-import process.FixThreadCallableProcessExectuor;
 
 import javax.xml.bind.JAXBException;
 import java.io.*;
@@ -20,11 +20,11 @@ import java.util.concurrent.Future;
  */
 public class TrinityRuner {
 
-    public static void main (String[]args){
+    public static void main(String[] args) {
 
-        final File driverXML=new File("/home/alext/Documents/Brain/full_process_of_SRP005169/human.xml");
-        final File mainFolder=new File("/home/alext/Documents/Brain/full_process_of_SRP005169");
-        try(InputStream inputStream=new FileInputStream(driverXML)) {
+        final File driverXML = new File("/home/alext/Documents/Brain/full_process_of_SRP005169/human.xml");
+        final File mainFolder = new File("/home/alext/Documents/Brain/full_process_of_SRP005169");
+        try (InputStream inputStream = new FileInputStream(driverXML)) {
 
             final EXPERIMENTPACKAGESET experimentpackageset = SRAXMLLoader.catchXMLOutput(inputStream);
             final List<String> sraNames = new ArrayList<>();
@@ -39,29 +39,29 @@ public class TrinityRuner {
                 final File subFolder = new File(mainFolder, s);
                 folders.add(subFolder);
             }
-            CallableProcessExecutor<File,Callable<File>> fileCallableCallableProcessExecutor=FixThreadCallableProcessExectuor.newInstance(1);
-            final File trinityExec=new File("/opt/trinityrnaseq_r20131110/trinity");
-            final boolean forward=true;
-            final int numThreads=12;
-            final int minContigLenghth=70;
-            final String seqType=Trinity.FASTQ;
-            final String jmMemory="50G";
+            CallableProcessExecutor<File, Callable<File>> fileCallableCallableProcessExecutor = FixThreadCallableProcessExectuor.newInstance(1);
+            final File trinityExec = new File("/opt/trinityrnaseq_r20131110/trinity");
+            final boolean forward = true;
+            final int numThreads = 12;
+            final int minContigLenghth = 70;
+            final String seqType = Trinity.FASTQ;
+            final String jmMemory = "50G";
             System.out.println("Starting trinities..");
-            for(int i=0;i<folders.size();i++){
+            for (int i = 0; i < folders.size(); i++) {
 
-                final File lLane=new File(folders.get(i), sraNames.get(i)+"_1.rest.fastq");
-                final File rLane=new File(folders.get(i), sraNames.get(i)+"_2.rest.fastq");
+                final File lLane = new File(folders.get(i), sraNames.get(i) + "_1.rest.fastq");
+                final File rLane = new File(folders.get(i), sraNames.get(i) + "_2.rest.fastq");
 
-                if(rLane.exists()){
-                    fileCallableCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec,lLane,rLane,forward,numThreads,minContigLenghth,seqType,jmMemory));
-                }else{
-                    fileCallableCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec,lLane,forward,numThreads,minContigLenghth,seqType,jmMemory));
+                if (rLane.exists()) {
+                    fileCallableCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec, lLane, rLane, forward, numThreads, minContigLenghth, seqType, jmMemory));
+                } else {
+                    fileCallableCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec, lLane, forward, numThreads, minContigLenghth, seqType, jmMemory));
                 }
 
             }
-            final List<Future<File>> trinityFastas=fileCallableCallableProcessExecutor.getFutures();
-            final List<File> trinityFastaFiles=new ArrayList<>();
-            for(Future<File> f:trinityFastas){
+            final List<Future<File>> trinityFastas = fileCallableCallableProcessExecutor.getFutures();
+            final List<File> trinityFastaFiles = new ArrayList<>();
+            for (Future<File> f : trinityFastas) {
                 try {
                     trinityFastaFiles.add(f.get());
                 } catch (InterruptedException e) {
@@ -71,15 +71,23 @@ public class TrinityRuner {
                 }
             }
             fileCallableCallableProcessExecutor.shutdown();
-            fileCallableCallableProcessExecutor=FixThreadCallableProcessExectuor.newInstance(7);
-            final File bmTaggerExec=new File("/usr/local/bin/bmtagger.sh");
-            final File humanBitmask=new File("/home/alext/NCBI/reference/grch38/grch38.bitmask");
-            final File humanSRPrism=new File("/home/alext/NCBI/reference/grch38/grch38.srprism");
-            final File tmpDir=new File("/home/alext/Downloads/tmp");
-            for(File f:trinityFastaFiles){
-                fileCallableCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec,f,humanBitmask,humanSRPrism,tmpDir, BMTagger.RestrictType.FastA));
+            fileCallableCallableProcessExecutor = FixThreadCallableProcessExectuor.newInstance(7);
+            final File bmTaggerExec = new File("/usr/local/bin/bmtagger.sh");
+            final File humanBitmask = new File("/home/alext/NCBI/reference/grch38/grch38.bitmask");
+            final File humanSRPrism = new File("/home/alext/NCBI/reference/grch38/grch38.srprism");
+            final File tmpDir = new File("/home/alext/Downloads/tmp");
+            for (File f : trinityFastaFiles) {
+                fileCallableCallableProcessExecutor.addProcess(
+                        new BMTagger.BMTaggerBuilder()
+                                .bmtaggerExecutale(bmTaggerExec)
+                                .lLane(f)
+                                .referenceBitmask(humanBitmask)
+                                .referenceSrprism(humanSRPrism)
+                                .tmpDir(tmpDir)
+                                .restrictType(BMTagger.RestrictType.FastA)
+                                .build());
             }
-            for(Future<File> f:fileCallableCallableProcessExecutor.getFutures()){
+            for (Future<File> f : fileCallableCallableProcessExecutor.getFutures()) {
                 try {
                     f.get();
                 } catch (InterruptedException e) {

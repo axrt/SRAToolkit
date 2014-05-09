@@ -4,9 +4,10 @@ import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
 import edu.miami.med.alext.ncbi.xml.jaxb.ExperimentPackageType;
 import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;
 import edu.miami.med.alext.net.DownloadSRA;
+import edu.miami.med.alext.process.CallableProcessExecutor;
+import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import org.xml.sax.SAXException;
-import process.CallableProcessExecutor;
-import process.FixThreadCallableProcessExectuor;
+
 
 import javax.xml.bind.JAXBException;
 import java.io.*;
@@ -19,22 +20,22 @@ import java.util.concurrent.*;
  */
 public class SRAListAssembler {
 
-    public static void main (String[]args){
+    public static void main(String[] args) {
 
-        final File driverXML=new File("/home/alext/Documents/Brain/full_process_of_SRP005169/human.xml");
-        final File mainFolder=new File("/home/alext/Documents/Brain/full_process_of_SRP005169");
-        final File bmTaggerExec=new File("/usr/local/bin/bmtagger.sh");
-        final File humanBitmask=new File("/home/alext/NCBI/reference/grch38/grch38.bitmask");
-        final File humanSRPrism=new File("/home/alext/NCBI/reference/grch38/grch38.srprism");
-        final File tmpDir=new File("/home/alext/Downloads/tmp");
-        try(InputStream inputStream=new FileInputStream(driverXML)){
+        final File driverXML = new File("/home/alext/Documents/Brain/full_process_of_SRP005169/human.xml");
+        final File mainFolder = new File("/home/alext/Documents/Brain/full_process_of_SRP005169");
+        final File bmTaggerExec = new File("/usr/local/bin/bmtagger.sh");
+        final File humanBitmask = new File("/home/alext/NCBI/reference/grch38/grch38.bitmask");
+        final File humanSRPrism = new File("/home/alext/NCBI/reference/grch38/grch38.srprism");
+        final File tmpDir = new File("/home/alext/Downloads/tmp");
+        try (InputStream inputStream = new FileInputStream(driverXML)) {
 
-            final EXPERIMENTPACKAGESET experimentpackageset= SRAXMLLoader.catchXMLOutput(inputStream);
-            final List<String> sraNames=new ArrayList<>();
-            for(ExperimentPackageType experimentPackageType:experimentpackageset.getEXPERIMENTPACKAGE()){
+            final EXPERIMENTPACKAGESET experimentpackageset = SRAXMLLoader.catchXMLOutput(inputStream);
+            final List<String> sraNames = new ArrayList<>();
+            for (ExperimentPackageType experimentPackageType : experimentpackageset.getEXPERIMENTPACKAGE()) {
                 sraNames.add(experimentPackageType.getRUNSET().getRUN().get(0).getAccession());
             }
-            System.out.println("SRR archives for humans: "+sraNames.size());
+            System.out.println("SRR archives for humans: " + sraNames.size());
             /*for(String s:sraNames){
                 DownloadSRA.downloadSRAToANewFolder(s, mainFolder);
                 System.out.println(s+" downloaded");
@@ -57,24 +58,41 @@ public class SRAListAssembler {
             }
             executorService.shutdown();*/
 
-            final CallableProcessExecutor<File,Callable<File>> fileCallableCallableProcessExecutor = FixThreadCallableProcessExectuor.newInstance(7);
-            List<File> folders=new ArrayList<>();
-            for(String s:sraNames){
-               final File subFolder=new File(mainFolder,s);
-               folders.add(subFolder);
+            final CallableProcessExecutor<File, Callable<File>> fileCallableCallableProcessExecutor = FixThreadCallableProcessExectuor.newInstance(7);
+            List<File> folders = new ArrayList<>();
+            for (String s : sraNames) {
+                final File subFolder = new File(mainFolder, s);
+                folders.add(subFolder);
             }
-            for(int i=0;i<folders.size();i++){
-                final File rLane=new File(folders.get(i), sraNames.get(i)+"_2.fastq");
-                final File lLane=new File(folders.get(i), sraNames.get(i)+"_1.fastq");
-                if(rLane.exists()){
-                    fileCallableCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec,lLane,rLane,humanBitmask,humanSRPrism,tmpDir));
-                }else{
-                    fileCallableCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec,lLane,humanBitmask,humanSRPrism,tmpDir, BMTagger.RestrictType.FastQ));
+            for (int i = 0; i < folders.size(); i++) {
+                final File rLane = new File(folders.get(i), sraNames.get(i) + "_2.fastq");
+                final File lLane = new File(folders.get(i), sraNames.get(i) + "_1.fastq");
+                if (rLane.exists()) {
+                    fileCallableCallableProcessExecutor.addProcess(
+                            new BMTagger.BMTaggerBuilder()
+                            .bmtaggerExecutale(bmTaggerExec)
+                            .lLane(lLane)
+                            .rLane(rLane)
+                            .referenceBitmask(humanBitmask)
+                            .referenceSrprism(humanSRPrism)
+                            .tmpDir(tmpDir)
+                            .build()
+                    );
+                } else {
+                    fileCallableCallableProcessExecutor.addProcess(new BMTagger.BMTaggerBuilder()
+                            .bmtaggerExecutale(bmTaggerExec)
+                            .lLane(lLane)
+                            .rLane(rLane)
+                            .referenceBitmask(humanBitmask)
+                            .referenceSrprism(humanSRPrism)
+                            .tmpDir(tmpDir)
+                            .restrictType(BMTagger.RestrictType.FastQ)
+                            .build());
                 }
             }
-            final List<Future<File>> futures=fileCallableCallableProcessExecutor.getFutures();
+            final List<Future<File>> futures = fileCallableCallableProcessExecutor.getFutures();
             final List<File> blacklists = new ArrayList<>();
-            for(Future<File>f:futures){
+            for (Future<File> f : futures) {
                 try {
                     blacklists.add(f.get());
                 } catch (InterruptedException e) {
@@ -83,12 +101,12 @@ public class SRAListAssembler {
                     e.printStackTrace();
                 }
             }
-            for(int i=0;i<folders.size();i++) {
+            for (int i = 0; i < folders.size(); i++) {
                 final File rLane = new File(folders.get(i), sraNames.get(i) + "_2.fastq");
                 final File lLane = new File(folders.get(i), sraNames.get(i) + "_1.fastq");
-                BMTagger.restrict(lLane,new File(lLane.getParent(),lLane.getName().replaceAll("fastq","rest.fastq")),blacklists.get(i), BMTagger.RestrictType.FastQ);
-                if(rLane.exists()){
-                    BMTagger.restrict(lLane,new File(rLane.getParent(),rLane.getName().replaceAll("fastq","rest.fastq")),blacklists.get(i), BMTagger.RestrictType.FastQ);
+                BMTagger.restrict(lLane, new File(lLane.getParent(), lLane.getName().replaceAll("fastq", "rest.fastq")), blacklists.get(i), BMTagger.RestrictType.FastQ);
+                if (rLane.exists()) {
+                    BMTagger.restrict(lLane, new File(rLane.getParent(), rLane.getName().replaceAll("fastq", "rest.fastq")), blacklists.get(i), BMTagger.RestrictType.FastQ);
                 }
             }
             fileCallableCallableProcessExecutor.shutdown();

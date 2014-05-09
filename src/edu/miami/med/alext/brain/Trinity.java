@@ -1,7 +1,7 @@
 package edu.miami.med.alext.brain;
 
-import process.CallableProcess;
-import sun.plugin2.gluegen.runtime.CPU;
+
+import edu.miami.med.alext.process.CallableProcess;
 
 import java.io.BufferedReader;
 import java.io.File;

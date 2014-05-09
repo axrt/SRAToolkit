@@ -4,10 +4,10 @@ import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
 import edu.miami.med.alext.ncbi.xml.jaxb.ExperimentPackageType;
 import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;
 import edu.miami.med.alext.net.DownloadSRA;
+import edu.miami.med.alext.process.CallableProcessExecutor;
+import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import org.apache.commons.io.FileUtils;
 import org.xml.sax.SAXException;
-import process.CallableProcessExecutor;
-import process.FixThreadCallableProcessExectuor;
 
 import javax.xml.bind.JAXBException;
 import java.io.*;
@@ -79,9 +79,26 @@ public class MonkeyPipeline {
             for (int i = 0; i < fastqFiles.size(); i++) {
 
                 if (fastqFiles.get(i)[1].exists()) {
-                    fileCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec, fastqFiles.get(i)[0], fastqFiles.get(i)[1], bitmask, sRPrism, tmpDir));
+                    fileCallableProcessExecutor.addProcess(
+                            new BMTagger.BMTaggerBuilder()
+                                    .bmtaggerExecutale(bmTaggerExec)
+                                    .lLane(fastqFiles.get(i)[0])
+                                    .rLane(fastqFiles.get(i)[1])
+                                    .referenceBitmask(bitmask)
+                                    .referenceSrprism(sRPrism)
+                                    .tmpDir(tmpDir)
+                                    .restrictType(BMTagger.RestrictType.FastQ)
+                                    .build());
                 } else {
-                    fileCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec, fastqFiles.get(i)[0], bitmask, sRPrism, tmpDir, BMTagger.RestrictType.FastQ));
+                    fileCallableProcessExecutor.addProcess(
+                            new BMTagger.BMTaggerBuilder()
+                                    .bmtaggerExecutale(bmTaggerExec)
+                                    .lLane(fastqFiles.get(i)[0])
+                                    .referenceBitmask(bitmask)
+                                    .referenceSrprism(sRPrism)
+                                    .restrictType(BMTagger.RestrictType.FastQ)
+                                    .tmpDir(tmpDir).build()
+                    );
                 }
 
             }
@@ -152,7 +169,16 @@ public class MonkeyPipeline {
             //6. Search contigs against the monkey reference
             final CallableProcessExecutor<File, Callable<File>> bmtaggerCallableProcessExecutor = FixThreadCallableProcessExectuor.newInstance(7);
             trinityOutputs.stream().map(output ->
-                            bmtaggerCallableProcessExecutor.addProcess(BMTagger.newInstance(bmTaggerExec, output, bitmask, sRPrism, tmpDir, BMTagger.RestrictType.FastA))
+                    bmtaggerCallableProcessExecutor.addProcess(
+                            new BMTagger.BMTaggerBuilder()
+                            .bmtaggerExecutale(bmTaggerExec)
+                            .lLane(output)
+                            .referenceBitmask(bitmask)
+                            .referenceSrprism(sRPrism)
+                            .tmpDir(tmpDir)
+                            .restrictType(BMTagger.RestrictType.FastA)
+                            .build())
+
             ).count();
             final List<File> contigBlacklists = bmtaggerCallableProcessExecutor.getFutures().stream().map(future -> {
                 try {
@@ -165,25 +191,25 @@ public class MonkeyPipeline {
                 return null;
             }).collect(Collectors.toList());
             //7. Restrict the contigs
-            final List<File> outFiles=new ArrayList<>();
+            final List<File> outFiles = new ArrayList<>();
             for (int i = 0; i < trinityOutputs.size(); i++) {
 
                 outFiles.add(BMTagger.restrict(trinityOutputs.get(i), new File(trinityOutputs.get(i).getParent(),
-                                trinityOutputs.get(i).getName().replaceAll("\\.fasta", ".rest.fasta")),
+                        trinityOutputs.get(i).getName().replaceAll("\\.fasta", ".rest.fasta")),
                         contigBlacklists.get(i), BMTagger.RestrictType.FastA
                 ));
             }
 
 
             bmtaggerCallableProcessExecutor.shutdown();
-            final File outDir=new File("/home/alext/Documents/Brain/full_process_of_SRP005169/monkey_out");
-            outFiles.stream().forEach(file->{
+            final File outDir = new File("/home/alext/Documents/Brain/full_process_of_SRP005169/monkey_out");
+            outFiles.stream().forEach(file -> {
 
-                        try {
-                            FileUtils.copyFile(file, new File(outDir, file.getParentFile().getParentFile().getName()+"."+file.getName()));
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        }
+                try {
+                    FileUtils.copyFile(file, new File(outDir, file.getParentFile().getParentFile().getName() + "." + file.getName()));
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
 
             }
             );

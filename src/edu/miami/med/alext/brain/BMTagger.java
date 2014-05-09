@@ -1,10 +1,12 @@
 package edu.miami.med.alext.brain;
 
-import process.CallableProcess;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import edu.miami.med.alext.process.CallableProcess;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -15,19 +17,19 @@ public class BMTagger extends CallableProcess<File> {
     public static final String REFERENCE_BITMASK = "-b";
     public static final String REFERENCE_SPRISM = "-x";
     public static final String FASTQ = "-q1";
-    public static final String FASTA= "-q0";
+    public static final String FASTA = "-q0";
     public static final String LEFT_MATE = "-1";
     public static final String RIGHT_MATE = "-2";
     public static final String TEMP_DIR = "-T";
     public static final String OUTPUT = "-o";
     public static final String OUTPUT_EXT = ".blacklist";
 
-    private final File rLane;
-    private final File lLane;
-    private final File referenceBitmask;
-    private final File referenceSrprism;
+    protected final File rLane;
+    protected final File lLane;
+    protected final File referenceBitmask;
+    protected final File referenceSrprism;
 
-    public BMTagger(ProcessBuilder processBuilder,  File lLane,File rLane, File referenceBitmask, File referenceSrprism) {
+    protected BMTagger(ProcessBuilder processBuilder, File lLane, File rLane, File referenceBitmask, File referenceSrprism) {
         super(processBuilder);
         this.rLane = rLane;
         this.lLane = lLane;
@@ -42,82 +44,57 @@ public class BMTagger extends CallableProcess<File> {
         }
         if (!new File(this.lLane.getParent(), this.lLane.getName().split("\\.")[0] + OUTPUT_EXT).exists()) {
 
-        System.out.println();
-        final Process p = this.processBuilder.start();
+            System.out.println();
+            final Process p = this.processBuilder.start();
 
 
-        try (InputStream inputStream = p.getErrorStream();
-             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                System.out.println("ERR::" + this.lLane.getName() + " >" + line);
+            try (InputStream inputStream = p.getErrorStream();
+                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    System.out.println("ERR::" + this.lLane.getName() + " >" + line);
+                }
             }
-        }
-        try (InputStream inputStream = p.getInputStream();
-             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                System.out.println("OUT::" + this.lLane.getName() + " >" + line);
+            try (InputStream inputStream = p.getInputStream();
+                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    System.out.println("OUT::" + this.lLane.getName() + " >" + line);
+                }
             }
-        }
-        p.waitFor();
+            p.waitFor();
 
-        }else{//TODO remove
-            System.out.println("Reads for "+this.lLane+" have already been filtered against the reference.");
+        } else {//TODO remove
+            System.out.println("Reads for " + this.lLane + " have already been filtered against the reference.");
         }
         return new File(this.lLane.getParent(), this.lLane.getName().split("\\.")[0] + OUTPUT_EXT);
     }
 
-    public static CallableProcess<File> newInstance(File bmtaggerExec, File lLane, File rLane, File referenceBitmask, File referenceSrprism, File tmpDir) {
+    public static CallableProcess<File> newInstance(BMTaggerBuilder builder) {
 
-        final String[] processCall = {
-                bmtaggerExec.toString(),
-                REFERENCE_BITMASK, referenceBitmask.toString(),
-                REFERENCE_SPRISM, referenceSrprism.toString(),
-                TEMP_DIR, tmpDir.toString(),
-                FASTQ,
-                LEFT_MATE, lLane.toString(),
-                RIGHT_MATE, rLane.toString(),
-                OUTPUT, new File(lLane.getParent(), lLane.getName().split("\\.")[0] + OUTPUT_EXT).toString()
-        };
-
-
-        return new BMTagger(new ProcessBuilder(processCall), lLane, rLane, referenceBitmask, referenceSrprism);
-    }
-
-    public static CallableProcess<File> newInstance(File bmtaggerExec, File lane, File referenceBitmask, File referenceSrprism, File tmpDir, final RestrictType type) {
-        String[]    processCall=null;//TODO initialize to just make fasta fastaq selection fro the last argument; do the same fo paired
-        switch(type){
-            case FastQ: {
-                 processCall = new String[]{
-                        bmtaggerExec.toString(),
-                        REFERENCE_BITMASK, referenceBitmask.toString(),
-                        REFERENCE_SPRISM, referenceSrprism.toString(),
-                        TEMP_DIR, tmpDir.toString(),
-                         FASTQ,
-                        LEFT_MATE, lane.toString(),
-                        OUTPUT, new File(lane.getParent(), lane.getName().split("\\.")[0] + OUTPUT_EXT).toString()
-                };
-                break;
-            }
-            case FastA: {
-                processCall = new String[]{
-                        bmtaggerExec.toString(),
-                        REFERENCE_BITMASK, referenceBitmask.toString(),
-                        REFERENCE_SPRISM, referenceSrprism.toString(),
-                        TEMP_DIR, tmpDir.toString(),
-                        FASTA,
-                        LEFT_MATE, lane.toString(),
-                        OUTPUT, new File(lane.getParent(), lane.getName().split("\\.")[0] + OUTPUT_EXT).toString()
-                };
-                break;
-            }
-
+        final List<String> processCall = new ArrayList<>();
+        processCall.add(builder.bmtaggerExec.toString());
+        processCall.add(REFERENCE_BITMASK);
+        processCall.add(builder.referenceBitmask.toString());
+        processCall.add(REFERENCE_SPRISM);
+        processCall.add(builder.referenceSrprism.toString());
+        processCall.add(TEMP_DIR);
+        processCall.add(builder.tmpDir.toString());
+        processCall.add(builder.restrictType.toString());
+        processCall.add(LEFT_MATE);
+        processCall.add(builder.lLane.toString());
+        if (builder.rLane != null) {
+            processCall.add(RIGHT_MATE);
+            processCall.add(builder.rLane.toString());
+        }
+        processCall.add(OUTPUT);
+        if (builder.output != null) {
+            processCall.add(builder.lLane.toString());
+        } else {
+            processCall.add(new File(builder.lLane.getParent(), builder.lLane.getName().split("\\.")[0] + OUTPUT_EXT).toString());
         }
 
-
-
-        return new BMTagger(new ProcessBuilder(processCall), lane, null, referenceBitmask, referenceSrprism);
+        return new BMTagger(new ProcessBuilder(processCall), builder.lLane, builder.rLane, builder.referenceBitmask, builder.referenceSrprism);
     }
 
     public enum RestrictType {
@@ -131,7 +108,7 @@ public class BMTagger extends CallableProcess<File> {
     }
 
     public static File restrict(final File input, final File output, final File blacklist, final RestrictType type) throws IOException {
-        if(output.exists()){
+        if (output.exists()) {
             return output;
         }
         final Set<String> blacklisted = new HashSet<>();
@@ -149,7 +126,7 @@ public class BMTagger extends CallableProcess<File> {
                 ) {
                     String line;
                     while ((line = bufferedReader.readLine()) != null) {
-                        final String ac=line.split(" ")[0].substring(1);
+                        final String ac = line.split(" ")[0].substring(1);
                         if (!blacklisted.contains(ac)) {
                             bufferedWriter.write(line);
                             bufferedWriter.newLine();
@@ -157,8 +134,8 @@ public class BMTagger extends CallableProcess<File> {
                                 bufferedWriter.write(bufferedReader.readLine());
                                 bufferedWriter.newLine();
                             }
-                        }else{
-                            for(int i=0;i<3;i++){
+                        } else {
+                            for (int i = 0; i < 3; i++) {
                                 bufferedReader.readLine();
                             }
                         }
@@ -172,17 +149,17 @@ public class BMTagger extends CallableProcess<File> {
                         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(output));
                 ) {
                     String line;
-                    boolean write=false;
+                    boolean write = false;
                     while ((line = bufferedReader.readLine()) != null) {
-                        if(line.startsWith(">")){
-                            final String ac=line.split(" ")[0].substring(1);
-                            if(!blacklisted.contains(ac)){
-                               write=true;
-                            }else{
-                                write=false;
+                        if (line.startsWith(">")) {
+                            final String ac = line.split(" ")[0].substring(1);
+                            if (!blacklisted.contains(ac)) {
+                                write = true;
+                            } else {
+                                write = false;
                             }
                         }
-                        if(write){
+                        if (write) {
                             bufferedWriter.write(line);
                             bufferedWriter.newLine();
                         }
@@ -192,5 +169,73 @@ public class BMTagger extends CallableProcess<File> {
             }
         }
         return output;
+    }
+
+    public static class BMTaggerBuilder {
+        //Required
+        private File bmtaggerExec = null;
+        private File lLane = null;
+        private File referenceBitmask = null;
+        private File referenceSrprism = null;
+        private File tmpDir = null;
+        private RestrictType restrictType = null;
+        //Optional
+        private File rLane = null;
+        private File output = null;
+
+        //No explicit constructor
+
+        public BMTaggerBuilder bmtaggerExecutale(File bmtaggerExec) {
+            this.bmtaggerExec = bmtaggerExec;
+            return this;
+        }
+
+        public BMTaggerBuilder rLane(File rLane) {
+            this.rLane = rLane;
+            return this;
+        }
+
+        public BMTaggerBuilder referenceBitmask(File referenceBitmask) {
+            this.referenceBitmask = referenceBitmask;
+            return this;
+        }
+
+        public BMTaggerBuilder referenceSrprism(File referenceSrprism) {
+            this.referenceSrprism = referenceSrprism;
+            return this;
+        }
+
+        public BMTaggerBuilder tmpDir(File tmpDir) {
+            this.tmpDir = tmpDir;
+            return this;
+        }
+
+        public BMTaggerBuilder lLane(File lLane) {
+            this.lLane = lLane;
+            return this;
+        }
+
+        public BMTaggerBuilder restrictType(RestrictType restrictType) {
+            this.restrictType = restrictType;
+            return this;
+        }
+
+        public BMTaggerBuilder outputFile(File output) {
+            this.output = output;
+            return this;
+        }
+
+        public BMTagger build() {
+            if (this.bmtaggerExec != null
+                    && this.lLane != null
+                    && this.referenceBitmask != null
+                    && this.referenceSrprism != null
+                    && this.tmpDir != null
+                    && this.restrictType != null) {
+                return null;
+            }
+            throw new IllegalStateException("Please provide path to: bmtagger execuatble, " +
+                    "right lane file, reference bitmask path, sprism path, a path to a temporary directory.");
+        }
     }
 }
