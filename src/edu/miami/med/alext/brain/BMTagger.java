@@ -73,7 +73,7 @@ public class BMTagger extends CallableProcess<File> {
         return referenceSrprism;
     }
 
-    public Optional<File> getBlacklist() {
+    public synchronized Optional<File> getBlacklist() {
         final Optional<File> file = Optional.of(this.blacklist);
         return file;
     }
