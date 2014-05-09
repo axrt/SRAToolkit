@@ -43,25 +43,27 @@ public class Trinity extends CallableProcess<File> {
         for(String s:this.processBuilder.command()){
             System.out.print(s.concat(" "));
         }
-        System.out.println();
-        final Process p=this.processBuilder.start();
+        if(!new File(new File(this.lLane.getParent(),OUTPUT_DIR),OUTPUT_FILE).exists()) {
+            System.out.println();
+            final Process p = this.processBuilder.start();
 
 
-        try(    InputStream inputStream=p.getErrorStream();
-                BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));){
-            String line;
-            while((line=bufferedReader.readLine())!=null){
-                System.out.println("ERR::"+this.lLane.getName()+" >"+line);
+            try (InputStream inputStream = p.getErrorStream();
+                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    System.out.println("ERR::" + this.lLane.getName() + " >" + line);
+                }
             }
-        }
-        try(    InputStream inputStream=p.getInputStream();
-                BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));){
-            String line;
-            while((line=bufferedReader.readLine())!=null){
-                System.out.println("OUT::"+this.lLane.getName()+" >"+line);
+            try (InputStream inputStream = p.getInputStream();
+                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    System.out.println("OUT::" + this.lLane.getName() + " >" + line);
+                }
             }
+            p.waitFor();
         }
-        p.waitFor();
         return new File(new File(this.lLane.getParent(),OUTPUT_DIR),OUTPUT_FILE);
     }
 

@@ -50,7 +50,9 @@ public class DownloadSRA {
             dir.mkdir();
         }
         final File file=new File(dir,sra.concat(".sra"));
-        DownloadSRA.downloadSra(sra,file);
+        if(!file.exists()){
+            DownloadSRA.downloadSra(sra,file);
+        }
         return file;
     }
 }

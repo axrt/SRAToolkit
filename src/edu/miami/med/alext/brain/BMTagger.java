@@ -40,6 +40,8 @@ public class BMTagger extends CallableProcess<File> {
         for (String s : this.processBuilder.command()) {
             System.out.print(s.concat(" "));
         }
+        if (!new File(this.lLane.getParent(), this.lLane.getName().split("\\.")[0] + OUTPUT_EXT).exists()) {
+
         System.out.println();
         final Process p = this.processBuilder.start();
 
@@ -59,6 +61,10 @@ public class BMTagger extends CallableProcess<File> {
             }
         }
         p.waitFor();
+
+        }else{//TODO remove
+            System.out.println("Reads for "+this.lLane+" have already been filtered against the reference.");
+        }
         return new File(this.lLane.getParent(), this.lLane.getName().split("\\.")[0] + OUTPUT_EXT);
     }
 
@@ -125,6 +131,9 @@ public class BMTagger extends CallableProcess<File> {
     }
 
     public static File restrict(final File input, final File output, final File blacklist, final RestrictType type) throws IOException {
+        if(output.exists()){
+            return output;
+        }
         final Set<String> blacklisted = new HashSet<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(blacklist))) {
             String line;

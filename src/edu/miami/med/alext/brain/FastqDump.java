@@ -21,8 +21,13 @@ public class FastqDump extends CallableProcess<File[]> {
     @Override
     public File[] call() throws Exception {
         System.out.println("Processing: "+this.inputFile);
-        final Process p=this.processBuilder.start();
-        p.waitFor();
+        //TEMP TODO REMOVE
+        if(!new File(this.inputFile.getParent(),this.inputFile.getName().split("\\.")[0]+"_1.fastq").exists()) {
+            final Process p = this.processBuilder.start();
+            p.waitFor();
+        }else{
+            System.out.println("Has already been processed: "+this.inputFile);
+        }
         final File[]outputFiles=new File[]{new File(this.inputFile.getParent(),this.inputFile.getName().split("\\.")[0]+"_1.fastq"),
                 new File(this.inputFile.getParent(),this.inputFile.getName().split("\\.")[0]+"_2.fastq")};
         return outputFiles;
