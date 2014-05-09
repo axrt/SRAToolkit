@@ -81,9 +81,12 @@ public class BMTagger extends CallableProcess<File> {
     @Override
     public File call() throws Exception {
 
+        final StringBuilder stringBuilder=new StringBuilder();
         for (String s : this.processBuilder.command()) {
-            System.out.print(s.concat(" ")); //TODO lambdify
+            stringBuilder.append(s.concat(" "));
         }
+        stringBuilder.append('\n');
+        print(stringBuilder.toString());    //TODO lambdify
 
         try {
             if (!new File(this.lLane.getParent(), this.lLane.getName().split("\\.")[0] + OUTPUT_EXT).exists()) {

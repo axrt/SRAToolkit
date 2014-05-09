@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SRAToolkit.iws" />
@@ -159,7 +158,7 @@
       <file leaf-file-name="BMTagger.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="8" selection-start="2289" selection-end="2289" vertical-scroll-proportion="-1.0610687" vertical-offset="2124" max-vertical-offset="4410">
+            <state line="88" column="59" selection-start="2435" selection-end="2435" vertical-scroll-proportion="0.3129771" vertical-offset="1074" max-vertical-offset="4455">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1719#1720#0" expanded="true" />
@@ -757,7 +756,11 @@
       <created>1399663062913</created>
       <updated>1399663062913</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="BMTagger refactored">
+      <created>1399665282467</created>
+      <updated>1399665282467</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -808,7 +811,8 @@
     <MESSAGE value="Fasta processing" />
     <MESSAGE value="Fasta processing on BMTaggers" />
     <MESSAGE value="BMTaggerBuilder added to BMTagger" />
-    <option name="LAST_COMMIT_MESSAGE" value="BMTaggerBuilder added to BMTagger" />
+    <MESSAGE value="BMTagger refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="BMTagger refactored" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1146,7 +1150,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="8" selection-start="2289" selection-end="2289" vertical-scroll-proportion="-1.0610687" vertical-offset="2124" max-vertical-offset="4410">
+        <state line="88" column="59" selection-start="2435" selection-end="2435" vertical-scroll-proportion="0.3129771" vertical-offset="1074" max-vertical-offset="4455">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1719#1720#0" expanded="true" />
