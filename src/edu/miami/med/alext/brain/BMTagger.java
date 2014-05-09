@@ -111,7 +111,7 @@ public class BMTagger extends CallableProcess<File> {
                 p.waitFor(); //TODO is this necessary?
 
             } else {//TODO remove
-                System.out.println("Reads for " + this.lLane + " have already been filtered against the reference.");
+                print("Reads for " + this.lLane + " have already been filtered against the reference.");
             }
         } catch (Exception e) {
             this.blacklist = null;
