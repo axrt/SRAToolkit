@@ -158,7 +158,7 @@
       <file leaf-file-name="BMTagger.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="40" selection-start="2968" selection-end="2968" vertical-scroll-proportion="-2.053435" vertical-offset="3114" max-vertical-offset="4455">
+            <state line="123" column="49" selection-start="3848" selection-end="3868" vertical-scroll-proportion="0.24809161" vertical-offset="1650" max-vertical-offset="4455">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1719#1720#0" expanded="true" />
@@ -768,7 +768,11 @@
       <created>1399665660964</created>
       <updated>1399665660964</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="BMTagger: updated">
+      <created>1399665719670</created>
+      <updated>1399665719670</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -822,7 +826,8 @@
     <MESSAGE value="BMTagger refactored" />
     <MESSAGE value="BMTagger: multithreaded printout" />
     <MESSAGE value="BMTagger: getBlackList synchronized" />
-    <option name="LAST_COMMIT_MESSAGE" value="BMTagger: getBlackList synchronized" />
+    <MESSAGE value="BMTagger: updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="BMTagger: updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1084,8 +1089,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="14" selection-start="1968" selection-end="1968" vertical-scroll-proportion="1.0888611" vertical-offset="0" max-vertical-offset="2505">
           <folding>
-            <element signature="e#0#4400#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#4400#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1160,7 +1165,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="40" selection-start="2968" selection-end="2968" vertical-scroll-proportion="-2.053435" vertical-offset="3114" max-vertical-offset="4455">
+        <state line="123" column="49" selection-start="3848" selection-end="3868" vertical-scroll-proportion="0.24809161" vertical-offset="1650" max-vertical-offset="4455">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1719#1720#0" expanded="true" />

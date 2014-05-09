@@ -121,7 +121,7 @@ public class BMTagger extends CallableProcess<File> {
         return this.blacklist;
     }
 
-    public void removePreviousOutput() {
+    public synchronized void removePreviousOutput() {
         if (this.blacklist != null && this.blacklist.exists()) {
             this.blacklist.delete();
         } else {
