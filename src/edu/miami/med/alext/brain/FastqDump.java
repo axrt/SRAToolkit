@@ -2,7 +2,9 @@ package edu.miami.med.alext.brain;
 
 import edu.miami.med.alext.process.CallableProcess;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
 
 /**
  * Created by alext on 4/20/14.
@@ -24,6 +26,13 @@ public class FastqDump extends CallableProcess<File[]> {
         //TEMP TODO REMOVE
         if(!new File(this.inputFile.getParent(),this.inputFile.getName().split("\\.")[0]+"_1.fastq").exists()) {
             final Process p = this.processBuilder.start();
+            try(BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(p.getErrorStream()))){
+                bufferedReader.lines().forEach(line->{
+
+                    System.out.print("Error: "+this.inputFile.toString());
+                    System.out.print("Error: "+line);
+                });
+            }
             p.waitFor();
         }else{
             System.out.println("Has already been processed: "+this.inputFile);

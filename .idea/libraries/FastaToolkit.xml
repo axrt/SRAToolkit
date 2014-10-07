@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="FastaToolkit">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../FastaToolkit/out/artifacts/FastaToolkit_jar/FastaToolkit.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

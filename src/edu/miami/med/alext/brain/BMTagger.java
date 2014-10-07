@@ -75,7 +75,10 @@ public class BMTagger extends CallableProcess<File> {
 
     public synchronized Optional<File> getBlacklist() {
         final Optional<File> file = Optional.of(new File(this.blacklist.toString()));
-        return file;
+        if(this.blacklist.exists()){
+            return file;
+        }
+        else return Optional.empty();
     }
 
     @Override
@@ -126,7 +129,7 @@ public class BMTagger extends CallableProcess<File> {
             this.blacklist.delete();
         }
             this.blacklist = null;
-    }
+    } //TODO opt to make this check for whether the thread has finished
 
     public static CallableProcess<File> newInstance(BMTaggerBuilder builder) {
 
@@ -147,7 +150,7 @@ public class BMTagger extends CallableProcess<File> {
         }
         processCall.add(OUTPUT);
         if (builder.output != null) {
-            processCall.add(builder.lLane.toString());
+            processCall.add(builder.output.toString());
         } else {
             processCall.add(new File(builder.lLane.getParent(), builder.lLane.getName().split("\\.")[0] + OUTPUT_EXT).toString());
         }
@@ -219,7 +222,7 @@ public class BMTagger extends CallableProcess<File> {
         }
         return output;
     }
-
+    //TODO implement strategy
     public static class BMTaggerBuilder {
         //Required
         private File bmtaggerExec = null;
@@ -281,7 +284,10 @@ public class BMTagger extends CallableProcess<File> {
                     && this.referenceSrprism != null
                     && this.tmpDir != null
                     && this.restrictType != null) {
-                return null;
+                if(this.output==null){
+                   this.output=lLane.toPath().resolveSibling(lLane.getName().substring(0,lLane.getName().indexOf("."))+".blacklist").toFile();
+                }
+                return (BMTagger)BMTagger.newInstance(this);
             }
             throw new IllegalStateException("Please provide path to: bmtagger execuatble, " +
                     "right lane file, reference bitmask path, sprism path, a path to a temporary directory.");
