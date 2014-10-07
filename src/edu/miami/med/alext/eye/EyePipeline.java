@@ -1,7 +1,7 @@
 package edu.miami.med.alext.eye;
 
-import edu.miami.med.alext.brain.BMTagger;
-import edu.miami.med.alext.brain.FastqDump;
+import edu.miami.med.alext.module.BMTagger;
+import edu.miami.med.alext.module.FastqDump;
 import edu.miami.med.alext.brain.Trinity;
 import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
 import edu.miami.med.alext.ncbi.xml.jaxb.ExperimentPackageType;
@@ -82,7 +82,7 @@ public class EyePipeline {
             final File tmpDir = new File("/home/alext/Downloads/tmp");
             CallableProcessExecutor<File, Callable<File>> fileCallableProcessExecutor = FixThreadCallableProcessExectuor.newInstance(6);
             for (int i = 0; i < fastqFiles.size(); i++) {
-
+                //If the right file exists do paiwise
                 if (fastqFiles.get(i)[1].exists()) {
                     fileCallableProcessExecutor.addProcess(
                             new BMTagger.BMTaggerBuilder()

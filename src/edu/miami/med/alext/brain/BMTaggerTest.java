@@ -1,5 +1,6 @@
 package edu.miami.med.alext.brain;
 
+import edu.miami.med.alext.module.BMTagger;
 import org.junit.Test;
 
 import java.io.File;

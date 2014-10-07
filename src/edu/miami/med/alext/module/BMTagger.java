@@ -1,4 +1,4 @@
-package edu.miami.med.alext.brain;
+package edu.miami.med.alext.module;
 
 
 import edu.miami.med.alext.process.CallableProcess;

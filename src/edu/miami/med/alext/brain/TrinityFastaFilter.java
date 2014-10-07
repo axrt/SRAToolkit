@@ -1,5 +1,6 @@
 package edu.miami.med.alext.brain;
 
+import edu.miami.med.alext.module.BMTagger;
 import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
 import edu.miami.med.alext.ncbi.xml.jaxb.ExperimentPackageType;
 import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;

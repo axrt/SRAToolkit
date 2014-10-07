@@ -1,4 +1,4 @@
-package edu.miami.med.alext.brain;
+package edu.miami.med.alext.module;
 
 import edu.miami.med.alext.process.CallableProcess;
 
@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
  * Created by alext on 4/20/14.
  */
 public class FastqDump extends CallableProcess<File[]> {
+
     public static final String SPLIT_FILES= "--split-files";
 
     protected final File inputFile;
