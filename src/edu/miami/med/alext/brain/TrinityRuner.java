@@ -42,10 +42,9 @@ public class TrinityRuner {
             }
             CallableProcessExecutor<File, Callable<File>> fileCallableCallableProcessExecutor = FixThreadCallableProcessExectuor.newInstance(1);
             final File trinityExec = new File("/opt/trinityrnaseq_r20131110/trinity");
-            final boolean forward = true;
             final int numThreads = 12;
             final int minContigLenghth = 70;
-            final String seqType = Trinity.FASTQ;
+            final Trinity.SEQ_TYPE seqType = Trinity.SEQ_TYPE.FQ;
             final String jmMemory = "50G";
             System.out.println("Starting trinities..");
             for (int i = 0; i < folders.size(); i++) {
@@ -54,9 +53,9 @@ public class TrinityRuner {
                 final File rLane = new File(folders.get(i), sraNames.get(i) + "_2.rest.fastq");
 
                 if (rLane.exists()) {
-                    fileCallableCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec, lLane, rLane, forward, numThreads, minContigLenghth, seqType, jmMemory));
+                    fileCallableCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec, lLane, rLane, Trinity.LIB_TYPE.FR, numThreads, minContigLenghth, seqType, jmMemory));
                 } else {
-                    fileCallableCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec, lLane, forward, numThreads, minContigLenghth, seqType, jmMemory));
+                    fileCallableCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec, lLane, Trinity.LIB_TYPE.F, numThreads, minContigLenghth, seqType, jmMemory));
                 }
 
             }

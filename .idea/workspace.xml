@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/module/BMTaggerHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/module/FastqDumpHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/module/SRADownloader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/module/BMTagger.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastqDump.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/module/FastqDump.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTaggerTest.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTaggerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastaBMTagerRun.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastaBMTagerRun.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SRAListAssembler.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SRAListAssembler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityFastaFilter.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityFastaFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityTest.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SRAToolkit.iws" />
@@ -136,8 +129,8 @@
       <file leaf-file-name="EyePipeline.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="806" max-vertical-offset="3842">
-              <caret line="82" column="138" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="136" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3825">
+              <caret line="155" column="142" selection-start-line="155" selection-start-column="142" selection-end-line="155" selection-end-column="142" />
               <folding />
             </state>
           </provider>
@@ -162,8 +155,28 @@
       <file leaf-file-name="TrinityRuner.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1785">
-              <caret line="41" column="149" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="534" max-vertical-offset="1768">
+              <caret line="57" column="107" selection-start-line="57" selection-start-column="107" selection-end-line="57" selection-end-column="107" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MonkeyPipeline.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1933" max-vertical-offset="3706">
+              <caret line="153" column="124" selection-start-line="153" selection-start-column="124" selection-end-line="153" selection-end-column="124" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FastqDump.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/module/FastqDump.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8292683" vertical-offset="0" max-vertical-offset="902">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -189,12 +202,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trinity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Trinity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.9789357" vertical-offset="1087" max-vertical-offset="1989">
-              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="4539">
+              <caret line="74" column="71" selection-start-line="74" selection-start-column="71" selection-end-line="74" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#591#592#0" expanded="true" />
+                <element signature="e#631#632#0" expanded="true" />
+                <element signature="e#666#667#0" expanded="true" />
+                <element signature="e#701#702#0" expanded="true" />
+                <element signature="e#915#916#0" expanded="true" />
+                <element signature="e#955#956#0" expanded="true" />
+                <element signature="e#990#991#0" expanded="true" />
+                <element signature="e#1025#1026#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -214,26 +237,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1394">
               <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FastqDump.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/module/FastqDump.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlignReads.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/AlignReads.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-              <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -266,14 +269,10 @@
         <option value="$PROJECT_DIR$/src/scripts/SimpleTest.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTaggerTest.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityTest.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SRAListAssembler.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastaBMTagerRun.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityFastaFilter.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/net/DownloadSRA.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastqDump.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/BMTagger.java" />
         <option value="$PROJECT_DIR$/src/scripts/TrinityReads.java" />
@@ -284,8 +283,12 @@
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/module/SRADownloader.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/module/FastqDump.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/module/FastqDumpHelper.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/module/BMTaggerHelper.java" />
+        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java" />
+        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityTest.java" />
+        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java" />
+        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java" />
+        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java" />
       </list>
     </option>
   </component>
@@ -865,7 +868,11 @@
       <created>1412714045227</created>
       <updated>1412714045227</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Helpers updated&#10;">
+      <created>1412721364981</created>
+      <updated>1412721364981</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -875,7 +882,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32805908" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270242" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -919,7 +926,8 @@
     <MESSAGE value="Monkey pipeline successully applied" />
     <MESSAGE value="Pushing jaxb classes that had been left out" />
     <MESSAGE value="Last update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Last update" />
+    <MESSAGE value="Helpers updated&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Helpers updated&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -956,7 +964,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java</url>
-          <line>198</line>
+          <line>197</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
@@ -1149,13 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/SRAListAssembler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1734">
@@ -1227,14 +1228,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.8483872" vertical-offset="88" max-vertical-offset="3706">
-          <caret line="196" column="55" selection-start-line="196" selection-start-column="55" selection-end-line="196" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../FastaToolkit/out/artifacts/FastaToolkit_jar/FastaToolkit.jar!/format/fasta/nucleotide/NucleotideFasta.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09582864" vertical-offset="0" max-vertical-offset="887">
@@ -1275,14 +1268,6 @@
             <element signature="e#2251#2252#0" expanded="true" />
             <element signature="e#2313#2314#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/module/FastqDump.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1336,14 +1321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="806" max-vertical-offset="3842">
-          <caret line="82" column="138" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="136" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/module/BMTaggerHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="895" max-vertical-offset="2278">
@@ -1358,14 +1335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1785">
-          <caret line="41" column="149" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityFastaFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="67" max-vertical-offset="969">
@@ -1374,10 +1343,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="534" max-vertical-offset="1768">
+          <caret line="57" column="107" selection-start-line="57" selection-start-column="107" selection-end-line="57" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1933" max-vertical-offset="3706">
+          <caret line="153" column="124" selection-start-line="153" selection-start-column="124" selection-end-line="153" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39578715" vertical-offset="0" max-vertical-offset="902">
+          <caret line="27" column="122" selection-start-line="27" selection-start-column="122" selection-end-line="27" selection-end-column="122" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9789357" vertical-offset="1087" max-vertical-offset="1989">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="4539">
+          <caret line="74" column="71" selection-start-line="74" selection-start-column="71" selection-end-line="74" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#915#916#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2061" max-vertical-offset="3825">
+          <caret line="155" column="142" selection-start-line="155" selection-start-column="142" selection-end-line="155" selection-end-column="142" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/module/FastqDump.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8292683" vertical-offset="0" max-vertical-offset="902">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
           <folding />
         </state>
       </provider>

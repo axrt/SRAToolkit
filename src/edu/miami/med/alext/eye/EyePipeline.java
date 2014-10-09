@@ -143,18 +143,17 @@ public class EyePipeline {
             //5. Run Trinities
             fileCallableProcessExecutor = FixThreadCallableProcessExectuor.newInstance(1);
             final File trinityExec = new File("/opt/trinityrnaseq_r20131110/trinity");
-            final boolean forward = true;
             final int numThreads = 6;
             final int minContigLenghth = 70;
-            final String seqType = Trinity.FASTQ;
+            final Trinity.SEQ_TYPE seqType = Trinity.SEQ_TYPE.FQ;
             final String jmMemory = "50G";
             System.out.println("Starting trinities..");
 
             for (int i = 0; i < restrictedFastqFiles.size(); i++) {
                 if (restrictedFastqFiles.get(i).length > 1) {
-                    fileCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec, restrictedFastqFiles.get(i)[0], restrictedFastqFiles.get(i)[1], forward, numThreads, minContigLenghth, seqType, jmMemory));
+                    fileCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec, restrictedFastqFiles.get(i)[0], restrictedFastqFiles.get(i)[1], Trinity.LIB_TYPE.FR, numThreads, minContigLenghth, seqType, jmMemory));
                 } else {
-                    fileCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec, restrictedFastqFiles.get(i)[0], forward, numThreads, minContigLenghth, seqType, jmMemory));
+                    fileCallableProcessExecutor.addProcess(Trinity.newInstance(trinityExec, restrictedFastqFiles.get(i)[0], Trinity.LIB_TYPE.F, numThreads, minContigLenghth, seqType, jmMemory));
                 }
             }
             final List<File> trinityOutputs = fileCallableProcessExecutor.getFutures().stream().map(

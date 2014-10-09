@@ -18,14 +18,14 @@ public class TrinityTest {
         final File trinityExec=new File("/opt/trinityrnaseq_r20131110/trinity");
         final File lLane=new File("/home/alext/Documents/Brain/full_process_of_SRP005169/SRR112674/SRR112674_1.rest.fastq");
         final File rLane=new File("/home/alext/Documents/Brain/full_process_of_SRP005169/SRR112674/SRR112674_1.rest.fastq");
-        final boolean forward=true;
+
         final int numThreads=12;
         final int minContigLenghth=70;
-        final String seqType=Trinity.FASTQ;
+        final Trinity.SEQ_TYPE seqType = Trinity.SEQ_TYPE.FQ;
         final String jmMemory="50G";
 
         final ExecutorService executorService = Executors.newSingleThreadExecutor();
-        final Future<File>future=executorService.submit(Trinity.newInstance(trinityExec, lLane, rLane, forward, numThreads, minContigLenghth, seqType, jmMemory));
+        final Future<File>future=executorService.submit(Trinity.newInstance(trinityExec, lLane, rLane, Trinity.LIB_TYPE.FR, numThreads, minContigLenghth, seqType, jmMemory));
         try {
             future.get();
         } catch (InterruptedException e) {
