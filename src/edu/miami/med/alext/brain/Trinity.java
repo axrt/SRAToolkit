@@ -99,7 +99,7 @@ public class Trinity extends CallableProcess<File> {
                     System.out.println("OUT::" + this.lLane.getName() + " >" + line);
                 }
             }
-            p.waitFor();
+
         }
         return new File(new File(this.lLane.getParent(), OUTPUT_DIR), OUTPUT_FILE);
     }
