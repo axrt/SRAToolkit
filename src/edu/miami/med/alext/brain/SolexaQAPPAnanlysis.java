@@ -15,7 +15,7 @@ public class SolexaQAPPAnanlysis<T extends SolexaQAPPAnanlysis.SolexaQAPPAnalysi
     }
 
     @Override
-    public T getResult() {
+    public List<T> getResult() {
         return super.getResult();
     }
 
@@ -87,7 +87,14 @@ public class SolexaQAPPAnanlysis<T extends SolexaQAPPAnanlysis.SolexaQAPPAnalysi
     }
 
     public static class SolexaQAPPAnalysisResult extends SolexaQAPPResult{
+
         //Specific parameters + getters
+        public static final String PDF=".pdf";
+        public static final String MATRIX=".matrix";
+        public static final String SEGMENTS=".segments";
+        public static final String _COMULATIVE="_comulative";
+        public static final String _HIST="_hist";
+
         protected SolexaQAPPAnalysisResult(Path outputDir) {
             super(outputDir);
         }

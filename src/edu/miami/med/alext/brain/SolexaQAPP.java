@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  */
 public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<T> {
 
-    protected T result;
+    protected List<T> result;
     protected final String name;
     protected final Path outputDir;
 
@@ -34,10 +34,10 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
     protected SolexaQAPP(SolexaQAPPBuilder builder) {
         super(builder);
         this.outputDir=builder.outDir;
-        this.name="["+builder.inpuFiles.stream().map(f->{return f.getName();}).collect(Collectors.joining("]["))+"]";
+        this.name="["+builder.inputFiles.stream().map(f->{return f.getName();}).collect(Collectors.joining("]["))+"]";
     }
 
-    public T getResult() {
+    public List<T> getResult() {
         return result;
     }
 
@@ -48,7 +48,7 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
      * @throws Exception if unable to compute a result
      */
     @Override
-    public T call() throws Exception {
+    public List<T> call() throws Exception {
 
         if(!this.outputDir.toFile().exists()){
             this.outputDir.toFile().mkdir();
@@ -85,14 +85,14 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
 
         public static final String DIRECTORY="-directory";
 
-        protected final List<File> inpuFiles;
+        protected final List<File> inputFiles;
         protected final Path outDir;
 
-        protected SolexaQAPPBuilder(File exec,List<File> inpuFiles, Path outDir) {
+        protected SolexaQAPPBuilder(File exec,List<File> inputFiles, Path outDir) {
             super(exec);
-            this.inpuFiles = inpuFiles;
+            this.inputFiles = inputFiles;
             this.outDir = outDir;
-            this.params.put("", inpuFiles.stream().map(File::getPath).collect(Collectors.joining(" ")));
+            this.params.put("", this.inputFiles.stream().map(File::getPath).collect(Collectors.joining(" ")));
             this.params.put(DIRECTORY,outDir.toFile().getPath());
         }
 
@@ -102,7 +102,12 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
             this.processBuilder=new ProcessBuilder(this.command);
             return new SolexaQAPP(this);
         }
+
+        public List<File> getInputFiles() {
+            return inputFiles;
+        }
     }
+
 
     /**
      * The one for the first two options
@@ -136,7 +141,7 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
 
         public SolexaQAPPAnDyBuilder probeCutoff(double probeCutoff) {
             if(this.params.containsKey(PHREDCUTOFF)){
-                throw new IllegalArgumentException("The builder has already been set to use PHRED cutoff!");
+                throw new IllegalArgumentException("The solexaBuilder has already been set to use PHRED cutoff!");
             }
             if(probeCutoff<0||probeCutoff>1){
                 throw new IllegalArgumentException("PROBABILITY cutoff value must be within (0,1]!");
@@ -149,7 +154,7 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
 
         public SolexaQAPPAnDyBuilder phredCutoff(int phredCutoff) {
             if(this.params.containsKey(PROBCUTOFF)){
-                throw new IllegalArgumentException("The builder has already been set to use PROBABILITY cutoff!");
+                throw new IllegalArgumentException("The solexaBuilder has already been set to use PROBABILITY cutoff!");
             }
             if(probeCutoff<0||probeCutoff>41){
                 throw new IllegalArgumentException("PHRED cutoff value must be within (0,41]!");

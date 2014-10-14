@@ -1,8 +1,8 @@
 package scripts;
 
 import edu.miami.med.alext.caseclass.Sample;
-import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
-import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;
+import xml.jaxb.EXPERIMENTPACKAGESET;
+import xml.jaxb.SRAXMLLoader;
 import org.junit.Test;
 
 import java.io.File;

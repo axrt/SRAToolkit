@@ -2,7 +2,7 @@ package scripts;
 
 import edu.miami.med.alext.caseclass.Sample;
 import edu.miami.med.alext.mothur.MothurUtil;
-import edu.miami.med.alext.net.DownloadSRA;
+import net.DownloadSRA;
 import edu.miami.med.alext.sra.SraUtil;
 
 import java.io.*;

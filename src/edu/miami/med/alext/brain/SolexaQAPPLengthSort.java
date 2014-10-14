@@ -15,7 +15,7 @@ public class SolexaQAPPLengthSort<T extends SolexaQAPPLengthSort.SolexaQAPPLengt
     }
 
     @Override
-    public T getResult() {
+    public List<T> getResult() {
         return super.getResult();
     }
 

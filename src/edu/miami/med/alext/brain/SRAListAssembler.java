@@ -1,9 +1,9 @@
 package edu.miami.med.alext.brain;
 
 import edu.miami.med.alext.module.BMTagger;
-import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
-import edu.miami.med.alext.ncbi.xml.jaxb.ExperimentPackageType;
-import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;
+import xml.jaxb.EXPERIMENTPACKAGESET;
+import xml.jaxb.ExperimentPackageType;
+import xml.jaxb.SRAXMLLoader;
 import edu.miami.med.alext.process.CallableProcessExecutor;
 import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import org.xml.sax.SAXException;
@@ -45,7 +45,7 @@ public class SRAListAssembler {
             final File fastqDumpExec=new File("/usr/local/bin/fastq-dump.2.3.4");
             final List<Future<File[]>>futures=new ArrayList<>();
             for(String s:sraNames){
-                 futures.add(executorService.submit(FastqDump.newInstance(fastqDumpExec,new File(mainFolder,s+"/"+s+".sra"))));
+                 futures.add(executorService.submit(process.FastqDump.newInstance(fastqDumpExec,new File(mainFolder,s+"/"+s+".sra"))));
             }
             for(Future<File[]>f:futures){
                 try {

@@ -1,16 +1,17 @@
 package edu.miami.med.alext.eye;
 
-import edu.miami.med.alext.module.BMTagger;
-import edu.miami.med.alext.module.FastqDump;
+
 import edu.miami.med.alext.brain.Trinity;
-import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
-import edu.miami.med.alext.ncbi.xml.jaxb.ExperimentPackageType;
-import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;
-import edu.miami.med.alext.net.DownloadSRA;
+import edu.miami.med.alext.module.BMTagger;
 import edu.miami.med.alext.process.CallableProcessExecutor;
 import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
+import net.DownloadSRA;
 import org.apache.commons.io.FileUtils;
 import org.xml.sax.SAXException;
+import process.FastqDump;
+import xml.jaxb.EXPERIMENTPACKAGESET;
+import xml.jaxb.ExperimentPackageType;
+import xml.jaxb.SRAXMLLoader;
 
 import javax.xml.bind.JAXBException;
 import java.io.*;
@@ -57,9 +58,9 @@ public class EyePipeline {
             final File fastqDumpExec = new File("/usr/local/bin/fastq-dump.2.3.4");
             final List<Future<File[]>> fastqFutures = sraFiles.stream().map(
                     sraFileToDecompress -> executorService.submit(
-                            FastqDump.newInstance(
-                                    fastqDumpExec, sraFileToDecompress
-                            )
+                           FastqDump.newInstance(
+                                   fastqDumpExec, sraFileToDecompress
+                           )
                     )
             ).collect(Collectors.toList());
             final List<File[]> fastqFiles = fastqFutures

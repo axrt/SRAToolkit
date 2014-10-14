@@ -1,8 +1,8 @@
 package edu.miami.med.alext.module;
 
-import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
-import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;
-import edu.miami.med.alext.net.DownloadSRA;
+import xml.jaxb.EXPERIMENTPACKAGESET;
+import xml.jaxb.SRAXMLLoader;
+import net.DownloadSRA;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;

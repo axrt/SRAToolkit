@@ -1,15 +1,16 @@
 package edu.miami.med.alext.brain;
 
+
 import edu.miami.med.alext.module.BMTagger;
-import edu.miami.med.alext.module.FastqDump;
-import edu.miami.med.alext.ncbi.xml.jaxb.EXPERIMENTPACKAGESET;
-import edu.miami.med.alext.ncbi.xml.jaxb.ExperimentPackageType;
-import edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader;
-import edu.miami.med.alext.net.DownloadSRA;
 import edu.miami.med.alext.process.CallableProcessExecutor;
 import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
+import net.DownloadSRA;
 import org.apache.commons.io.FileUtils;
 import org.xml.sax.SAXException;
+import process.FastqDump;
+import xml.jaxb.EXPERIMENTPACKAGESET;
+import xml.jaxb.ExperimentPackageType;
+import xml.jaxb.SRAXMLLoader;
 
 import javax.xml.bind.JAXBException;
 import java.io.*;

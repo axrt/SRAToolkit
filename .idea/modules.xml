@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SRAToolkit.iml" filepath="$PROJECT_DIR$/SRAToolkit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SRAToolkit_V7/SRAToolkit_V7.iml" filepath="$PROJECT_DIR$/SRAToolkit_V7/SRAToolkit_V7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sra.net/sra.net.iml" filepath="$PROJECT_DIR$/sra.net/sra.net.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sra.xml/sra.xml.iml" filepath="$PROJECT_DIR$/sra.xml/sra.xml.iml" />
     </modules>
   </component>
 </project>

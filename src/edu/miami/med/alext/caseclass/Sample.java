@@ -1,9 +1,9 @@
 package edu.miami.med.alext.caseclass;
 
 
-import edu.miami.med.alext.ncbi.xml.jaxb.ExperimentPackageType;
-import edu.miami.med.alext.ncbi.xml.jaxb.SampleDescriptorType;
-import edu.miami.med.alext.ncbi.xml.jaxb.SpotDescriptorType;
+import xml.jaxb.ExperimentPackageType;
+import xml.jaxb.SampleDescriptorType;
+import xml.jaxb.SpotDescriptorType;
 
 /**
  * Created by alext on 2/7/14.

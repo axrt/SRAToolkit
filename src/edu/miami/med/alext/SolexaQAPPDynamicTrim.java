@@ -17,7 +17,7 @@ public class SolexaQAPPDynamicTrim<T extends SolexaQAPPDynamicTrim.SolexaQAPPDyn
     }
 
     @Override
-    public T getResult() {
+    public List<T> getResult() {
         return super.getResult();
     }
 
