@@ -170,11 +170,16 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
             if(!this.params.containsKey(BWA)){
                 this.params.put(BWA,"");
             }
+            if(!bwa&&this.params.containsKey(BWA)){
+                this.params.remove(BWA);
+            }
             return this;
         }
         public  SolexaQAPPAnDyBuilder format(SeqFormat format){
             this.format=format;
-            this.params.put("",this.params.get("").concat(" ").concat(format.getFormat()));
+            if(this.format!=null) {
+                this.params.put("", this.params.get("").concat(" ").concat(format.getFormat()));
+            }else throw new IllegalArgumentException("Format has already been defined!");
             return this;
         }
     }

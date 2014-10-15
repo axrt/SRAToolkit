@@ -66,18 +66,23 @@ public class SolexaQAPPAnanlysis<T extends SolexaQAPPAnanlysis.SolexaQAPPAnalysi
         }
 
         public SolexaQAPPAnalysisBuilder variance(boolean varianceStat) {
-            this.varianceStat = varianceStat;
-            if(!this.params.containsKey(VARIANCE_STAT)){
+            if(varianceStat&&!this.varianceStat){
                 this.params.put("",this.params.get("").concat(" ").concat(VARIANCE_STAT));
+            }else if(!varianceStat&&this.varianceStat){
+                this.params.put("",this.params.get("").replaceAll(VARIANCE_STAT,""));
             }
+            this.varianceStat = varianceStat;
             return this;
         }
 
         public SolexaQAPPAnalysisBuilder setMinmaxStat(boolean minmaxStat) {
-            this.minmaxStat = minmaxStat;
-            if(!this.params.containsKey(MINMAX_STAT)){
+
+            if(minmaxStat&&!this.minmaxStat){
                 this.params.put("",this.params.get("").concat(" ").concat(MINMAX_STAT));
+            }else if(!minmaxStat&&this.minmaxStat){
+                this.params.put("",this.params.get("").replaceAll(MINMAX_STAT,""));
             }
+            this.minmaxStat = minmaxStat;
             return this;
         }
 

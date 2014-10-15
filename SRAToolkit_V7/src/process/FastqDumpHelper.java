@@ -19,22 +19,27 @@ public class FastqDumpHelper {
     }
 
     public static List<File[]> runTaskArray(File fastqDumpExec,int numberOfThreads, List<File> sraFiles) throws ExecutionException, InterruptedException {
+        ExecutorService executorService=null;
+        try {
+            executorService= Executors.newFixedThreadPool(numberOfThreads);
 
-        final ExecutorService executorService = Executors.newFixedThreadPool(numberOfThreads);
+            final List<Future<File[]>> futures = new ArrayList<>(sraFiles.size());
+            for (File f : sraFiles) {
+                futures.add(executorService.submit(FastqDump.newInstance(
+                        fastqDumpExec, f
+                )));
+            }
 
-        final List<Future<File[]>> futures=new ArrayList<>(sraFiles.size());
-        for(File f:sraFiles){
-            futures.add(executorService.submit(FastqDump.newInstance(
-                    fastqDumpExec, f
-            ))) ;
+            final List<File[]> fastqFiles = new ArrayList<File[]>(futures.size());
+            for (Future<File[]> f : futures) {
+                fastqFiles.add(f.get());
+            }
+            return fastqFiles;
+
+        }finally {
+            if(executorService!=null){
+                executorService.shutdown();
+            }
         }
-
-        final List<File[]> fastqFiles = new ArrayList<File[]>(futures.size());
-        for(Future<File[]> f:futures){
-            fastqFiles.add(f.get());
-        }
-        executorService.shutdown();
-
-        return fastqFiles;
     }
 }

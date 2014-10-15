@@ -9,6 +9,7 @@ import tools.SolexaQAPPAnanlysis;
 import tools.SolexaQAPPDynamicTrim;
 import xml.jaxb.EXPERIMENTPACKAGESET;
 import xml.jaxb.ExperimentPackageType;
+import xml.jaxb.RunType;
 import xml.jaxb.SRAXMLLoader;
 
 import java.io.File;
@@ -22,17 +23,17 @@ import java.util.List;
 import java.util.concurrent.Future;
 
 /**
- * Created by alext on 10/13/14.
+ * Created by alext on 10/14/14.
  * TODO document class
  */
-public class SRP017329Analysis {
+public class SRP033725Analysis {
 
     public static void main(String[] args) {
 
-        final File driverXML = new File("/nethome/atuzhikov/target/SRP017329.xml");
-        final File mainFolder = new File("/scratch/atuzhikov/SRP017329");
-        final Path outDir=Paths.get("/scratch/atuzhikov/SRP017329/out");
-        final Path trimDir=Paths.get("/scratch/atuzhikov/SRP017329/trim");
+        final File driverXML = new File("/nethome/atuzhikov/target/SRP033725.xml");
+        final File mainFolder = new File("/scratch/atuzhikov/SRP033725");
+        final Path outDir= Paths.get("/scratch/atuzhikov/SRP033725/out");
+        final Path trimDir=Paths.get("/scratch/atuzhikov/SRP033725/trim");
         final File fastqDumpExec = new File("/nethome/atuzhikov/bin/fastq-dump.2.4.1");
         final File exec = new File("/nethome/atuzhikov/bin/solexaqapp");
         final int numThreads = 15;
@@ -43,8 +44,10 @@ public class SRP017329Analysis {
             final EXPERIMENTPACKAGESET experimentpackageset = SRAXMLLoader.catchXMLOutput(inputStream);
             final List<String> sraNames = new ArrayList<>();
             for (ExperimentPackageType experimentPackageType : experimentpackageset.getEXPERIMENTPACKAGE()) {
-                sraNames.add(experimentPackageType.getRUNSET().getRUN().get(0).getAccession());
+               for(RunType runty: experimentPackageType.getRUNSET().getRUN())
+                sraNames.add(runty.getAccession());
             }
+
             System.out.println("SRR archives: " + sraNames.size());
 
             //Find out which folders exist
@@ -108,4 +111,6 @@ public class SRP017329Analysis {
             e.printStackTrace();
         }
     }
+
+
 }
