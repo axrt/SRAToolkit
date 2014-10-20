@@ -2,13 +2,13 @@ package edu.miami.med.alext.eye;
 
 
 import edu.miami.med.alext.brain.Trinity;
-import edu.miami.med.alext.module.BMTagger;
 import edu.miami.med.alext.process.CallableProcessExecutor;
 import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import net.DownloadSRA;
 import org.apache.commons.io.FileUtils;
 import org.xml.sax.SAXException;
 import process.FastqDump;
+import tools.BMTagger;
 import xml.jaxb.EXPERIMENTPACKAGESET;
 import xml.jaxb.ExperimentPackageType;
 import xml.jaxb.SRAXMLLoader;
@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
  */
 public class EyePipeline {
 
-    public static void main(String[]args){
+    public static void main(String[] args) {
 
 
         final File driverXML = new File("/home/alext/Documents/ocular_rnaseq/sequences/eye.xml");
@@ -58,9 +58,9 @@ public class EyePipeline {
             final File fastqDumpExec = new File("/usr/local/bin/fastq-dump.2.3.4");
             final List<Future<File[]>> fastqFutures = sraFiles.stream().map(
                     sraFileToDecompress -> executorService.submit(
-                           FastqDump.newInstance(
-                                   fastqDumpExec, sraFileToDecompress
-                           )
+                            FastqDump.newInstance(
+                                    fastqDumpExec, sraFileToDecompress
+                            )
                     )
             ).collect(Collectors.toList());
             final List<File[]> fastqFiles = fastqFutures
@@ -94,7 +94,8 @@ public class EyePipeline {
                                     .referenceSrprism(sRPrism)
                                     .tmpDir(tmpDir)
                                     .restrictType(BMTagger.RestrictType.FastQ)
-                                    .build());
+                                    .build()
+                    );
                 } else {
                     fileCallableProcessExecutor.addProcess(
                             new BMTagger.BMTaggerBuilder()
@@ -182,8 +183,8 @@ public class EyePipeline {
                                             .referenceSrprism(sRPrism)
                                             .tmpDir(tmpDir)
                                             .restrictType(BMTagger.RestrictType.FastA)
-                                            .build())
-
+                                            .build()
+                            )
             ).count();
             final List<File> contigBlacklists = bmtaggerCallableProcessExecutor.getFutures().stream().map(future -> {
                 try {
@@ -218,7 +219,6 @@ public class EyePipeline {
 
                     }
             );
-
 
 
         } catch (FileNotFoundException e) {

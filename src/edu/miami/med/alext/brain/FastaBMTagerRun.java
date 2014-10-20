@@ -1,13 +1,12 @@
 package edu.miami.med.alext.brain;
 
-import edu.miami.med.alext.module.BMTagger;
-import xml.jaxb.EXPERIMENTPACKAGESET;
-import xml.jaxb.ExperimentPackageType;
-import xml.jaxb.SRAXMLLoader;
 import edu.miami.med.alext.process.CallableProcessExecutor;
 import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import org.xml.sax.SAXException;
-
+import tools.BMTagger;
+import xml.jaxb.EXPERIMENTPACKAGESET;
+import xml.jaxb.ExperimentPackageType;
+import xml.jaxb.SRAXMLLoader;
 
 import javax.xml.bind.JAXBException;
 import java.io.*;
@@ -57,7 +56,8 @@ public class FastaBMTagerRun {
                                 .referenceSrprism(humanSRPrism)
                                 .tmpDir(tmpDir)
                                 .restrictType(BMTagger.RestrictType.FastA)
-                                .build());
+                                .build()
+                );
             }
             for (Future<File> f : fileCallableCallableProcessExecutor.getFutures()) {
                 try {

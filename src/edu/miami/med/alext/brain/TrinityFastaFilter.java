@@ -1,11 +1,11 @@
 package edu.miami.med.alext.brain;
 
-import edu.miami.med.alext.module.BMTagger;
+import org.apache.commons.io.FileUtils;
+import org.xml.sax.SAXException;
+import tools.BMTagger;
 import xml.jaxb.EXPERIMENTPACKAGESET;
 import xml.jaxb.ExperimentPackageType;
 import xml.jaxb.SRAXMLLoader;
-import org.apache.commons.io.FileUtils;
-import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;
 import java.io.*;
@@ -37,14 +37,14 @@ public class TrinityFastaFilter {
                 subFolder = new File(subFolder, Trinity.OUTPUT_DIR);
                 folders.add(subFolder);
             }
-            final File outputDir=new File("/home/alext/Documents/Brain/full_process_of_SRP005169/out");
+            final File outputDir = new File("/home/alext/Documents/Brain/full_process_of_SRP005169/out");
             for (int i = 0; i < sraNames.size(); i++) {
                 System.out.println("Filtering: " + sraNames.get(i));
                 final File input = new File(folders.get(i), Trinity.OUTPUT_FILE);
                 final File output = new File(folders.get(i), Trinity.OUTPUT_FILE.replaceAll("\\.fasta", ".rest.fasta"));
                 final File blacklist = new File(folders.get(i), "Trinity.blacklist");
                 BMTagger.restrict(input, output, blacklist, BMTagger.RestrictType.FastA);
-                FileUtils.copyFile(output,new File(outputDir,sraNames.get(i).concat(".").concat(output.getName())));
+                FileUtils.copyFile(output, new File(outputDir, sraNames.get(i).concat(".").concat(output.getName())));
             }
 
         } catch (FileNotFoundException e) {

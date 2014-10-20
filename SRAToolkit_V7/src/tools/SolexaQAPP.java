@@ -13,33 +13,20 @@ import java.util.List;
  */
 public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<T> {
 
-    protected List<T> result;
     protected final String name;
     protected final Path outputDir;
-
-    public enum Mode{
-        ANALYSIS("analysis"),DYNAMICTRIM("dynamictrim"),LENGTHSHORT("lengthshort");
-        private final String modality;
-
-        private Mode(String modality) {
-            this.modality = modality;
-        }
-
-        public String getModality() {
-            return modality;
-        }
-    }
+    protected List<T> result;
 
     protected SolexaQAPP(SolexaQAPPBuilder builder) {
         super(builder);
-        this.outputDir=builder.outDir;
-        final StringBuilder stringBuilder=new StringBuilder();
-        for(File f:builder.inputFiles){
+        this.outputDir = builder.outDir;
+        final StringBuilder stringBuilder = new StringBuilder();
+        for (File f : builder.inputFiles) {
             stringBuilder.append('[');
             stringBuilder.append(f.getName());
             stringBuilder.append(']');
         }
-        this.name=stringBuilder.toString();
+        this.name = stringBuilder.toString();
     }
 
     public List<T> getResult() {
@@ -55,9 +42,9 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
     @Override
     public List<T> call() throws Exception {
 
-        this.result=super.call();
+        this.result = super.call();
 
-        if(!this.outputDir.toFile().exists()){
+        if (!this.outputDir.toFile().exists()) {
             this.outputDir.toFile().mkdir();
         }
 
@@ -84,28 +71,38 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
         return this.result;
     }
 
+    public enum Mode {
+        ANALYSIS("analysis"), DYNAMICTRIM("dynamictrim"), LENGTHSORT("lengthsort");
+        private final String modality;
 
+        private Mode(String modality) {
+            this.modality = modality;
+        }
 
+        public String getModality() {
+            return modality;
+        }
+    }
 
-    public abstract static class SolexaQAPPBuilder extends SolexaQABuilder{
+    public abstract static class SolexaQAPPBuilder extends SolexaQABuilder {
 
-        public static final String DIRECTORY="--directory";
+        public static final String DIRECTORY = "--directory";
 
         protected final List<File> inputFiles;
         protected final Path outDir;
 
-        protected SolexaQAPPBuilder(File exec,List<File> inputFiles, Path outDir) {
+        protected SolexaQAPPBuilder(File exec, List<File> inputFiles, Path outDir) {
             super(exec);
             this.inputFiles = inputFiles;
             this.outDir = outDir;
-            final StringBuilder stringBuilder=new StringBuilder();
+            final StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append(' ');
-            for(File f:this.inputFiles){
+            for (File f : this.inputFiles) {
                 stringBuilder.append(f.getPath());
                 stringBuilder.append(' ');
             }
-            this.params.put("",stringBuilder.substring(0,stringBuilder.length()-1));
-            this.params.put(DIRECTORY,outDir.toFile().getPath());
+            this.params.put("", stringBuilder.substring(0, stringBuilder.length() - 1));
+            this.params.put(DIRECTORY, outDir.toFile().getPath());
         }
 
     }
@@ -113,18 +110,66 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
     /**
      * The one for the first two options
      */
-    public abstract static class SolexaQAPPAnDyBuilder extends SolexaQAPPBuilder{
+    public abstract static class SolexaQAPPAnDyBuilder extends SolexaQAPPBuilder {
 
-        public static final String PROBCUTOFF="-p";
-        public static final String PHREDCUTOFF="-h";
-        public static final String BWA="-bwa";
+        public static final String PROBCUTOFF = "-p";
+        public static final String PHREDCUTOFF = "-h";
+        public static final String BWA = "-bwa";
+        protected double probeCutoff;
+        protected int phredCutoff;
+        protected boolean bwa;
+        protected SeqFormat format;
 
-        protected SolexaQAPPAnDyBuilder(File exec,List<File> inpuFiles, Path outDir) {
-            super(exec,inpuFiles, outDir);
+        protected SolexaQAPPAnDyBuilder(File exec, List<File> inpuFiles, Path outDir) {
+            super(exec, inpuFiles, outDir);
         }
 
-        public enum SeqFormat{
-            SANGER("--sanger"),SOLEXA("--solexa"),ILLUMINA("--ILLUMINA"),IONTORRENT("--torrent");
+        public SolexaQAPPAnDyBuilder probeCutoff(double probeCutoff) {
+            if (this.params.containsKey(PHREDCUTOFF)) {
+                throw new IllegalArgumentException("The builder has already been set to use PHRED cutoff!");
+            }
+            if (probeCutoff < 0 || probeCutoff > 1) {
+                throw new IllegalArgumentException("PROBABILITY cutoff value must be within (0,1]!");
+            }
+
+            this.probeCutoff = probeCutoff;
+            this.params.put(PROBCUTOFF, String.valueOf(probeCutoff));
+            return this;
+        }
+
+        public SolexaQAPPAnDyBuilder phredCutoff(int phredCutoff) {
+            if (this.params.containsKey(PROBCUTOFF)) {
+                throw new IllegalArgumentException("The builder has already been set to use PROBABILITY cutoff!");
+            }
+            if (probeCutoff < 0 || probeCutoff > 41) {
+                throw new IllegalArgumentException("PHRED cutoff value must be within (0,41]!");
+            }
+            this.phredCutoff = phredCutoff;
+            this.params.put(PHREDCUTOFF, String.valueOf(phredCutoff));
+            return this;
+        }
+
+        public SolexaQAPPAnDyBuilder bwa(boolean bwa) {
+            this.bwa = bwa;
+            if (!this.params.containsKey(BWA)) {
+                this.params.put(BWA, "");
+            }
+            if (!bwa && this.params.containsKey(BWA)) {
+                this.params.remove(BWA);
+            }
+            return this;
+        }
+
+        public SolexaQAPPAnDyBuilder format(SeqFormat format) {
+            this.format = format;
+            if (this.format != null) {
+                this.params.put("", this.params.get("").concat(" ").concat(format.getFormat()));
+            } else throw new IllegalArgumentException("Format has already been defined!");
+            return this;
+        }
+
+        public enum SeqFormat {
+            SANGER("--sanger"), SOLEXA("--solexa"), ILLUMINA("--ILLUMINA"), IONTORRENT("--torrent");
             private final String format;
 
             private SeqFormat(String format) {
@@ -135,56 +180,9 @@ public class SolexaQAPP<T extends SolexaQAPP.SolexaQAPPResult> extends SolexaQA<
                 return format;
             }
         }
-        protected double probeCutoff;
-        protected int phredCutoff;
-        protected boolean bwa;
-        protected SeqFormat format;
-
-        public SolexaQAPPAnDyBuilder probeCutoff(double probeCutoff) {
-            if(this.params.containsKey(PHREDCUTOFF)){
-                throw new IllegalArgumentException("The builder has already been set to use PHRED cutoff!");
-            }
-            if(probeCutoff<0||probeCutoff>1){
-                throw new IllegalArgumentException("PROBABILITY cutoff value must be within (0,1]!");
-            }
-
-            this.probeCutoff = probeCutoff;
-            this.params.put(PROBCUTOFF,String.valueOf(probeCutoff));
-            return this;
-        }
-
-        public SolexaQAPPAnDyBuilder phredCutoff(int phredCutoff) {
-            if(this.params.containsKey(PROBCUTOFF)){
-                throw new IllegalArgumentException("The builder has already been set to use PROBABILITY cutoff!");
-            }
-            if(probeCutoff<0||probeCutoff>41){
-                throw new IllegalArgumentException("PHRED cutoff value must be within (0,41]!");
-            }
-            this.phredCutoff = phredCutoff;
-            this.params.put(PHREDCUTOFF,String.valueOf(phredCutoff));
-            return this;
-        }
-
-        public SolexaQAPPAnDyBuilder bwa(boolean bwa) {
-            this.bwa = bwa;
-            if(!this.params.containsKey(BWA)){
-                this.params.put(BWA,"");
-            }
-            if(!bwa&&this.params.containsKey(BWA)){
-                this.params.remove(BWA);
-            }
-            return this;
-        }
-        public  SolexaQAPPAnDyBuilder format(SeqFormat format){
-            this.format=format;
-            if(this.format!=null) {
-                this.params.put("", this.params.get("").concat(" ").concat(format.getFormat()));
-            }else throw new IllegalArgumentException("Format has already been defined!");
-            return this;
-        }
     }
 
-    public static class SolexaQAPPResult extends SolexaQAResult{
+    public static class SolexaQAPPResult extends SolexaQAResult {
         protected final Path outputDir;
 
         protected SolexaQAPPResult(Path outputDir) {

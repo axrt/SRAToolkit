@@ -1,19 +1,20 @@
 package edu.miami.med.alext.brain;
 
-import edu.miami.med.alext.module.BMTagger;
-import xml.jaxb.EXPERIMENTPACKAGESET;
-import xml.jaxb.ExperimentPackageType;
-import xml.jaxb.SRAXMLLoader;
 import edu.miami.med.alext.process.CallableProcessExecutor;
 import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import org.xml.sax.SAXException;
-
+import tools.BMTagger;
+import xml.jaxb.EXPERIMENTPACKAGESET;
+import xml.jaxb.ExperimentPackageType;
+import xml.jaxb.SRAXMLLoader;
 
 import javax.xml.bind.JAXBException;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * Created by alext on 4/19/14.
@@ -70,13 +71,13 @@ public class SRAListAssembler {
                 if (rLane.exists()) {
                     fileCallableCallableProcessExecutor.addProcess(
                             new BMTagger.BMTaggerBuilder()
-                            .bmtaggerExecutale(bmTaggerExec)
-                            .lLane(lLane)
-                            .rLane(rLane)
-                            .referenceBitmask(humanBitmask)
-                            .referenceSrprism(humanSRPrism)
-                            .tmpDir(tmpDir)
-                            .build()
+                                    .bmtaggerExecutale(bmTaggerExec)
+                                    .lLane(lLane)
+                                    .rLane(rLane)
+                                    .referenceBitmask(humanBitmask)
+                                    .referenceSrprism(humanSRPrism)
+                                    .tmpDir(tmpDir)
+                                    .build()
                     );
                 } else {
                     fileCallableCallableProcessExecutor.addProcess(new BMTagger.BMTaggerBuilder()

@@ -1,7 +1,7 @@
-package edu.miami.med.alext.module;
+package tools;
 
 
-import edu.miami.med.alext.process.CallableProcess;
+import process.CallableProcess;
 
 import java.io.*;
 import java.util.*;
@@ -20,28 +20,6 @@ public class BMTagger extends CallableProcess<File> {
     public static final String TEMP_DIR = "-T";
     public static final String OUTPUT = "-o";
     public static final String OUTPUT_EXT = ".blacklist";
-
-    public enum RestrictType {
-
-        FastQ("fastq"),
-        FastA("fasta");
-
-        private final String name;
-
-        RestrictType(String name) {
-            this.name = name;
-        }
-
-        public static String toBMTaggerCommand(RestrictType restrictType) {
-            switch (restrictType) {
-                case FastA:
-                    return FASTA;
-                default:
-                    return FASTQ;
-            }
-        }
-    }
-
     protected final File rLane;
     protected final File lLane;
     protected final File referenceBitmask;
@@ -56,80 +34,6 @@ public class BMTagger extends CallableProcess<File> {
         this.referenceSrprism = referenceSrprism;
         this.blacklist = blacklist;
     }
-
-    public File getrLane() {
-        return rLane;
-    }
-
-    public File getlLane() {
-        return lLane;
-    }
-
-    public File getReferenceBitmask() {
-        return referenceBitmask;
-    }
-
-    public File getReferenceSrprism() {
-        return referenceSrprism;
-    }
-
-    public synchronized Optional<File> getBlacklist() {
-        final Optional<File> file = Optional.of(new File(this.blacklist.toString()));
-        if(this.blacklist.exists()){
-            return file;
-        }
-        else return Optional.empty();
-    }
-
-    @Override
-    public File call() throws Exception {
-
-        final StringBuilder stringBuilder=new StringBuilder();
-        for (String s : this.processBuilder.command()) {
-            stringBuilder.append(s.concat(" "));
-        }
-        stringBuilder.append('\n');
-        print(stringBuilder.toString());    //TODO lambdify
-
-        try {
-            if (!new File(this.lLane.getParent(), this.lLane.getName().split("\\.")[0] + OUTPUT_EXT).exists()) {
-
-                final Process p = this.processBuilder.start();
-
-
-                try (InputStream inputStream = p.getErrorStream();
-                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
-                    String line;
-                    while ((line = bufferedReader.readLine()) != null) {
-                        System.out.println("ERR::" + this.lLane.getName() + " >" + line);
-                    }
-                }
-                try (InputStream inputStream = p.getInputStream();
-                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
-                    String line;
-                    while ((line = bufferedReader.readLine()) != null) {
-                        System.out.println("OUT::" + this.lLane.getName() + " >" + line);
-                    }
-                }
-                p.waitFor(); //TODO is this necessary?
-
-            } else {//TODO remove
-                print("Reads for " + this.lLane + " have already been filtered against the reference.");
-            }
-        } catch (Exception e) {
-            this.blacklist = null;
-            throw e;
-        }
-
-        return this.blacklist;
-    }
-
-    public synchronized void removePreviousOutput() {
-        if (this.blacklist != null && this.blacklist.exists()) {
-            this.blacklist.delete();
-        }
-            this.blacklist = null;
-    } //TODO opt to make this check for whether the thread has finished
 
     public static CallableProcess<File> newInstance(BMTaggerBuilder builder) {
 
@@ -155,9 +59,8 @@ public class BMTagger extends CallableProcess<File> {
             processCall.add(new File(builder.lLane.getParent(), builder.lLane.getName().split("\\.")[0] + OUTPUT_EXT).toString());
         }
 
-        return new BMTagger(new ProcessBuilder(processCall), builder.lLane, builder.rLane, builder.referenceBitmask, builder.referenceSrprism,builder.output);
+        return new BMTagger(new ProcessBuilder(processCall), builder.lLane, builder.rLane, builder.referenceBitmask, builder.referenceSrprism, builder.output);
     }
-
 
     public static File restrict(final File input, final File output, final File blacklist, final RestrictType type) throws IOException {
         if (output.exists()) {
@@ -222,6 +125,100 @@ public class BMTagger extends CallableProcess<File> {
         }
         return output;
     }
+
+    public File getrLane() {
+        return rLane;
+    }
+
+    public File getlLane() {
+        return lLane;
+    }
+
+    public File getReferenceBitmask() {
+        return referenceBitmask;
+    }
+
+    public File getReferenceSrprism() {
+        return referenceSrprism;
+    }
+
+    public synchronized Optional<File> getBlacklist() {
+        final Optional<File> file = Optional.of(new File(this.blacklist.toString()));
+        if (this.blacklist.exists()) {
+            return file;
+        } else return Optional.empty();
+    }
+
+    @Override
+    public File call() throws Exception {
+
+        final StringBuilder stringBuilder = new StringBuilder();
+        for (String s : this.processBuilder.command()) {
+            stringBuilder.append(s.concat(" "));
+        }
+        stringBuilder.append('\n');
+        CallableProcess.print(stringBuilder.toString());
+
+        try {
+            if (!new File(this.lLane.getParent(), this.lLane.getName().split("\\.")[0] + OUTPUT_EXT).exists()) {
+
+                final Process p = this.processBuilder.start();
+
+
+                try (InputStream inputStream = p.getErrorStream();
+                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        System.out.println("ERR::" + this.lLane.getName() + " >" + line);
+                    }
+                }
+                try (InputStream inputStream = p.getInputStream();
+                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        System.out.println("OUT::" + this.lLane.getName() + " >" + line);
+                    }
+                }
+
+            } else {//TODO remove
+                CallableProcess.print("Reads for " + this.lLane + " have already been filtered against the reference.");
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+
+        return this.blacklist;
+    }
+
+    public synchronized void removePreviousOutput() {
+        if (this.blacklist != null && this.blacklist.exists()) {
+            this.blacklist.delete();
+        }
+        this.blacklist = null;
+    } //TODO opt to make this check for whether the thread has finished
+
+
+    public enum RestrictType {
+
+        FastQ("fastq"),
+        FastA("fasta");
+
+        private final String name;
+
+        RestrictType(String name) {
+            this.name = name;
+        }
+
+        public static String toBMTaggerCommand(RestrictType restrictType) {
+            switch (restrictType) {
+                case FastA:
+                    return FASTA;
+                default:
+                    return FASTQ;
+            }
+        }
+    }
+
     //TODO implement strategy
     public static class BMTaggerBuilder {
         //Required
@@ -284,10 +281,10 @@ public class BMTagger extends CallableProcess<File> {
                     && this.referenceSrprism != null
                     && this.tmpDir != null
                     && this.restrictType != null) {
-                if(this.output==null){
-                   this.output=lLane.toPath().resolveSibling(lLane.getName().substring(0,lLane.getName().indexOf("."))+".blacklist").toFile();
+                if (this.output == null) {
+                    this.output = lLane.toPath().resolveSibling(lLane.getName().substring(0, lLane.getName().indexOf(".")) + ".blacklist").toFile();
                 }
-                return (BMTagger)BMTagger.newInstance(this);
+                return (BMTagger) BMTagger.newInstance(this);
             }
             throw new IllegalStateException("Please provide path to: bmtagger execuatble, " +
                     "right lane file, reference bitmask path, sprism path, a path to a temporary directory.");

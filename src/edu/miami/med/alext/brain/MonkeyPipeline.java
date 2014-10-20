@@ -1,13 +1,13 @@
 package edu.miami.med.alext.brain;
 
 
-import edu.miami.med.alext.module.BMTagger;
 import edu.miami.med.alext.process.CallableProcessExecutor;
 import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import net.DownloadSRA;
 import org.apache.commons.io.FileUtils;
 import org.xml.sax.SAXException;
 import process.FastqDump;
+import tools.BMTagger;
 import xml.jaxb.EXPERIMENTPACKAGESET;
 import xml.jaxb.ExperimentPackageType;
 import xml.jaxb.SRAXMLLoader;
@@ -91,7 +91,8 @@ public class MonkeyPipeline {
                                     .referenceSrprism(sRPrism)
                                     .tmpDir(tmpDir)
                                     .restrictType(BMTagger.RestrictType.FastQ)
-                                    .build());
+                                    .build()
+                    );
                 } else {
                     fileCallableProcessExecutor.addProcess(
                             new BMTagger.BMTaggerBuilder()
@@ -172,16 +173,16 @@ public class MonkeyPipeline {
             //6. Search contigs against the monkey reference
             final CallableProcessExecutor<File, Callable<File>> bmtaggerCallableProcessExecutor = FixThreadCallableProcessExectuor.newInstance(7);
             trinityOutputs.stream().map(output ->
-                    bmtaggerCallableProcessExecutor.addProcess(
-                            new BMTagger.BMTaggerBuilder()
-                            .bmtaggerExecutale(bmTaggerExec)
-                            .lLane(output)
-                            .referenceBitmask(bitmask)
-                            .referenceSrprism(sRPrism)
-                            .tmpDir(tmpDir)
-                            .restrictType(BMTagger.RestrictType.FastA)
-                            .build())
-
+                            bmtaggerCallableProcessExecutor.addProcess(
+                                    new BMTagger.BMTaggerBuilder()
+                                            .bmtaggerExecutale(bmTaggerExec)
+                                            .lLane(output)
+                                            .referenceBitmask(bitmask)
+                                            .referenceSrprism(sRPrism)
+                                            .tmpDir(tmpDir)
+                                            .restrictType(BMTagger.RestrictType.FastA)
+                                            .build()
+                            )
             ).count();
             final List<File> contigBlacklists = bmtaggerCallableProcessExecutor.getFutures().stream().map(future -> {
                 try {
@@ -198,7 +199,7 @@ public class MonkeyPipeline {
             for (int i = 0; i < trinityOutputs.size(); i++) {
 
                 outFiles.add(BMTagger.restrict(trinityOutputs.get(i), new File(trinityOutputs.get(i).getParent(),
-                        trinityOutputs.get(i).getName().replaceAll("\\.fasta", ".rest.fasta")),
+                                trinityOutputs.get(i).getName().replaceAll("\\.fasta", ".rest.fasta")),
                         contigBlacklists.get(i), BMTagger.RestrictType.FastA
                 ));
             }
@@ -208,13 +209,13 @@ public class MonkeyPipeline {
             final File outDir = new File("/home/alext/Documents/Brain/full_process_of_SRP005169/monkey_out");
             outFiles.stream().forEach(file -> {
 
-                try {
-                    FileUtils.copyFile(file, new File(outDir, file.getParentFile().getParentFile().getName() + "." + file.getName()));
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+                        try {
+                            FileUtils.copyFile(file, new File(outDir, file.getParentFile().getParentFile().getName() + "." + file.getName()));
+                        } catch (IOException e1) {
+                            e1.printStackTrace();
+                        }
 
-            }
+                    }
             );
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -1,7 +1,7 @@
 package edu.miami.med.alext.brain;
 
-import edu.miami.med.alext.module.BMTagger;
 import org.junit.Test;
+import tools.BMTagger;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,15 +11,15 @@ import java.io.IOException;
  */
 public class BMTaggerTest {
     @Test
-    public void testFastqBlacklist(){
+    public void testFastqBlacklist() {
 
-        final File input =new File("/home/alext/Documents/Brain/full_process_of_SRP005169/SRR090440/SRR090440_1.fastq");
-        final File output=new File("/home/alext/Documents/Brain/full_process_of_SRP005169/SRR090440/SRR090440_1.restrict.fastq");
-        final File blacklist=new File("/home/alext/Documents/Brain/full_process_of_SRP005169/SRR090440/SRR090440_1.blacklist");
-        final BMTagger.RestrictType type= BMTagger.RestrictType.FastQ;
+        final File input = new File("/home/alext/Documents/Brain/full_process_of_SRP005169/SRR090440/SRR090440_1.fastq");
+        final File output = new File("/home/alext/Documents/Brain/full_process_of_SRP005169/SRR090440/SRR090440_1.restrict.fastq");
+        final File blacklist = new File("/home/alext/Documents/Brain/full_process_of_SRP005169/SRR090440/SRR090440_1.blacklist");
+        final BMTagger.RestrictType type = BMTagger.RestrictType.FastQ;
 
         try {
-            BMTagger.restrict(input,output,blacklist,type);
+            BMTagger.restrict(input, output, blacklist, type);
         } catch (IOException e) {
             e.printStackTrace();
         }
