@@ -51,7 +51,8 @@ public class AbiSolidDump extends CallableProcess<AbiSolidDump.AbiSolidDumpResul
         //TODO input smth in case smth goes wrong
         return new AbiSolidDumpResult(
                 this.outDir.resolve(this.name.concat(F3).concat(QV).concat(QUAL)).toFile(),
-                this.outDir.resolve(this.name.concat(F3).concat(CSFASTA)).toFile());
+                this.outDir.resolve(this.name.concat(F3).concat(CSFASTA)).toFile(),
+                this.name);
     }
 
     public static class AbiSolidDumpBuilder {
@@ -88,10 +89,12 @@ public class AbiSolidDump extends CallableProcess<AbiSolidDump.AbiSolidDumpResul
     public static class AbiSolidDumpResult {
         protected final File qual;
         protected final File csFasta;
+        protected final String name;
 
-        public AbiSolidDumpResult(File qual, File csFasta) {
+        public AbiSolidDumpResult(File qual, File csFasta, String name) {
             this.qual = qual;
             this.csFasta = csFasta;
+            this.name = name;
         }
 
         public File getQual() {
@@ -100,6 +103,10 @@ public class AbiSolidDump extends CallableProcess<AbiSolidDump.AbiSolidDumpResul
 
         public File getCsFasta() {
             return csFasta;
+        }
+
+        public String getName() {
+            return name;
         }
     }
 }

@@ -40,7 +40,7 @@ public class SolexaQAPPLengthSort<T extends SolexaQAPPLengthSort.SolexaQAPPLengt
 
         public SolexaQAPPLengthSortBuilder(File exec, List<File> inpuFiles, Path outDir) {
             super(exec, inpuFiles, outDir);
-            this.params.put("", Mode.LENGTHSORT.getModality().concat(" ").concat(this.params.get("")));
+            this.params.put("", Mode.LENGTHSORT.getModality().concat(" ").concat(this.params.get("")).trim());
         }
 
         public SolexaQAPPLengthSortBuilder length(int length) {

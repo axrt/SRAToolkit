@@ -3,6 +3,7 @@ package edu.miami.med.alext.brain;
 import org.apache.commons.io.FileUtils;
 import org.xml.sax.SAXException;
 import tools.BMTagger;
+import tools.Trinity;
 import xml.jaxb.EXPERIMENTPACKAGESET;
 import xml.jaxb.ExperimentPackageType;
 import xml.jaxb.SRAXMLLoader;
@@ -34,7 +35,7 @@ public class TrinityFastaFilter {
             List<File> folders = new ArrayList<>();
             for (String s : sraNames) {
                 File subFolder = new File(mainFolder, s);
-                subFolder = new File(subFolder, Trinity.OUTPUT_DIR);
+                subFolder = new File(subFolder, Trinity.OUTPUT_DIR_DEFAULT);
                 folders.add(subFolder);
             }
             final File outputDir = new File("/home/alext/Documents/Brain/full_process_of_SRP005169/out");

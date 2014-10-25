@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.xml.sax.SAXException;
 import process.FastqDump;
 import tools.BMTagger;
+import tools.Trinity;
 import xml.jaxb.EXPERIMENTPACKAGESET;
 import xml.jaxb.ExperimentPackageType;
 import xml.jaxb.SRAXMLLoader;

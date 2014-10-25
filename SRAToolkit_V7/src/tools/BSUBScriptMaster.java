@@ -33,12 +33,13 @@ public class BSUBScriptMaster {
     protected final int stepping;
     protected final List<BSUBScript> scripts;
     protected final Path dir;
+    protected final Path toDrvFolder;
 
     public BSUBScriptMaster(String name, String task, int hours,
                             String queue, int cores,
                             boolean emailOnStart, boolean emailOnFinish,
                             String email, String command,
-                            int fullLength, int stepping, Path dir) {
+                            int fullLength, int stepping, Path dir, Path toDrvFolder) {
         this.name = name;
         this.task = task;
         this.hours = hours;
@@ -51,10 +52,11 @@ public class BSUBScriptMaster {
         this.fullLength = fullLength;
         this.stepping = stepping;
         this.dir = dir;
+        this.toDrvFolder = toDrvFolder;
         this.scripts = new ArrayList<>();
 
         for (int i = 0; i < this.fullLength; i += this.stepping) {
-            int to = i + this.stepping - 1;
+            int to = i + this.stepping;
             if (to >= fullLength) {
                 to = -1;
             }
@@ -84,7 +86,7 @@ public class BSUBScriptMaster {
                 i += this.stepping;
                 masterWriter.write(BSUB_C);
                 masterWriter.write(' ');
-                masterWriter.write(outFile.getPath());
+                masterWriter.write(this.toDrvFolder.resolve(outFile.getName()).toFile().getPath());
                 masterWriter.newLine();
             }
         }
@@ -100,7 +102,7 @@ public class BSUBScriptMaster {
         public final static String ERR_EXT = ".err";
         public final static String WALLCLOCK = "-W";
         public final static String QUEUE = "-q";
-        public final static String CORES = "-o";
+        public final static String CORES = "-n";
         public final static String EMAIL_ON_START = "-B";
         public final static String EMAIL_ON_FINISH = "-N";
         public final static String EMAIL = "-u";
@@ -230,9 +232,10 @@ public class BSUBScriptMaster {
             stringBuilder.append(' ');
             stringBuilder.append(String.valueOf(this.from));
             stringBuilder.append(' ');
-            stringBuilder.append(TO);
-            stringBuilder.append(' ');
+
             if (this.to > -1) {
+                stringBuilder.append(TO);
+                stringBuilder.append(' ');
                 stringBuilder.append(String.valueOf(this.to));
             }
             stringBuilder.append('\n');

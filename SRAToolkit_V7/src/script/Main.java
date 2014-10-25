@@ -2,10 +2,7 @@ package script;
 
 import org.apache.commons.cli.*;
 import org.xml.sax.SAXException;
-import process.AbiSolidDump;
-import process.CallableProcessExecutor;
-import process.FastqDumpHelper;
-import process.FixThreadCallableProcessExectuor;
+import process.*;
 import tools.*;
 import xml.jaxb.EXPERIMENTPACKAGESET;
 import xml.jaxb.ExperimentPackageType;
@@ -32,13 +29,22 @@ import java.util.concurrent.Future;
  */
 public class Main {
 
+    public static final String JVM_MEMORY = Trinity.JVM_MEMORY.substring(2);
+    public static final String LEFT = Trinity.LEFT.substring(2);
+    public static final String RIGHT = Trinity.RIGHT.substring(2);
+    public static final String SINGLE = Trinity.SINGLE.substring(2);
+    public static final String MIN_CONTIG_LENGTH = Trinity.MIN_CONTIG_LENGTH.substring(2);
+    public static final String PROCESSORS = Trinity.PROCESSORS.substring(2);
+    public static final String BFLY_MAX_HEAP = Trinity.BFLY_MAX_HEAP.substring(2);
+    public static final String BFLY_CPU = Trinity.BFLY_CPU.substring(2);
+    public static final String TRINITY_OUTPUT_DIR = "output";
+    public static final String LIBTYPE = Trinity.LIB_TYPE.LIBTYPE.substring(2);
     private static final String DOWNLOAD = "dw";
     private static final String ANALYSE = "an";
     private static final String BMTAG = "bm";
     private static final String TRIM = "dt";
     private static final String LENGTHSORT = "ls";
     private static final String ABI_DUMP = "abi";
-
     private static final String BMTAG_TMP = "bmtmp";
     private static final String BMTAG_REF_DIR = "bmtref";
     private static final String BMTAG_REF_NAME = "bmtrefname";
@@ -62,13 +68,40 @@ public class Main {
     private static final String SOLEXAQAPP = "solexaqapp";
     private static final String ABIDUMPAPP = "abi-dump.2.4.1";
     private static final String BMTAGGER = "bmtagger.sh";
+    private static final String NGS_FASTAQ_UTILS = "fastqutils";
+    private static final String NGS_FASTAQ_FORMFASTA = "ngff";
+    private static final String NGS_FASTAQ_CSENCODE = "ngce";
+    private static final String APPEND_EXT = "aext";
+    private static final String APPEND_PREF1 = "pext1";
+    private static final String APPEND_PREF2 = "pext2";
+    private static final String TRINITY = "tr";
+    private static final String TRINITY_EXEC = "Trinity.pl";
 
     public static void main(String[] args) {
 
         final CommandLineParser parser = new GnuParser();
         final Options options = new Options();
 
-        Option option = new Option(DOWNLOAD, "download", false, "Download the given list of SRAs from xml.");
+        Option option = new Option(TRINITY, "trinity", false, "Run trinity mode.");
+        options.addOption(option);
+        option = new Option(JVM_MEMORY, JVM_MEMORY, true, "JVM memory for trinity.");
+        options.addOption(option);
+        option = new Option(LEFT, LEFT, true, "Left paried.");
+        options.addOption(option);
+        option = new Option(RIGHT, RIGHT, true, "Right paried.");
+        options.addOption(option);
+        option = new Option(SINGLE, SINGLE, true, "Single ended.");
+        options.addOption(option);
+        option = new Option(MIN_CONTIG_LENGTH, MIN_CONTIG_LENGTH, true, "Mininum contig lentgh for trinity.");
+        options.addOption(option);
+        option = new Option(BFLY_MAX_HEAP, BFLY_MAX_HEAP, true, "Maximum heap size for bfly.");
+        options.addOption(option);
+        option = new Option(LIBTYPE, LIBTYPE, true, "Libtype for trinity.");
+        options.addOption(option);
+        option = new Option(TRINITY_OUTPUT_DIR, TRINITY_OUTPUT_DIR, true, "Trinity output folder.");
+        options.addOption(option);
+
+        option = new Option(DOWNLOAD, "download", false, "Download the given list of SRAs from xml.");
         options.addOption(option);
 
         option = new Option(ANALYSE, "analyze", false, "Analyze SRAs in a given home folder");
@@ -77,7 +110,13 @@ public class Main {
         options.addOption(option);
         option = new Option(TRIM_OUT, "trim_out", true, "Trim out folder");
         options.addOption(option);
+        option = new Option(APPEND_EXT, "append_ext", true, "Append additional extension to file names (for pipelines)");
+        options.addOption(option);
 
+        option = new Option(APPEND_PREF1, "append_pref1", true, "Append additional prefix to forward fastq file names (for pipelines)");
+        options.addOption(option);
+        option = new Option(APPEND_PREF2, "append_pref2", true, "Append additional prefix to reverse fastq file names (for pipelines)");
+        options.addOption(option);
 
         option = new Option(ABI_DUMP, "abi-dump", false, "Abi-dump an SOLID sra.");
         options.addOption(option);
@@ -98,6 +137,10 @@ public class Main {
         option = new Option(BMTAG_REF_DIR, "bmtagger_ref", true, "BMTAGGER reference folder.");
         options.addOption(option);
         option = new Option(BMTAG_REF_NAME, "bmtagger_ref_name", true, "BMTAGGER reference name.");
+        options.addOption(option);
+        option = new Option(NGS_FASTAQ_FORMFASTA, "fqu_formfasta", false, "Use fromfasta from the ngsutils package to convert csfasta and qual files to fastq.");
+        options.addOption(option);
+        option = new Option(NGS_FASTAQ_CSENCODE, "fqu_csencode", false, "Use csencode from the ngsutils package to convert colorspace to encoded fastq.");
         options.addOption(option);
 
         option = new Option(DRIVER, "driver", true, "Path to the driver xml.");
@@ -195,19 +238,74 @@ public class Main {
                 } else {
                     format = SolexaQAPP.SolexaQAPPAnDyBuilder.SeqFormat.SANGER;
                 }
-
+                final String append;
+                if (commandLine.hasOption(APPEND_EXT)) {
+                    append = commandLine.getOptionValue(APPEND_EXT);
+                } else {
+                    append = "";
+                }
+                final String prefix1;
+                if (commandLine.hasOption(APPEND_PREF1)) {
+                    prefix1 = commandLine.getOptionValue(APPEND_PREF1);
+                } else {
+                    prefix1 = "";
+                }
+                final String prefix2;
+                if (commandLine.hasOption(APPEND_PREF2)) {
+                    prefix2 = commandLine.getOptionValue(APPEND_PREF2);
+                } else {
+                    prefix2 = "";
+                }
 
                 // *****ABI-DUMP*****
                 if (commandLine.hasOption(ABI_DUMP)) {
+                    System.out.println(sraNames);
                     final List<File> sraFiles = new ArrayList<>();
                     for (String name : sraNames) {
-                        final File sraFile = directory.toPath().resolve(name.concat(".sra")).toFile();
+                        final File sraFile = directory.toPath().resolve(name).resolve(name.concat(".sra")).toFile();
                         if (!sraFile.exists()) {
                             continue;
                         }
                         sraFiles.add(sraFile);
                     }
-                    abidump(new File(binFolder, ABI_DUMP), sraFiles, cores);
+
+                    abidump(new File(binFolder, ABIDUMPAPP), sraFiles, cores);
+                    return;
+                }
+
+                // *****NGSUTILS FASTQUITLS FORMFASTA*****
+                if (commandLine.hasOption(NGS_FASTAQ_FORMFASTA)) {
+                    final List<AbiSolidDump.AbiSolidDumpResult> abiresults = new ArrayList<>();
+                    for (String name : sraNames) {
+                        final File csFasta = directory.toPath().resolve(name).resolve(name.concat(AbiSolidDump.F3).concat(AbiSolidDump.CSFASTA)).toFile();
+                        final File qual = directory.toPath().resolve(name).resolve(name.concat(AbiSolidDump.F3).concat(AbiSolidDump.QV).concat(AbiSolidDump.QUAL)).toFile();
+                        final AbiSolidDump.AbiSolidDumpResult result = new AbiSolidDump.AbiSolidDumpResult(qual, csFasta, name);
+
+                        if (!csFasta.exists() || !qual.exists()) {
+                            continue;
+                        }
+                        abiresults.add(result);
+
+                    }
+
+                    fromfasta(new File(binFolder, NGS_FASTAQ_UTILS), abiresults, cores);
+                    return;
+                }
+
+                // *****NGSUTILS FASTQUITLS CSENCODE*****
+                if (commandLine.hasOption(NGS_FASTAQ_CSENCODE)) {
+                    final List<File> fastqFiles = new ArrayList<>();
+                    for (String name : sraNames) {
+                        final File fastqFile = directory.toPath().resolve(name).resolve(name.concat(".fastq")).toFile();
+
+                        if (!fastqFile.exists()) {
+                            continue;
+                        }
+                        fastqFiles.add(fastqFile);
+
+                    }
+
+                    csencode(new File(binFolder, NGS_FASTAQ_UTILS), fastqFiles, cores);
                     return;
                 }
 
@@ -218,7 +316,7 @@ public class Main {
                         return;
                     }
                     final Path outDir = Paths.get(commandLine.getOptionValue(ANALYSIS_OUT));
-                    final List<File[]> fastqFiles = getFastqFiles(sraNames, directory, "");
+                    final List<File[]> fastqFiles = getFastqFiles(sraNames, directory, prefix1, prefix2, append);
 
                     analyze(new File(binFolder, SOLEXAQAPP), fastqFiles, cores, outDir, probCutoff, variance, samples, format);
                     return;
@@ -231,7 +329,7 @@ public class Main {
                         return;
                     }
                     final Path trimOut = Paths.get(commandLine.getOptionValue(TRIM_OUT));
-                    final List<File[]> fastqFiles = getFastqFiles(sraNames, directory, "");
+                    final List<File[]> fastqFiles = getFastqFiles(sraNames, directory, prefix1, prefix2, append);
 
                     dynamictrim(new File(binFolder, SOLEXAQAPP), cores, probCutoff, fastqFiles, trimOut, format);
                     return;
@@ -251,10 +349,11 @@ public class Main {
                         System.out.println("Please specify an output folder containing dynamictrimmed files with " + TRIM_OUT + " flag!");
                         return;
                     }
+
                     final Path trimOut = Paths.get(commandLine.getOptionValue(TRIM_OUT));
                     final Path sortDir = Paths.get(commandLine.getOptionValue(LENGTHSORT_OUT));
-                    final List<File[]> fastqFiles = getModFastqFiles(sraNames, trimOut.toFile(), ".trimmed");
-
+                    final List<File[]> fastqFiles = getModFastqFiles(sraNames, trimOut.toFile(), prefix1, prefix2, append);
+                    System.out.println(fastqFiles);
                     lengthsort(new File(binFolder, SOLEXAQAPP), cores, Integer.valueOf(commandLine.getOptionValue(LENGTHSORT_CUTOFF)), fastqFiles, sortDir);
                     return;
                 }
@@ -277,6 +376,10 @@ public class Main {
                         System.out.println("Please specify an output folder containing dynamictrimmed files with " + TRIM_OUT + " flag!");
                         return;
                     }
+                    if (!commandLine.hasOption(REC_FORMAT)) {
+                        System.out.println("Please specify the record fromatting (FastA or FastQ) " + REC_FORMAT + " flag!");
+                        return;
+                    }
                     final Path bmtaggerReference = Paths.get(commandLine.getOptionValue(BMTAG_REF_DIR));
                     final File bmtaggerExec = new File(binFolder, BMTAGGER);
                     final File bitmask = bmtaggerReference.resolve(commandLine.getOptionValue(BMTAG_REF_NAME).concat(".bitmask")).toFile();
@@ -284,22 +387,73 @@ public class Main {
                     final File tmpDir = new File(commandLine.getOptionValue(BMTAG_TMP));
                     final BMTagger.RestrictType type = BMTagger.RestrictType.valueOf(commandLine.getOptionValue(REC_FORMAT));
 
-                    final List<File[]> fastqFiles = new ArrayList<>();
                     final Path trimOut = Paths.get(commandLine.getOptionValue(TRIM_OUT));
-                    for (String s : sraNames) {
-                        final File fastqFile_1 = trimOut.resolve(s.concat("_1.fastq.trimmed")).toFile();
-                        final File fastqFile_2 = trimOut.resolve(s.concat("_2.fastq.trimmed")).toFile();
-                        if (!fastqFile_2.exists()) {
-                            fastqFiles.add(new File[]{fastqFile_1});
-                        } else {
-                            fastqFiles.add(new File[]{fastqFile_1, fastqFile_2});
-                        }
-                    }
+                    final List<File[]> fastqFiles = getModFastqFiles(sraNames, trimOut.toFile(), prefix1, prefix2, append);
 
                     final List<File> blacklists = bmtag(bmtaggerExec, bitmask, srprism, tmpDir, fastqFiles, cores, type);
 
                     restrict(fastqFiles, blacklists, cores, type);
 
+                    return;
+                }
+
+                //*****TRINITY*****
+                if (commandLine.hasOption(TRINITY)) {
+                    if (!commandLine.hasOption(TRIM_OUT)) {
+                        System.out.println("Please specify an output folder containing dynamictrimmed files with " + TRIM_OUT + " flag!");
+                        return;
+                    }
+                    if (!commandLine.hasOption(REC_FORMAT)) {
+                        System.out.println("Please specify the record fromatting (FastA or FastQ) " + REC_FORMAT + " flag!");
+                        return;
+                    }
+                    if (!commandLine.hasOption(JVM_MEMORY)) {
+                        System.out.println("Please specify the ammount of allocated JVM memory for trinity " + JVM_MEMORY + " flag!");
+                        return;
+                    }
+                    if (!commandLine.hasOption(LIBTYPE)) {
+                        System.out.println("Please specify libtype (F,R,FR,RF) for trinity " + LIBTYPE + " flag!");
+                        return;
+                    }
+                    final Path trimOut = Paths.get(commandLine.getOptionValue(TRIM_OUT));
+                    final List<File[]> fastqFiles = getModFastqFiles(sraNames, trimOut.toFile(), prefix1, prefix2, append);
+                    final CallableProcessExecutor<File, Trinity> trinityExec = FixThreadCallableProcessExectuor.newInstance(1);
+                    int i = 0;
+                    for (File[] f : fastqFiles) {
+                        final Trinity.TrinityBuilder trinityBuilder
+                                = new Trinity.TrinityBuilder(
+                                new File(TRINITY_EXEC),
+                                Trinity.SEQ_TYPE.convertName(commandLine.getOptionValue(REC_FORMAT)),
+                                Trinity.LIB_TYPE.valueOf(commandLine.getOptionValue(LIBTYPE)),
+                                commandLine.getOptionValue(JVM_MEMORY));
+                        if (f.length > 1) {
+                            trinityBuilder.right(f[0].getPath());
+                            trinityBuilder.left(f[1].getPath());
+                        } else {
+                            trinityBuilder.single(f[0].getPath());
+                        }
+                        if (commandLine.hasOption(MIN_CONTIG_LENGTH)) {
+                            trinityBuilder.minCongtigLength(Integer.valueOf(commandLine.getOptionValue(MIN_CONTIG_LENGTH)));
+                        }
+                        if (commandLine.hasOption(TRINITY_OUTPUT_DIR)) {
+                            trinityBuilder.outputDir(Paths.get(commandLine.getOptionValue(TRINITY_OUTPUT_DIR)));
+                        }
+                        if (commandLine.hasOption(BFLY_MAX_HEAP)) {
+                            trinityBuilder.bflyMaxHeap(commandLine.getOptionValue(BFLY_MAX_HEAP));
+                        }
+                        if (commandLine.hasOption(MIN_CONTIG_LENGTH)) {
+                            trinityBuilder.minCongtigLength(Integer.valueOf(commandLine.getOptionValue(MIN_CONTIG_LENGTH)));
+                        }
+                        trinityBuilder.bflyCPU(cores);
+                        trinityBuilder.numCPU(cores);
+                        trinityBuilder.outputDir(directory.toPath().resolve(sraNames.get(i)).resolve(Trinity.TRINITY));
+                        trinityExec.addProcess(trinityBuilder.build());
+                        i++;
+                    }
+                    for (Future<File> future : trinityExec.getFutures()) {
+                        future.get();
+                    }
+                    trinityExec.shutdown();
                     return;
                 }
             }
@@ -308,6 +462,66 @@ public class Main {
             e.printStackTrace();
         }
 
+    }
+
+    /**
+     *
+     * @param fastqutilsExec
+     * @param fastqFiles
+     * @param numthreads
+     * @return
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
+    private static List<File> csencode(File fastqutilsExec, List<File> fastqFiles, int numthreads) throws ExecutionException, InterruptedException {
+        CallableProcessExecutor<File, CallableProcess<File>> executorCsencode = null;
+        final List<File> outfiles = new ArrayList<>();
+
+        try {
+            executorCsencode = FixThreadCallableProcessExectuor.newInstance(numthreads);
+            for (File file : fastqFiles) {
+                executorCsencode.addProcess(NGSUtils.FastqUtils.csencode(fastqutilsExec, file, file.toPath().getParent()));
+            }
+
+        } finally {
+            if (executorCsencode != null) {
+                executorCsencode.shutdown();
+            }
+        }
+        for (Future<File> future : executorCsencode.getFutures()) {
+            outfiles.add(future.get());
+        }
+        return outfiles;
+
+    }
+
+    /**
+     * @param fastqutilsExec
+     * @param results
+     * @param numthreads
+     * @return
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
+    private static List<File> fromfasta(File fastqutilsExec, List<AbiSolidDump.AbiSolidDumpResult> results, int numthreads) throws ExecutionException, InterruptedException {
+        CallableProcessExecutor<File, CallableProcess<File>> executorFromFasta = null;
+        final List<File> outfiles = new ArrayList<>();
+
+        try {
+            executorFromFasta = FixThreadCallableProcessExectuor.newInstance(numthreads);
+            for (AbiSolidDump.AbiSolidDumpResult result : results) {
+                executorFromFasta.addProcess(NGSUtils.FastqUtils.fromfasta(fastqutilsExec, result, result.getCsFasta().toPath().getParent()));
+            }
+
+        } finally {
+            if (executorFromFasta != null) {
+                executorFromFasta.shutdown();
+            }
+        }
+        for (Future<File> future : executorFromFasta.getFutures()) {
+            outfiles.add(future.get());
+        }
+        return outfiles;
     }
 
     /**
@@ -637,12 +851,12 @@ public class Main {
      * @param directory
      * @return
      */
-    private static final List<File[]> getFastqFiles(List<String> sraNames, File directory, String extra) {
+    private static final List<File[]> getFastqFiles(List<String> sraNames, File directory, String prefix1, String prefix2, String extra) {
         final List<File[]> fastqFiles = new ArrayList<>();
         for (String name : sraNames) {
 
-            final File sraFile_1 = new File(new File(directory, name), name.concat("_1.fastq").concat(extra));
-            final File sraFile_2 = new File(new File(directory, name), name.concat("_2.fastq").concat(extra));
+            final File sraFile_1 = new File(new File(directory, name), name.concat(prefix1).concat(".fastq").concat(extra));
+            final File sraFile_2 = new File(new File(directory, name), name.concat(prefix2).concat(".fastq").concat(extra));
             if (!sraFile_1.exists()) {
                 continue;
             } else if (!sraFile_2.exists()) {
@@ -664,12 +878,16 @@ public class Main {
      * @param extra
      * @return
      */
-    private static final List<File[]> getModFastqFiles(List<String> sraNames, File directory, String extra) {
+    private static final List<File[]> getModFastqFiles(List<String> sraNames, File directory, String prefix1, String prefix2, String extra) {
         final List<File[]> fastqFiles = new ArrayList<>();
         for (String name : sraNames) {
+            final File sraFile_1;
+            final File sraFile_2;
 
-            final File sraFile_1 = new File(directory, name.concat("_1.fastq").concat(extra));
-            final File sraFile_2 = new File(directory, name.concat("_2.fastq").concat(extra));
+            sraFile_1 = directory.toPath().resolve(name.concat(prefix1).concat(".fastq").concat(extra)).toFile();
+            sraFile_2 = directory.toPath().resolve(name.concat(prefix2).concat(".fastq").concat(extra)).toFile();
+
+
             if (!sraFile_1.exists()) {
                 continue;
             } else if (!sraFile_2.exists()) {

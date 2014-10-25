@@ -1,7 +1,6 @@
 package edu.miami.med.alext.eye;
 
 
-import edu.miami.med.alext.brain.Trinity;
 import edu.miami.med.alext.process.CallableProcessExecutor;
 import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import net.DownloadSRA;
@@ -9,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.xml.sax.SAXException;
 import process.FastqDump;
 import tools.BMTagger;
+import tools.Trinity;
 import xml.jaxb.EXPERIMENTPACKAGESET;
 import xml.jaxb.ExperimentPackageType;
 import xml.jaxb.SRAXMLLoader;

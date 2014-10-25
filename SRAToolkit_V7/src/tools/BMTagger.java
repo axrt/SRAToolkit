@@ -165,8 +165,8 @@ public class BMTagger extends CallableProcess<File> {
                 final Process p = this.processBuilder.start();
 
 
-                try (InputStream inputStream = p.getErrorStream();
-                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));) {
+                try (InputStream errorStream = p.getErrorStream();
+                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(errorStream));) {
                     String line;
                     while ((line = bufferedReader.readLine()) != null) {
                         System.out.println("ERR::" + this.lLane.getName() + " >" + line);

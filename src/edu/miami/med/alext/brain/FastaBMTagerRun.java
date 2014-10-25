@@ -4,6 +4,7 @@ import edu.miami.med.alext.process.CallableProcessExecutor;
 import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import org.xml.sax.SAXException;
 import tools.BMTagger;
+import tools.Trinity;
 import xml.jaxb.EXPERIMENTPACKAGESET;
 import xml.jaxb.ExperimentPackageType;
 import xml.jaxb.SRAXMLLoader;
@@ -38,7 +39,7 @@ public class FastaBMTagerRun {
             List<File> folders = new ArrayList<>();
             for (String s : sraNames) {
                 File subFolder = new File(mainFolder, s);
-                subFolder = new File(subFolder, Trinity.OUTPUT_DIR);
+                subFolder = new File(subFolder, Trinity.OUTPUT_DIR_DEFAULT);
                 folders.add(subFolder);
             }
 

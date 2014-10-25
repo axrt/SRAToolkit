@@ -4,6 +4,7 @@ import edu.miami.med.alext.process.CallableProcessExecutor;
 import edu.miami.med.alext.process.FixThreadCallableProcessExectuor;
 import org.xml.sax.SAXException;
 import tools.BMTagger;
+import tools.Trinity;
 import xml.jaxb.EXPERIMENTPACKAGESET;
 import xml.jaxb.ExperimentPackageType;
 import xml.jaxb.SRAXMLLoader;
