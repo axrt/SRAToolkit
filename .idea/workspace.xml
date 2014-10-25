@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" line="395" />
+    <bookmark url="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" line="393" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="BSUBScriptMaster created">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/process/NGSUtils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/Trinity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit_V7/src/process/AbiSolidDump.java" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/process/AbiSolidDump.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMaster.java" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMaster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMasterTest.java" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMasterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit_V7/src/process/CallableProcess.java" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/process/CallableProcess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastaBMTagerRun.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/FastaBMTagerRun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit_V7/SRAToolkit_V7.iml" afterPath="$PROJECT_DIR$/SRAToolkit_V7/SRAToolkit_V7.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/SolexaQAPPLengthSort.java" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/SolexaQAPPLengthSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityFastaFilter.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityFastaFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityTest.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityTest.java" />
+    <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="Up to Trinity implemented">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SRAToolkit.iws" />
@@ -143,7 +127,7 @@
       <file leaf-file-name="BSUBScriptMasterTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMasterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="952">
+            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="952">
               <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
               <folding />
             </state>
@@ -153,10 +137,19 @@
       <file leaf-file-name="Trinity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/Trinity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4675">
+            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="4607">
               <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5678#5679#0" expanded="false" />
+                <element signature="e#5718#5719#0" expanded="false" />
+                <element signature="e#5753#5754#0" expanded="false" />
+                <element signature="e#5788#5789#0" expanded="false" />
+                <marker date="1414262732163" expanded="true" signature="4856:5462" placeholder="{...}" />
+                <marker date="1414262732163" expanded="false" signature="5017:5032" placeholder=" { " />
+                <marker date="1414262732163" expanded="false" signature="5049:5059" placeholder=" }" />
+                <marker date="1414262732163" expanded="false" signature="5419:5434" placeholder=" { " />
+                <marker date="1414262732163" expanded="false" signature="5446:5456" placeholder=" }" />
               </folding>
             </state>
           </provider>
@@ -165,14 +158,14 @@
       <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.08781559" vertical-offset="3310" max-vertical-offset="15521">
-              <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.018660812" vertical-offset="3179" max-vertical-offset="15487">
+              <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#37470#37758#0" expanded="true" />
-                <element signature="e#37739#37740#0" expanded="true" />
-                <element signature="e#37887#38195#0" expanded="true" />
-                <element signature="e#38172#38173#0" expanded="true" />
+                <element signature="e#37500#37788#0" expanded="true" />
+                <element signature="e#37769#37770#0" expanded="true" />
+                <element signature="e#37917#38225#0" expanded="true" />
+                <element signature="e#38202#38203#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,7 +174,7 @@
       <file leaf-file-name="BMTagger.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="4862">
+            <state vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="4862">
               <caret line="53" column="66" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
               <folding />
             </state>
@@ -191,7 +184,7 @@
       <file leaf-file-name="BSUBScriptMaster.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMaster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1137" max-vertical-offset="4165">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1768" max-vertical-offset="4165">
               <caret line="110" column="59" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
               <folding />
             </state>
@@ -260,8 +253,8 @@
         <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java" />
         <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMaster.java" />
         <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/Trinity.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" />
         <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMasterTest.java" />
+        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" />
       </list>
     </option>
   </component>
@@ -985,7 +978,11 @@
       <created>1413846706049</created>
       <updated>1413846706049</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Up to Trinity implemented">
+      <created>1414262748476</created>
+      <updated>1414262748476</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1045,7 +1042,8 @@
     <MESSAGE value="Working and ready for Pegasus2" />
     <MESSAGE value="Concatinated into one execuatable jar" />
     <MESSAGE value="BSUBScriptMaster created" />
-    <option name="LAST_COMMIT_MESSAGE" value="BSUBScriptMaster created" />
+    <MESSAGE value="Up to Trinity implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Up to Trinity implemented" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1381,12 +1379,12 @@
           <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3469#3470#0" expanded="true" />
-            <element signature="e#3504#3505#0" expanded="true" />
-            <element signature="e#3540#3541#0" expanded="true" />
-            <element signature="e#3578#3579#0" expanded="true" />
-            <element signature="e#3613#3614#0" expanded="true" />
-            <element signature="e#3648#3649#0" expanded="true" />
+            <element signature="e#3472#3473#0" expanded="true" />
+            <element signature="e#3507#3508#0" expanded="true" />
+            <element signature="e#3543#3544#0" expanded="true" />
+            <element signature="e#3581#3582#0" expanded="true" />
+            <element signature="e#3616#3617#0" expanded="true" />
+            <element signature="e#3651#3652#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1495,6 +1493,15 @@
           <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5678#5679#0" expanded="false" />
+            <element signature="e#5718#5719#0" expanded="false" />
+            <element signature="e#5753#5754#0" expanded="false" />
+            <element signature="e#5788#5789#0" expanded="false" />
+            <marker date="1414262732163" expanded="true" signature="4856:5462" placeholder="{...}" />
+            <marker date="1414262732163" expanded="false" signature="5017:5032" placeholder=" { " />
+            <marker date="1414262732163" expanded="false" signature="5049:5059" placeholder=" }" />
+            <marker date="1414262732163" expanded="false" signature="5419:5434" placeholder=" { " />
+            <marker date="1414262732163" expanded="false" signature="5446:5456" placeholder=" }" />
           </folding>
         </state>
       </provider>
@@ -1509,14 +1516,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.08781559" vertical-offset="3310" max-vertical-offset="15521">
-          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.018660812" vertical-offset="3179" max-vertical-offset="15487">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#37470#37758#0" expanded="true" />
-            <element signature="e#37739#37740#0" expanded="true" />
-            <element signature="e#37887#38195#0" expanded="true" />
-            <element signature="e#38172#38173#0" expanded="true" />
+            <element signature="e#37500#37788#0" expanded="true" />
+            <element signature="e#37769#37770#0" expanded="true" />
+            <element signature="e#37917#38225#0" expanded="true" />
+            <element signature="e#38202#38203#0" expanded="true" />
           </folding>
         </state>
       </provider>
