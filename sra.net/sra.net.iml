@@ -19,6 +19,8 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="commons-cli:commons-cli:1.2" level="project" />
+    <orderEntry type="library" name="commons-net:commons-net:3.3" level="project" />
+    <orderEntry type="library" name="javatar:javatar:2.5" level="project" />
+    <orderEntry type="library" name="org.apache.commons:commons-compress:1.5" level="project" />
   </component>
 </module>
-

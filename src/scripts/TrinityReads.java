@@ -92,9 +92,9 @@ public class TrinityReads {
     public static Map<String, String> connectToTaxa(Path toRDCFile, Path toTUITfile) throws IOException, NucleotideFasta_AC_BadFormatException, NucleotideFasta_BadFormat_Exception, NucleotideFasta_Sequence_BadFormatException {
 
         final Map<String, String> map = new HashMap<>();
-        final List<NucleotideFasta> nucleotideFastas;
+        final List<NucleotideFasta> nucleotideFastas = null;
         try (InputStream inputStream = new BufferedInputStream(new FileInputStream(toRDCFile.toFile()))) {
-            nucleotideFastas = NucleotideFasta.loadFromText(inputStream);
+            //BROKEN !!! nucleotideFastas = NucleotideFasta.loadFromText(inputStream);
 
         }
         final List<String> tuitLines;

@@ -33,9 +33,9 @@ public class Condenser {
         }
 
         //2. Get the contigs
-        final List<NucleotideFasta> nucleotideFastas;
+        final List<NucleotideFasta> nucleotideFastas = null;
         try (InputStream inputStream = new BufferedInputStream(new FileInputStream(toTrinityOutFile.toFile()))) {
-            nucleotideFastas = NucleotideFasta.loadFromText(inputStream);
+            //BROKEN nucleotideFastas = NucleotideFasta.loadFromText(inputStream);
         }
 
         //3. Condense and map the sequences to the summ of corresponding reads

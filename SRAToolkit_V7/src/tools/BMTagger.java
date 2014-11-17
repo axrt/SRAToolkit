@@ -4,7 +4,10 @@ package tools;
 import process.CallableProcess;
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by alext on 4/20/14.
@@ -142,11 +145,11 @@ public class BMTagger extends CallableProcess<File> {
         return referenceSrprism;
     }
 
-    public synchronized Optional<File> getBlacklist() {
-        final Optional<File> file = Optional.of(new File(this.blacklist.toString()));
+    public synchronized File getBlacklist() {
+        final File file = new File(this.blacklist.toString());
         if (this.blacklist.exists()) {
             return file;
-        } else return Optional.empty();
+        } else return null;
     }
 
     @Override

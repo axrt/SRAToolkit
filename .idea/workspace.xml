@@ -5,10 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="Up to Trinity implemented">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/Legend.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_net_commons_net_3_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/javatar_javatar_2_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_34.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_apache_commons_commons_compress_1_5.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/FastaToolkit.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/Main.class" afterPath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/miami/med/alext/process/Condenser.java" afterPath="$PROJECT_DIR$/src/edu/miami/med/alext/process/Condenser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.analysis.xsd" afterPath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.analysis.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.common.xsd" afterPath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.common.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.experiment.xsd" afterPath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.experiment.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.run.xsd" afterPath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.run.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.sample.xsd" afterPath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.sample.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.study.xsd" afterPath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.study.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.submission.xsd" afterPath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.submission.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit.iml" afterPath="$PROJECT_DIR$/SRAToolkit.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/TrinityReads.java" afterPath="$PROJECT_DIR$/src/scripts/TrinityReads.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sra.net/sra.net.iml" afterPath="$PROJECT_DIR$/sra.net/sra.net.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SRAToolkit.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +45,38 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java" line="62" class="edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader" package="edu.miami.med.alext.ncbi.xml.jaxb">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/scripts/Processor.java" line="71" class="scripts.Processor" package="scripts">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -59,39 +113,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java" line="62" class="edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader" package="edu.miami.med.alext.ncbi.xml.jaxb">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/scripts/Processor.java" line="71" class="scripts.Processor" package="scripts">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <field_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint url="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentType.java" line="189" class="edu.miami.med.alext.ncbi.xml.jaxb.ExperimentType" package="edu.miami.med.alext.ncbi.xml.jaxb" field_name="accession">
         <option name="WATCH_MODIFICATION" value="true" />
@@ -124,68 +145,109 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BSUBScriptMasterTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BSUBScriptMasterTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMasterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="952">
+            <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1008">
               <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trinity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/Trinity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="4607">
-              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5678#5679#0" expanded="false" />
-                <element signature="e#5718#5719#0" expanded="false" />
-                <element signature="e#5753#5754#0" expanded="false" />
-                <element signature="e#5788#5789#0" expanded="false" />
-                <marker date="1414262732163" expanded="true" signature="4856:5462" placeholder="{...}" />
-                <marker date="1414262732163" expanded="false" signature="5017:5032" placeholder=" { " />
-                <marker date="1414262732163" expanded="false" signature="5049:5059" placeholder=" }" />
-                <marker date="1414262732163" expanded="false" signature="5419:5434" placeholder=" { " />
-                <marker date="1414262732163" expanded="false" signature="5446:5456" placeholder=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.018660812" vertical-offset="3179" max-vertical-offset="15487">
-              <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3877" max-vertical-offset="16290">
+              <caret line="260" column="54" selection-start-line="260" selection-start-column="54" selection-end-line="260" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#37500#37788#0" expanded="true" />
-                <element signature="e#37769#37770#0" expanded="true" />
-                <element signature="e#37917#38225#0" expanded="true" />
-                <element signature="e#38202#38203#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BMTagger.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BMTagger.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="4862">
-              <caret line="53" column="66" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2180" max-vertical-offset="5148">
+              <caret line="148" column="27" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BSUBScriptMaster.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMaster.java">
+      <file leaf-file-name="Condenser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/process/Condenser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1768" max-vertical-offset="4165">
-              <caret line="110" column="59" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1656">
+              <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrinityReads.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scripts/TrinityReads.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="3708">
+              <caret line="94" column="57" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Legend.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scripts/Legend.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43413174" vertical-offset="286" max-vertical-offset="1224">
+              <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SRP017329Analysis.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/SRP017329Analysis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1764">
+              <caret line="42" column="103" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NucleotideFasta.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../JAVA_BIO/JAVA_BIO/src/format/fasta/nucleotide/NucleotideFasta.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1301" max-vertical-offset="2214">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OTUConsensusConversionTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../JAVA_BIO/JAVA_BIO/src/test/OTUConsensusConversionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1368">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SystemUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../JAVA_BIO/JAVA_BIO/src/util/SystemUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5652">
+              <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -202,67 +264,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="changedFiles">
+    <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/scripts/TrinityReads.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/process/Condenser.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/Bowtie.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/AlignReads.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/module/FastqDump.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/module/FastqDumpHelper.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/module/BMTaggerHelper.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityTest.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/TrinityRuner.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/Trinity.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SolexaQAppTest.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SolexaQAPPAnanlysis.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SolexaQAPPLengthSort.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/SolexaQAPPDynamicTrim.java" />
-        <option value="$PROJECT_DIR$/src/scripts/PegasusTest.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/process/Condenser.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/script/PegasusTest.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SolexaQA.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/SolexaQAPP.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/SolexaQAppTest.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/SolexaQA.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/net/DownloadSRA.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/xml/jaxb/SampleType.java" />
-        <option value="$PROJECT_DIR$/tools/src/FastqDump.java" />
-        <option value="$PROJECT_DIR$/sra.xml/src/xml/jaxb/SRAXMLLoader.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/process/FastqDump.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/eye/EyePipeline.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/test/SolexaQAppTest.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/module/SRADownloader.java" />
-        <option value="$PROJECT_DIR$/sra.net/src/net/DownloadSRATest.java" />
-        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/brain/MonkeyPipeline.java" />
-        <option value="$PROJECT_DIR$/sra.net/src/net/DownloadSRA.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/SolexaQAPPDynamicTrim.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/SolexaQAPPAnanlysis.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/script/SRP017329Analysis.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/script/SRP033725Analysis.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/script/DownloadSRA.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/process/FastqDumpHelper.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTaggerHelper.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/SolexaQAPP.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/process/AbiSolidDumpTest.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/process/CallableProcess.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/process/AbiSolidDump.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/process/NGSUtils.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/SolexaQAPPLengthSort.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMaster.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/Trinity.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMasterTest.java" />
         <option value="$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" />
+        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java" />
+        <option value="$PROJECT_DIR$/src/edu/miami/med/alext/process/Condenser.java" />
+        <option value="$PROJECT_DIR$/src/scripts/TrinityReads.java" />
+        <option value="$PROJECT_DIR$/src/scripts/Legend.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2160" />
-    <option name="y" value="835" />
-    <option name="width" value="1920" />
-    <option name="height" value="1041" />
+    <option name="x" value="2156" />
+    <option name="y" value="832" />
+    <option name="width" value="1928" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -290,6 +306,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -323,6 +340,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SRAToolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SRAToolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -642,10 +677,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SRAToolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -656,14 +696,14 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TUIT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JAVA_BIO/JAVA_BIO/JAVA_BIO.iml" />
     <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.11682243" />
+    <property name="project.structure.side.proportion" value="0.4073648" />
     <property name="dynamic.classpath" value="false" />
     <property name="LayoutCode.rearrangeEntriesXML" value="false" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
@@ -675,6 +715,7 @@
     <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/alext/Developer/SRAToolkit/src/edu/miami/med/alext/brain/SolexaQA.java" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -685,25 +726,9 @@
       <recent name="net" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BSUBScriptMasterTest">
-    <configuration default="false" name="PegasusTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="script.PegasusTest" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="SRAToolkit_V7" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Legend">
     <configuration default="false" name="SolexaQAppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="SRAToolkit_V7" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -749,6 +774,7 @@
       <method />
     </configuration>
     <configuration default="false" name="BSUBScriptMasterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="SRAToolkit_V7" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -771,6 +797,7 @@
       <method />
     </configuration>
     <configuration default="false" name="AbiSolidDumpTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="SRAToolkit_V7" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -792,44 +819,32 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <module name="" />
+    <configuration default="false" name="Legend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="scripts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="scripts.Legend" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
+      <module name="SRAToolkit" />
       <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -853,7 +868,29 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -895,20 +932,61 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.PegasusTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SolexaQAppTest" />
-      <item index="2" class="java.lang.String" itemvalue="Application.SRP017329Analysis" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.BSUBScriptMasterTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.AbiSolidDumpTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.SolexaQAppTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.SRP017329Analysis" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BSUBScriptMasterTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.AbiSolidDumpTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Legend" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.BSUBScriptMasterTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.AbiSolidDumpTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.SRP017329Analysis" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SolexaQAppTest" />
-        <item index="4" class="java.lang.String" itemvalue="Application.PegasusTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Legend" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.BSUBScriptMasterTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.AbiSolidDumpTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.SRP017329Analysis" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SolexaQAppTest" />
       </list>
     </recent_temporary>
   </component>
@@ -920,98 +998,130 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="" />
       <created>1391790335382</created>
+      <option name="number" value="Default" />
       <updated>1391790335382</updated>
     </task>
     <task id="LOCAL-00001" summary="Correct schema applied&#10;">
       <created>1391798720427</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
       <updated>1391798720427</updated>
     </task>
     <task id="LOCAL-00002" summary="Correct schema applied this time for sure&#10;">
       <created>1391799941570</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
       <updated>1391799941570</updated>
     </task>
     <task id="LOCAL-00003" summary="BMTagger and FastqDump added">
       <created>1398033188035</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
       <updated>1398033188035</updated>
     </task>
     <task id="LOCAL-00004" summary="BMTagger fastq processing via blacklist added">
       <created>1398265084503</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
       <updated>1398265084503</updated>
     </task>
     <task id="LOCAL-00005" summary="Monkey pipeline successully applied">
       <created>1399656995147</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
       <updated>1399656995147</updated>
     </task>
     <task id="LOCAL-00006" summary="Pushing jaxb classes that had been left out">
       <created>1399657967956</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
       <updated>1399657967957</updated>
     </task>
     <task id="LOCAL-00007" summary="Pushing jaxb classes that had been left out">
       <created>1399659553790</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
       <updated>1399659553790</updated>
     </task>
     <task id="LOCAL-00008" summary="Last update">
       <created>1412714045227</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
       <updated>1412714045227</updated>
     </task>
     <task id="LOCAL-00009" summary="Helpers updated&#10;">
       <created>1412721364981</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
       <updated>1412721364981</updated>
     </task>
     <task id="LOCAL-00010" summary="Trinity updated&#10;&#10;">
       <created>1412864878788</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
       <updated>1412864878788</updated>
     </task>
     <task id="LOCAL-00011" summary="SolexaQAPP inmplemented with full hierarchy, not tested yet">
       <created>1412966922345</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
       <updated>1412966922345</updated>
     </task>
     <task id="LOCAL-00012" summary="Working and ready for Pegasus2">
       <created>1413302613631</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
       <updated>1413302613631</updated>
     </task>
     <task id="LOCAL-00013" summary="Concatinated into one execuatable jar">
       <created>1413397800295</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
       <updated>1413397800295</updated>
     </task>
     <task id="LOCAL-00014" summary="BSUBScriptMaster created">
       <created>1413846706049</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
       <updated>1413846706049</updated>
     </task>
     <task id="LOCAL-00015" summary="Up to Trinity implemented">
       <created>1414262748476</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
       <updated>1414262748476</updated>
     </task>
     <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2160" y="835" width="1920" height="1041" extended-state="6" />
+    <frame x="2156" y="832" width="1928" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270242" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.36780384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1080" y="0" width="1080" height="1876" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30178759" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30150753" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32663316" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.36780384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1080" y="0" width="1080" height="1876" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1099,63 +1209,33 @@
           <properties />
           <option name="timeStamp" value="44" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/scripts/Legend.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/sra.xml/src/xml/jaxb/ExperimentType.java</url>
           <line>189</line>
           <properties field="accession" class="xml.jaxb.ExperimentType">
+            <option name="instance-filters-enabled" value="true" />
             <instance-filters>
               <instance-filter id="1694" />
             </instance-filters>
-            <option name="instance-filters-enabled" value="true" />
           </properties>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="45" />
+      <option name="time" value="47" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/java/jdk1.8.0_05/src.zip!/java/util/stream/Stream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1766" max-vertical-offset="18581">
-          <caret line="168" column="14" selection-start-line="168" selection-start-column="14" selection-end-line="168" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/TrinityReads.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2760" max-vertical-offset="3672">
-          <caret line="204" column="61" selection-start-line="204" selection-start-column="19" selection-end-line="204" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/AlignReads.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/process/FixThreadCallableProcessExectuor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/SolexaQAPPAnanlysis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1700">
@@ -1177,24 +1257,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/process/Condenser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44117647" vertical-offset="408" max-vertical-offset="1394">
-          <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/SolexaQAPPLengthSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="952">
           <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/java/jdk1.8.0_05/src.zip!/java/util/UUID.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="7191">
-          <caret line="127" column="11" selection-start-line="127" selection-start-column="11" selection-end-line="127" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1312,13 +1378,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/SRP017329Analysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1065" max-vertical-offset="1989">
-          <caret line="103" column="36" selection-start-line="88" selection-start-column="12" selection-end-line="103" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/sra/SraUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09199134" vertical-offset="0" max-vertical-offset="924">
@@ -1359,7 +1418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
           <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1393,7 +1451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.1277056" vertical-offset="2221" max-vertical-offset="3145">
           <caret line="20" column="76" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1401,9 +1458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44155845" vertical-offset="0" max-vertical-offset="924">
           <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1419,7 +1473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="969">
           <caret line="45" column="113" selection-start-line="45" selection-start-column="85" selection-end-line="45" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1451,7 +1504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4664502" vertical-offset="300" max-vertical-offset="1785">
           <caret line="58" column="107" selection-start-line="58" selection-start-column="107" selection-end-line="58" selection-end-column="107" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1459,22 +1511,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36796537" vertical-offset="0" max-vertical-offset="924">
           <caret line="27" column="122" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/BSUBScriptMaster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1137" max-vertical-offset="4165">
-          <caret line="110" column="59" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="4862">
-          <caret line="53" column="66" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1872" max-vertical-offset="4410">
+          <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1483,7 +1526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0945495" vertical-offset="0" max-vertical-offset="899">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1493,15 +1535,6 @@
           <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5678#5679#0" expanded="false" />
-            <element signature="e#5718#5719#0" expanded="false" />
-            <element signature="e#5753#5754#0" expanded="false" />
-            <element signature="e#5788#5789#0" expanded="false" />
-            <marker date="1414262732163" expanded="true" signature="4856:5462" placeholder="{...}" />
-            <marker date="1414262732163" expanded="false" signature="5017:5032" placeholder=" { " />
-            <marker date="1414262732163" expanded="false" signature="5049:5059" placeholder=" }" />
-            <marker date="1414262732163" expanded="false" signature="5419:5434" placeholder=" { " />
-            <marker date="1414262732163" expanded="false" signature="5446:5456" placeholder=" }" />
           </folding>
         </state>
       </provider>
@@ -1514,16 +1547,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java">
+    <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.018660812" vertical-offset="3179" max-vertical-offset="15487">
-          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2180" max-vertical-offset="5148">
+          <caret line="148" column="27" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JAVA_BIO/JAVA_BIO/src/test/OTUConsensusConversionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1368">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#37500#37788#0" expanded="true" />
-            <element signature="e#37769#37770#0" expanded="true" />
-            <element signature="e#37917#38225#0" expanded="true" />
-            <element signature="e#38202#38203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JAVA_BIO/JAVA_BIO/src/util/SystemUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5652">
+          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JAVA_BIO/JAVA_BIO/src/format/fasta/nucleotide/NucleotideFasta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1301" max-vertical-offset="2214">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05598756" vertical-offset="0" max-vertical-offset="643">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3877" max-vertical-offset="16290">
+          <caret line="260" column="54" selection-start-line="260" selection-start-column="54" selection-end-line="260" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/process/Condenser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1656">
+          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/TrinityReads.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="3708">
+          <caret line="94" column="57" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/SRP017329Analysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1764">
+          <caret line="42" column="103" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/Legend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43413174" vertical-offset="286" max-vertical-offset="1224">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1551,7 +1658,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.11682243" />
+                <option value="0.4073648" />
               </list>
             </option>
           </splitter-proportions>
@@ -1582,12 +1689,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>SRAToolkit_V7</last-edited>
+          <last-edited>JAVA_BIO</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.11682243" />
-                <option value="0.6" />
+                <option value="0.4073648" />
               </list>
             </option>
           </splitter-proportions>
@@ -1595,11 +1701,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>commons-cli:commons-cli:1.2</last-edited>
+          <last-edited>org.apache.commons:commons-compress:1.5</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.11682243" />
+                <option value="0.4073648" />
               </list>
             </option>
           </splitter-proportions>
@@ -1608,4 +1714,3 @@
     </states>
   </component>
 </project>
-
