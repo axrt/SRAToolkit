@@ -11,8 +11,10 @@ public class DownloadSRA {
     public static String address = "http://trace.ncbi.nlm.nih.gov/Traces/sra/?run=";
 
     public static void downloadSra(String sra, File out) throws IOException {
-
+        //System.out.println(sra);
+        //System.out.println(out);
         final URL driverPage = new URL(address.concat(sra));
+        System.out.println(driverPage);
         try (final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(driverPage.openConnection().getInputStream()))) {
             String line;
             String[]split;
@@ -27,6 +29,7 @@ public class DownloadSRA {
                     break;
                 }
             }
+            System.out.println(downloadUrl);
             try(
                     final BufferedInputStream bufferedInputStream=new BufferedInputStream(new URL(downloadUrl).openConnection().getInputStream());
                     final BufferedOutputStream bufferedOutputStream=new BufferedOutputStream(new FileOutputStream(out));

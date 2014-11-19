@@ -76,6 +76,7 @@ public class Main {
     private static final String APPEND_PREF2 = "pext2";
     private static final String TRINITY = "tr";
     private static final String TRINITY_EXEC = "Trinity.pl";
+    private static final String USE_SUBFOLDER = "subf";
 
     public static void main(String[] args) {
 
@@ -100,7 +101,8 @@ public class Main {
         options.addOption(option);
         option = new Option(TRINITY_OUTPUT_DIR, TRINITY_OUTPUT_DIR, true, "Trinity output folder.");
         options.addOption(option);
-
+        option = new Option(USE_SUBFOLDER, "use_sub_folder", false, "Are the files in individual folders?");
+        options.addOption(option);
         option = new Option(DOWNLOAD, "download", false, "Download the given list of SRAs from xml.");
         options.addOption(option);
 
@@ -183,7 +185,12 @@ public class Main {
             final int to = ft[1];
             final EXPERIMENTPACKAGESET experimentpackageset;
             final File directory = new File(commandLine.getOptionValue(DIRECTORY));
-
+            final boolean useSubfolder;
+            if (commandLine.hasOption(USE_SUBFOLDER)) {
+                useSubfolder = true;
+            } else {
+                useSubfolder = false;
+            }
             try (InputStream inputStream = new FileInputStream(driverXML)) {
                 experimentpackageset = SRAXMLLoader.catchXMLOutput(inputStream);
                 final List<String> sraNames = getSRANames(from, to, experimentpackageset);
@@ -316,7 +323,7 @@ public class Main {
                         return;
                     }
                     final Path outDir = Paths.get(commandLine.getOptionValue(ANALYSIS_OUT));
-                    final List<File[]> fastqFiles = getFastqFiles(sraNames, directory, prefix1, prefix2, append);
+                    final List<File[]> fastqFiles = getFastqFiles(sraNames, directory, prefix1, prefix2, append, useSubfolder);
 
                     analyze(new File(binFolder, SOLEXAQAPP), fastqFiles, cores, outDir, probCutoff, variance, samples, format);
                     return;
@@ -329,8 +336,7 @@ public class Main {
                         return;
                     }
                     final Path trimOut = Paths.get(commandLine.getOptionValue(TRIM_OUT));
-                    final List<File[]> fastqFiles = getFastqFiles(sraNames, directory, prefix1, prefix2, append);
-
+                    final List<File[]> fastqFiles = getFastqFiles(sraNames, directory, prefix1, prefix2, append, useSubfolder);
                     dynamictrim(new File(binFolder, SOLEXAQAPP), cores, probCutoff, fastqFiles, trimOut, format);
                     return;
                 }
@@ -851,12 +857,19 @@ public class Main {
      * @param directory
      * @return
      */
-    private static final List<File[]> getFastqFiles(List<String> sraNames, File directory, String prefix1, String prefix2, String extra) {
+    private static final List<File[]> getFastqFiles(List<String> sraNames, File directory, String prefix1, String prefix2, String extra, boolean subf) {
         final List<File[]> fastqFiles = new ArrayList<>();
         for (String name : sraNames) {
+            final File sraFile_1;
+            final File sraFile_2;
+            if (!subf) {
+                sraFile_1 = new File(directory, name.concat(prefix1).concat(".fastq").concat(extra));
+                sraFile_2 = new File(directory, name.concat(prefix2).concat(".fastq").concat(extra));
+            } else {
+                sraFile_1 = new File(new File(directory, name), name.concat(prefix1).concat(".fastq").concat(extra));
+                sraFile_2 = new File(new File(directory, name), name.concat(prefix2).concat(".fastq").concat(extra));
+            }
 
-            final File sraFile_1 = new File(new File(directory, name), name.concat(prefix1).concat(".fastq").concat(extra));
-            final File sraFile_2 = new File(new File(directory, name), name.concat(prefix2).concat(".fastq").concat(extra));
             if (!sraFile_1.exists()) {
                 continue;
             } else if (!sraFile_2.exists()) {
