@@ -39,7 +39,7 @@ public class Legend {
 
     public static void main(String[] args) {
 
-        final File legendFile = new File("/home/alext/Documents/Research/brain_rnaseq/SRP033725/SRP033725.xml");
+        final File legendFile = new File("/home/alext/Documents/Research/brain_rnaseq/SRP017329/SRP017329.xml");
         try (BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(legendFile))) {
 
 

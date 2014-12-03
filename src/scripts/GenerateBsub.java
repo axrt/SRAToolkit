@@ -12,13 +12,13 @@ import java.nio.file.Paths;
 public class GenerateBsub {
 
     public static final String study = "SRP033725";
-    public static final int from = 4;
-    public static final int to = 8;
+    public static final int from = 13;
+    public static final int to = 18;
     public static final int stepping = 1;
     public static final int time = 72;
     public static final int super_cores = 1;
     public static final int java_threads = 1;
-    public static final int jvm_memory = 1;
+    public static final int jvm_memory = 8;
     public static final Path toOutPutFolder = Paths.get("/home/alext/Documents/Research/brain_rnaseq/SRP033725/scr");
     public static final String generalHeader =
             "#BSUB -W " + time + ":00\n" +
@@ -61,8 +61,21 @@ public class GenerateBsub {
                     "-JM " + jvm_memory + "G \\\n" +
                     "-SS_lib_type F \\\n" +
                     "-tout /scratch/atuzhikov/" + study + "/ \\\n";
-    public static final action curact = action.TRINITY;
-    public static final String currentAct = trinity;
+
+    public static final String bmtagger =
+            "java -jar " + "-Xmx" + jvm_memory + "G" + " /nethome/atuzhikov/sratoolkit.jar \\\n" +
+                    "-bm " +
+                    "-drv /nethome/atuzhikov/target/" + study + ".xml \\\n" +
+                    "-dir /scratch/atuzhikov/" + study + "/ \\\n" +
+                    "-bin ~/bin \\\n" +
+                    "-bmtmp /scratch/atuzhikov/tmp \\\n" +
+                    "-bmtref /nethome/atuzhikov/ref/grch38 \\\n" +
+                    "-bmtrefname grch38 \\\n" +
+                    "-tout /scratch/atuzhikov/" + study + "/ \\\n" +
+                    "-rfmt FastA \\\n";
+
+    public static final action curact = action.BMTAGGER;
+    public static final String currentAct = bmtagger;
 
     public static void main(String[] args) {
 
@@ -94,6 +107,7 @@ public class GenerateBsub {
     public enum action {
         DYNAMICTRIM,
         DUMP,
-        TRINITY;
+        TRINITY,
+        BMTAGGER;
     }
 }

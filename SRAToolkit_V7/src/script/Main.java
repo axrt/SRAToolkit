@@ -75,7 +75,7 @@ public class Main {
     private static final String APPEND_PREF1 = "pext1";
     private static final String APPEND_PREF2 = "pext2";
     private static final String TRINITY = "tr";
-    private static final String TRINITY_EXEC = "Trinity.pl";
+    private static final String TRINITY_EXEC = "perl Trinity";
     private static final String USE_SUBFOLDER = "subf";
 
     public static void main(String[] args) {
@@ -845,6 +845,21 @@ public class Main {
         }
         final List<String> sraNames = new ArrayList<>();
         for (int i = from; i < to; i++) {
+            final ExperimentPackageType experimentPackageType = experimentpackageset.getEXPERIMENTPACKAGE().get(i);
+            for (RunType runty : experimentPackageType.getRUNSET().getRUN())
+                sraNames.add(runty.getAccession());
+        }
+        return sraNames;
+    }
+
+    /**
+     * @param experimentpackageset
+     * @return
+     */
+    public static final List<String> getSRANames(EXPERIMENTPACKAGESET experimentpackageset) {
+
+        final List<String> sraNames = new ArrayList<>();
+        for (int i = 0; i < experimentpackageset.getEXPERIMENTPACKAGE().size(); i++) {
             final ExperimentPackageType experimentPackageType = experimentpackageset.getEXPERIMENTPACKAGE().get(i);
             for (RunType runty : experimentPackageType.getRUNSET().getRUN())
                 sraNames.add(runty.getAccession());

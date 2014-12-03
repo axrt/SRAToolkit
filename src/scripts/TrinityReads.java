@@ -5,7 +5,12 @@ import format.fasta.nucleotide.NucleotideFasta;
 import format.fasta.nucleotide.NucleotideFasta_AC_BadFormatException;
 import format.fasta.nucleotide.NucleotideFasta_BadFormat_Exception;
 import format.fasta.nucleotide.NucleotideFasta_Sequence_BadFormatException;
+import org.xml.sax.SAXException;
+import script.Main;
+import xml.jaxb.EXPERIMENTPACKAGESET;
+import xml.jaxb.SRAXMLLoader;
 
+import javax.xml.bind.JAXBException;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -20,23 +25,40 @@ public class TrinityReads {
 
 
     public static void main(String[] args) {
+        final Path driverXML = Paths.get("/home/alext/NAS/Research/Brain/SRP033725/SRP033725.xml");
+        try (InputStream inputStream = new FileInputStream(driverXML.toFile())) {
 
-        int [] srrs={9,8,7,6,5};
-        for(int i:srrs){
 
-                finalEffort(i);
+            final EXPERIMENTPACKAGESET experimentpackageset = SRAXMLLoader.catchXMLOutput(inputStream);
+            final List<String> sraNames = Main.getSRANames(experimentpackageset);
+            for (String sra : sraNames) {
+                final Path toRDCFile = Paths.get("/home/alext/Documents/Research/brain_rnaseq/SRP033725/contig_results/" + sra + ".fastq.trimmed.rest.fasta.rest.rdc");
+                final Path toInitialFile = Paths.get("/home/alext/Documents/Research/brain_rnaseq/SRP033725/contig_results/" + sra + ".fastq.trimmed.rest.fasta.rest");
+                final Path toTUITFile = Paths.get("/home/alext/Documents/Research/brain_rnaseq/SRP033725/contig_results/" + sra + ".fastq.trimmed.rest.fasta.rest.rdc.tuit");
+                final Path toCountFile = Paths.get("/home/alext/Documents/Research/brain_rnaseq/SRP033725/contig_results/" + sra + "/contig.count.txt");
+                final Path toOutFile = toTUITFile.resolveSibling(sra + ".readcount.rdc.tuit");
+                System.out.println("Processing: " + sra);
+                reassignCountsToRDC(toRDCFile, toInitialFile, toTUITFile, toCountFile, toOutFile);
+            }
 
-        }
 
-        /*try {
-            System.out.println(calculateHuman(srrs[1]));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
-
-
-
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        } catch (NucleotideFasta_Sequence_BadFormatException e) {
+            e.printStackTrace();
+        } catch (NucleotideFasta_AC_BadFormatException e) {
+            e.printStackTrace();
+        } catch (NucleotideFasta_BadFormat_Exception e) {
+            e.printStackTrace();
+        }
     }
+
     public static void finalEffort(int i){
         final Path toRDCFile = Paths.get("/home/alext/Documents/ocular_rnaseq/sequences/eye/for_tuit/SRR59274"+i+".Trinity.rest.fasta.rdc");
         final Path toInitialFile = Paths.get("/home/alext/Documents/ocular_rnaseq/sequences/eye/for_tuit/SRR59274"+i+".Trinity.rest.fasta");
@@ -92,14 +114,14 @@ public class TrinityReads {
     public static Map<String, String> connectToTaxa(Path toRDCFile, Path toTUITfile) throws IOException, NucleotideFasta_AC_BadFormatException, NucleotideFasta_BadFormat_Exception, NucleotideFasta_Sequence_BadFormatException {
 
         final Map<String, String> map = new HashMap<>();
-        final List<NucleotideFasta> nucleotideFastas = null;
+        final List<NucleotideFasta> nucleotideFastas;
         try (InputStream inputStream = new BufferedInputStream(new FileInputStream(toRDCFile.toFile()))) {
-            //BROKEN !!! nucleotideFastas = NucleotideFasta.loadFromText(inputStream);
+            nucleotideFastas = NucleotideFasta.loadFromText(inputStream);
 
         }
         final List<String> tuitLines;
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(toTUITfile.toFile()))) {
-            tuitLines = bufferedReader.lines().collect(Collectors.toList());
+            tuitLines = bufferedReader.lines().filter(line -> line.length() != 0).collect(Collectors.toList());
         }
 
         for (int i = 0; i < nucleotideFastas.size(); i++) {

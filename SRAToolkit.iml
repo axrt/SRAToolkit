@@ -33,5 +33,6 @@
     <orderEntry type="module" module-name="sra.net" />
     <orderEntry type="module" module-name="SRAToolkit_V7" />
     <orderEntry type="module" module-name="JAVA_BIO" />
+    <orderEntry type="library" name="commons-cli:commons-cli:1.2" level="project" />
   </component>
 </module>

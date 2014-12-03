@@ -4,11 +4,128 @@
     <bookmark url="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" line="399" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="legend added">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/GenerateBsub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sra.net/src/net/DownloadSRA.java" afterPath="$PROJECT_DIR$/sra.net/src/net/DownloadSRA.java" />
+    <list default="true" id="0e9041cc-348e-4025-b368-d15dcac213c2" name="Default" comment="latest">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scripts/ConvertCreepyFastQ.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/creepy_fastq.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.annotation.xsd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/SRA.package.xsd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jax/SRAXMLLoader$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jax/SRAXMLLoader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AlignmentDirectivesType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AlignmentProcessingType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisFileType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisSetType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISATTRIBUTES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISLINKS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$ABUNDANCEMEASUREMENT.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$DENOVOASSEMBLY.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$REFERENCEALIGNMENT$ASSEMBLY$CUSTOM.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$REFERENCEALIGNMENT$ASSEMBLY$STANDARD.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$REFERENCEALIGNMENT$ASSEMBLY.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$REFERENCEALIGNMENT$RUNLABELS$RUN.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$REFERENCEALIGNMENT$RUNLABELS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$REFERENCEALIGNMENT$SEQLABELS$SEQUENCE.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$REFERENCEALIGNMENT$SEQLABELS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$REFERENCEALIGNMENT.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE$SEQUENCEANNOTATION.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$ANALYSISTYPE.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$DATABLOCK$FILES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$DATABLOCK.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$STUDYREF.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType$TARGETS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AnalysisType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/AttributeType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/DefaultProcessingType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/EXPERIMENTPACKAGESET.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentPackageType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentSetType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentType$EXPERIMENTATTRIBUTES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentType$EXPERIMENTLINKS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentType$STUDYREF.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/IdentifierType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/LibraryDescriptorType$LIBRARYLAYOUT$PAIRED.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/LibraryDescriptorType$LIBRARYLAYOUT$SINGLE.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/LibraryDescriptorType$LIBRARYLAYOUT.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/LibraryDescriptorType$TARGETEDLOCI$LOCUS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/LibraryDescriptorType$TARGETEDLOCI.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/LibraryDescriptorType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/LibraryType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/LinkType$ENTREZLINK.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/LinkType$URLLINK.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/LinkType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/NameAndLabelType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/ObjectFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PACKAGESET.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PackageType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PipelineType$PIPESECTION.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PipelineType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PlatformType$ABISOLID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PlatformType$CAPILLARY.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PlatformType$COMPLETEGENOMICS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PlatformType$HELICOS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PlatformType$ILLUMINA.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PlatformType$IONTORRENT.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PlatformType$LS454.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PlatformType$PACBIOSMRT.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PlatformType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PoolMemberType$READLABEL.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/PoolMemberType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/ProcessingType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/QualifiedNameType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/RUNSET.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/RunType$DATABLOCK$FILES$FILE.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/RunType$DATABLOCK$FILES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/RunType$DATABLOCK.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/RunType$EXPERIMENTREF.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/RunType$RUNATTRIBUTES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/RunType$RUNLINKS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/RunType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SampleDescriptorType$POOL.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SampleDescriptorType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SampleSetType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SampleType$SAMPLEATTRIBUTES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SampleType$SAMPLELINKS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SampleType$SAMPLENAME.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SampleType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SequencingDirectivesType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SpotDescriptorType$SPOTDECODESPEC$READSPEC$EXPECTEDBASECALLTABLE$BASECALL.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SpotDescriptorType$SPOTDECODESPEC$READSPEC$EXPECTEDBASECALLTABLE.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SpotDescriptorType$SPOTDECODESPEC$READSPEC$RELATIVEORDER.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SpotDescriptorType$SPOTDECODESPEC$READSPEC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SpotDescriptorType$SPOTDECODESPEC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SpotDescriptorType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SraLinkType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/StudySetType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/StudyType$DESCRIPTOR$RELATEDSTUDIES$RELATEDSTUDY.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/StudyType$DESCRIPTOR$RELATEDSTUDIES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/StudyType$DESCRIPTOR$STUDYTYPE.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/StudyType$DESCRIPTOR.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/StudyType$STUDYATTRIBUTES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/StudyType$STUDYLINKS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/StudyType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionSetType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$ACTIONS$ACTION$ADD.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$ACTIONS$ACTION$HOLD.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$ACTIONS$ACTION$MODIFY.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$ACTIONS$ACTION$PROTECT.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$ACTIONS$ACTION$RELEASE.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$ACTIONS$ACTION$SUPPRESS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$ACTIONS$ACTION$VALIDATE.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$ACTIONS$ACTION.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$ACTIONS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$CONTACTS$CONTACT.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$CONTACTS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$SUBMISSIONATTRIBUTES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType$SUBMISSIONLINKS.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/SubmissionType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SRAToolkit/edu/miami/med/alext/ncbi/xml/jaxb/XRefType.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/GenerateBsub.java" afterPath="$PROJECT_DIR$/src/scripts/GenerateBsub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/Legend.java" afterPath="$PROJECT_DIR$/src/scripts/Legend.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sra.xml/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/sra.xml/src/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" afterPath="$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sratoolkit.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sratoolkit.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SRAToolkit.iml" afterPath="$PROJECT_DIR$/SRAToolkit.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/TrinityReads.java" afterPath="$PROJECT_DIR$/src/scripts/TrinityReads.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SRAToolkit.iws" />
@@ -29,8 +146,10 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java" line="62" class="edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader" package="edu.miami.med.alext.ncbi.xml.jaxb">
+    <field_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentType.java" line="189" class="edu.miami.med.alext.ncbi.xml.jaxb.ExperimentType" package="edu.miami.med.alext.ncbi.xml.jaxb" field_name="accession">
+        <option name="WATCH_MODIFICATION" value="true" />
+        <option name="WATCH_ACCESS" value="false" />
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -41,26 +160,16 @@
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="true" />
         <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="true" />
         <option name="CONDITION" value="" />
+        <instance_id>
+          <option name="PATTERN" value="1694" />
+          <option name="ENABLED" value="true" />
+        </instance_id>
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/scripts/Processor.java" line="71" class="scripts.Processor" package="scripts">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    </field_breakpoints>
+    <ui_properties converted="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -97,10 +206,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <field_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/ExperimentType.java" line="189" class="edu.miami.med.alext.ncbi.xml.jaxb.ExperimentType" package="edu.miami.med.alext.ncbi.xml.jaxb" field_name="accession">
-        <option name="WATCH_MODIFICATION" value="true" />
-        <option name="WATCH_ACCESS" value="false" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/edu/miami/med/alext/ncbi/xml/jaxb/SRAXMLLoader.java" line="62" class="edu.miami.med.alext.ncbi.xml.jaxb.SRAXMLLoader" package="edu.miami.med.alext.ncbi.xml.jaxb">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -111,17 +218,27 @@
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="true" />
         <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="true" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
         <option name="CONDITION" value="" />
-        <instance_id>
-          <option name="PATTERN" value="1694" />
-          <option name="ENABLED" value="true" />
-        </instance_id>
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-    </field_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/scripts/Processor.java" line="71" class="scripts.Processor" package="scripts">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules converted="true" />
-    <ui_properties converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -132,11 +249,21 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="13498" max-vertical-offset="16524">
-              <caret line="865" column="52" selection-start-line="865" selection-start-column="52" selection-end-line="865" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2322" max-vertical-offset="16812">
+              <caret line="151" column="33" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssembleFullAnnotationFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scripts/AssembleFullAnnotationFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1206">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,30 +271,18 @@
       <file leaf-file-name="DownloadSRA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sra.net/src/net/DownloadSRA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="651" max-vertical-offset="1854">
+            <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="1854">
               <caret line="15" column="28" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenerateBsub.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GenerateBsub.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scripts/GenerateBsub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67202574" vertical-offset="651" max-vertical-offset="1980">
-              <caret line="71" column="59" selection-start-line="71" selection-start-column="59" selection-end-line="71" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BMTagger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2180" max-vertical-offset="5148">
-              <caret line="151" column="27" selection-start-line="151" selection-start-column="27" selection-end-line="151" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="2070">
+              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -176,9 +291,11 @@
       <file leaf-file-name="Condenser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/process/Condenser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1656">
+            <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1476">
               <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -186,8 +303,8 @@
       <file leaf-file-name="TrinityReads.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scripts/TrinityReads.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="3708">
-              <caret line="94" column="59" selection-start-line="94" selection-start-column="59" selection-end-line="94" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="302" max-vertical-offset="4014">
+              <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -197,7 +314,19 @@
         <entry file="file://$PROJECT_DIR$/src/scripts/Legend.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1224">
-              <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+              <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConvertCreepyFastQ.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scripts/ConvertCreepyFastQ.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7299035" vertical-offset="309" max-vertical-offset="1458">
+              <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -208,24 +337,12 @@
       <file leaf-file-name="NucleotideFasta.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../JAVA_BIO/JAVA_BIO/src/format/fasta/nucleotide/NucleotideFasta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1301" max-vertical-offset="2214">
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2556">
               <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="false" />
-                <element signature="e#1167#1168#0" expanded="false" />
-                <element signature="e#1202#1203#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OTUConsensusConversionTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../JAVA_BIO/JAVA_BIO/src/test/OTUConsensusConversionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="1170">
-              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="e#1339#1340#0" expanded="false" />
+                <element signature="e#1374#1375#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -259,11 +376,12 @@
       <list>
         <option value="$PROJECT_DIR$/SRAToolkit_V7/src/tools/BMTagger.java" />
         <option value="$PROJECT_DIR$/src/edu/miami/med/alext/process/Condenser.java" />
+        <option value="$PROJECT_DIR$/sra.net/src/net/DownloadSRA.java" />
+        <option value="$PROJECT_DIR$/src/scripts/GenerateBsub.java" />
+        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" />
         <option value="$PROJECT_DIR$/src/scripts/TrinityReads.java" />
         <option value="$PROJECT_DIR$/src/scripts/Legend.java" />
-        <option value="$PROJECT_DIR$/sra.net/src/net/DownloadSRA.java" />
-        <option value="$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java" />
-        <option value="$PROJECT_DIR$/src/scripts/GenerateBsub.java" />
+        <option value="$PROJECT_DIR$/src/scripts/ConvertCreepyFastQ.java" />
       </list>
     </option>
   </component>
@@ -299,8 +417,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -679,6 +795,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -689,7 +807,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JAVA_BIO/JAVA_BIO/JAVA_BIO.iml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -719,24 +837,7 @@
       <recent name="net" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GenerateBsub">
-    <configuration default="false" name="SRP017329Analysis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="script.SRP017329Analysis" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="SRAToolkit_V7" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.ConvertCreepyFastQ">
     <configuration default="false" name="BSUBScriptMasterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="SRAToolkit_V7" />
@@ -744,29 +845,6 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="tools" />
       <option name="MAIN_CLASS_NAME" value="tools.BSUBScriptMasterTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="AbiSolidDumpTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="SRAToolkit_V7" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="process" />
-      <option name="MAIN_CLASS_NAME" value="process.AbiSolidDumpTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -833,6 +911,97 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="TrinityReads" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="scripts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="scripts.TrinityReads" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="SRAToolkit" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ConvertCreepyFastQ" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="scripts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="scripts.ConvertCreepyFastQ" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="SRAToolkit" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -854,11 +1023,6 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -873,6 +1037,11 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -918,61 +1087,20 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.SRP017329Analysis" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BSUBScriptMasterTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AbiSolidDumpTest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Legend" />
-      <item index="4" class="java.lang.String" itemvalue="Application.GenerateBsub" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.BSUBScriptMasterTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Legend" />
+      <item index="2" class="java.lang.String" itemvalue="Application.GenerateBsub" />
+      <item index="3" class="java.lang.String" itemvalue="Application.TrinityReads" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ConvertCreepyFastQ" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.GenerateBsub" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ConvertCreepyFastQ" />
         <item index="1" class="java.lang.String" itemvalue="Application.Legend" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.BSUBScriptMasterTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.AbiSolidDumpTest" />
-        <item index="4" class="java.lang.String" itemvalue="Application.SRP017329Analysis" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TrinityReads" />
+        <item index="3" class="java.lang.String" itemvalue="Application.GenerateBsub" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BSUBScriptMasterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1083,37 +1211,43 @@
       <option name="project" value="LOCAL" />
       <updated>1416259870907</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="latest">
+      <created>1416438413631</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1416438413631</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="2156" y="832" width="1928" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30150753" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32604167" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32604167" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" weight="0.36780384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1080" y="0" width="1080" height="1876" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30104166" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1146,7 +1280,8 @@
     <MESSAGE value="BSUBScriptMaster created" />
     <MESSAGE value="Up to Trinity implemented" />
     <MESSAGE value="legend added" />
-    <option name="LAST_COMMIT_MESSAGE" value="legend added" />
+    <MESSAGE value="latest" />
+    <option name="LAST_COMMIT_MESSAGE" value="latest" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1185,12 +1320,6 @@
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/scripts/TrinityReads.java</url>
-          <line>100</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SRAToolkit_V7/src/tools/SolexaQA.java</url>
           <line>65</line>
           <properties />
@@ -1208,6 +1337,12 @@
           <properties />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/scripts/TrinityReads.java</url>
+          <line>126</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/sra.xml/src/xml/jaxb/ExperimentType.java</url>
           <line>189</line>
@@ -1220,7 +1355,7 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="47" />
+      <option name="time" value="49" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1229,20 +1364,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/SolexaQAPPDynamicTrim.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1173">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/process/CallableProcessExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/miami/med/alext/brain/SolexaQAPPLengthSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="952">
@@ -1388,7 +1509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
           <caret line="25" column="6" selection-start-line="17" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1403,9 +1523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="640" max-vertical-offset="1564">
           <caret line="59" column="86" selection-start-line="59" selection-start-column="86" selection-end-line="59" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1413,15 +1530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.11038961" vertical-offset="1020" max-vertical-offset="2006">
           <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3472#3473#0" expanded="false" />
-            <element signature="e#3507#3508#0" expanded="false" />
-            <element signature="e#3543#3544#0" expanded="false" />
-            <element signature="e#3581#3582#0" expanded="false" />
-            <element signature="e#3616#3617#0" expanded="false" />
-            <element signature="e#3651#3652#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1473,7 +1581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.66233766" vertical-offset="0" max-vertical-offset="1241">
           <caret line="42" column="108" selection-start-line="42" selection-start-column="108" selection-end-line="42" selection-end-column="108" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1509,9 +1616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4675">
           <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1519,9 +1623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="952">
           <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1560,8 +1661,8 @@
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1167#1168#0" expanded="false" />
-            <element signature="e#1202#1203#0" expanded="false" />
+            <element signature="e#1339#1340#0" expanded="false" />
+            <element signature="e#1374#1375#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1577,15 +1678,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1656">
           <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/TrinityReads.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="3708">
-          <caret line="94" column="59" selection-start-line="94" selection-start-column="59" selection-end-line="94" selection-end-column="59" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1593,26 +1688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1764">
           <caret line="42" column="103" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/Legend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1224">
-          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="13498" max-vertical-offset="16524">
-          <caret line="865" column="52" selection-start-line="865" selection-start-column="52" selection-end-line="865" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1624,10 +1699,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/AssembleFullAnnotationFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1206">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/scripts/GenerateBsub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67202574" vertical-offset="651" max-vertical-offset="1980">
-          <caret line="71" column="59" selection-start-line="71" selection-start-column="59" selection-end-line="71" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="2070">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/TrinityReads.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="302" max-vertical-offset="4014">
+          <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/Legend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1224">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SRAToolkit_V7/src/script/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2322" max-vertical-offset="16812">
+          <caret line="151" column="33" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/ConvertCreepyFastQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7299035" vertical-offset="309" max-vertical-offset="1458">
+          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
